@@ -298,7 +298,7 @@
       }
     }
 
-    /* ========== MATRIX CANVAS ========== */
+    /* ========== MATRIX CANVAS - BLUE DIGITAL RAIN ========== */
     #matrix-canvas {
       position: absolute;
       top: 0;
@@ -307,10 +307,6 @@
       height: 100%;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.18;
-    }
-    body.dark #matrix-canvas {
-      opacity: 0.3;
     }
     .hero-content {
       position: relative;
@@ -318,7 +314,7 @@
     }
 
     /* Dark mode toggle button */
-    #darkModeToggle {
+    #darkModeToggle, #darkModeToggleMobile {
       background: transparent;
       border: none;
       cursor: pointer;
@@ -331,13 +327,13 @@
       align-items: center;
       justify-content: center;
     }
-    #darkModeToggle:hover {
+    #darkModeToggle:hover, #darkModeToggleMobile:hover {
       background-color: rgba(0,0,0,0.05);
     }
-    body.dark #darkModeToggle {
+    body.dark #darkModeToggle, body.dark #darkModeToggleMobile {
       color: #facc15;
     }
-    body.dark #darkModeToggle:hover {
+    body.dark #darkModeToggle:hover, body.dark #darkModeToggleMobile:hover {
       background-color: rgba(255,255,255,0.1);
     }
   </style>
@@ -370,7 +366,7 @@
         </div>
         <!-- Mobile: Dark toggle + hamburger -->
         <div class="md:hidden flex items-center gap-2">
-          <button id="darkModeToggleMobile" class="text-gray-700 text-xl p-2" aria-label="Toggle Dark Mode">
+          <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon" id="darkIconMobile"></i>
             <i class="fas fa-sun hidden" id="lightIconMobile"></i>
           </button>
@@ -391,13 +387,11 @@
     </div>
   </nav>
 
-  <!-- ========== HERO SECTION (dengan Matrix Canvas) ========== -->
+  <!-- ========== HERO SECTION (dengan Blue Matrix Canvas) ========== -->
   <section id="home" class="relative bg-white overflow-hidden section-spacing">
-    <!-- Canvas untuk Matrix Rain -->
     <canvas id="matrix-canvas"></canvas>
     
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 hero-content">
-      <!-- Left Content -->
       <div class="lg:w-1/2 space-y-7 animate-fade-left">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight tracking-tight">
           Cyber Security <span class="text-[#1E3A8A]">& Training</span> for Professionals
@@ -410,7 +404,6 @@
           <a href="#kelas" class="btn-outline text-base">Lihat Kelas</a>
         </div>
       </div>
-      <!-- Right Illustration -->
       <div class="lg:w-1/2 flex justify-center animate-fade-right">
         <div class="relative w-full max-w-md">
           <div class="bg-gradient-to-br from-[#1E3A8A]/10 to-blue-50 rounded-3xl p-8 shadow-subtle border border-blue-100">
@@ -469,137 +462,41 @@
         <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">Kelas Cybersecurity</h2>
         <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">Tingkatkan skill Anda dengan kurikulum praktis dari mentor aktif di industri.</p>
       </div>
-      
       <div class="space-y-14">
         <!-- Malware Development -->
         <div class="animate-fade-in">
-          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3">
-            <i class="fas fa-bug text-[#1E3A8A] text-3xl"></i> Malware Development
-          </h3>
+          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-bug text-[#1E3A8A] text-3xl"></i> Malware Development</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Beginner</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Basic</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Pengenalan analisis & pembuatan malware dasar.</p>
-              <div class="price-tag">Rp 500.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 4 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Intermediate</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Pro</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Teknik evasion & persistence tingkat lanjut.</p>
-              <div class="price-tag">Rp 850.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 6 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Advanced</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Expert</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Reverse engineering & custom payload crafting.</p>
-              <div class="price-tag">Rp 1.200.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 8 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Pengenalan analisis & pembuatan malware dasar.</p><div class="price-tag">Rp 500.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 4 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Pro</h4><p class="text-sm text-gray-500 leading-relaxed">Teknik evasion & persistence tingkat lanjut.</p><div class="price-tag">Rp 850.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 6 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Expert</h4><p class="text-sm text-gray-500 leading-relaxed">Reverse engineering & custom payload crafting.</p><div class="price-tag">Rp 1.200.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 8 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
           </div>
         </div>
-
-        <!-- Red Team Fundamentals -->
+        <!-- Red Team -->
         <div class="animate-fade-in">
-          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3">
-            <i class="fas fa-user-secret text-[#1E3A8A] text-3xl"></i> Red Team Fundamentals
-          </h3>
+          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-user-secret text-[#1E3A8A] text-3xl"></i> Red Team Fundamentals</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Beginner</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Red Team Starter</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Dasar-dasar adversarial simulation.</p>
-              <div class="price-tag">Rp 550.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 5 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Intermediate</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Red Team Ops</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">C2 infrastructure & lateral movement.</p>
-              <div class="price-tag">Rp 900.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 6 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Advanced</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Red Team Mastery</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Full engagement simulation & reporting.</p>
-              <div class="price-tag">Rp 1.300.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 8 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Starter</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar adversarial simulation.</p><div class="price-tag">Rp 550.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 5 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Ops</h4><p class="text-sm text-gray-500 leading-relaxed">C2 infrastructure & lateral movement.</p><div class="price-tag">Rp 900.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 6 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Mastery</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement simulation.</p><div class="price-tag">Rp 1.300.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 8 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
           </div>
         </div>
-
         <!-- Blue Team -->
         <div class="animate-fade-in">
-          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3">
-            <i class="fas fa-shield-virus text-[#1E3A8A] text-3xl"></i> Blue Team Defense
-          </h3>
+          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-shield-virus text-[#1E3A8A] text-3xl"></i> Blue Team Defense</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Beginner</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Blue Team Essentials</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Log analysis & SIEM dasar.</p>
-              <div class="price-tag">Rp 500.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 4 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Intermediate</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Threat Hunting</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Proactive threat detection & IR.</p>
-              <div class="price-tag">Rp 800.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 5 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Advanced</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">SOC Architect</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Design & automation security operations.</p>
-              <div class="price-tag">Rp 1.100.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 7 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Blue Team Essentials</h4><p class="text-sm text-gray-500 leading-relaxed">Log analysis & SIEM dasar.</p><div class="price-tag">Rp 500.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 4 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Threat Hunting</h4><p class="text-sm text-gray-500 leading-relaxed">Proactive threat detection & IR.</p><div class="price-tag">Rp 800.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 5 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">SOC Architect</h4><p class="text-sm text-gray-500 leading-relaxed">Design & automation security ops.</p><div class="price-tag">Rp 1.100.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 7 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
           </div>
         </div>
-
-        <!-- Web Hacking & Bug Bounty -->
+        <!-- Web Hacking -->
         <div class="animate-fade-in">
-          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3">
-            <i class="fas fa-code text-[#1E3A8A] text-3xl"></i> Web Hacking & Bug Bounty
-          </h3>
+          <h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-code text-[#1E3A8A] text-3xl"></i> Web Hacking & Bug Bounty</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Beginner</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Web Hacking 101</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">OWASP Top 10 & basic exploitation.</p>
-              <div class="price-tag">Rp 450.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 4 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Intermediate</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Bug Bounty Hunter</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Advanced XSS, CSRF, IDOR techniques.</p>
-              <div class="price-tag">Rp 750.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 6 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
-            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift">
-              <span class="level-badge">Advanced</span>
-              <h4 class="font-semibold text-xl mt-3 mb-2">Advanced Web Exploit</h4>
-              <p class="text-sm text-gray-500 leading-relaxed">Deserialization, SSRF, chaining bugs.</p>
-              <div class="price-tag">Rp 1.000.000</div>
-              <p class="text-xs text-gray-500 mb-4">Durasi: 7 Minggu</p>
-              <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-            </div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Web Hacking 101</h4><p class="text-sm text-gray-500 leading-relaxed">OWASP Top 10 & basic exploitation.</p><div class="price-tag">Rp 450.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 4 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Bug Bounty Hunter</h4><p class="text-sm text-gray-500 leading-relaxed">Advanced XSS, CSRF, IDOR.</p><div class="price-tag">Rp 750.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 6 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
+            <div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Advanced Web Exploit</h4><p class="text-sm text-gray-500 leading-relaxed">Deserialization, SSRF, chaining.</p><div class="price-tag">Rp 1.000.000</div><p class="text-xs text-gray-500 mb-4">Durasi: 7 Minggu</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div>
           </div>
         </div>
       </div>
@@ -611,69 +508,38 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-14 animate-fade-in">Kenapa Pilih Kami?</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-100">
-          <i class="fas fa-briefcase text-3xl text-[#1E3A8A] mb-4"></i>
-          <h4 class="font-semibold text-xl mb-2">Berpengalaman</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">Tim kami telah menangani berbagai proyek keamanan skala enterprise.</p>
-        </div>
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-200">
-          <i class="fas fa-chalkboard-teacher text-3xl text-[#1E3A8A] mb-4"></i>
-          <h4 class="font-semibold text-xl mb-2">Mentor Praktisi</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">Belajar langsung dari profesional yang aktif di industri keamanan.</p>
-        </div>
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-300">
-          <i class="fas fa-flask text-3xl text-[#1E3A8A] mb-4"></i>
-          <h4 class="font-semibold text-xl mb-2">Materi Real-World</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">Studi kasus dan lab based on actual scenarios, bukan teori semata.</p>
-        </div>
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-400">
-          <i class="fas fa-users text-3xl text-[#1E3A8A] mb-4"></i>
-          <h4 class="font-semibold text-xl mb-2">Support Komunitas</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">Akses ke grup diskusi dan update materi setelah kelas selesai.</p>
-        </div>
+        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-100"><i class="fas fa-briefcase text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Berpengalaman</h4><p class="text-gray-600 text-sm">Proyek keamanan skala enterprise.</p></div>
+        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-200"><i class="fas fa-chalkboard-teacher text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Mentor Praktisi</h4><p class="text-gray-600 text-sm">Profesional aktif di industri.</p></div>
+        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-300"><i class="fas fa-flask text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Materi Real-World</h4><p class="text-gray-600 text-sm">Studi kasus aktual, bukan teori.</p></div>
+        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-400"><i class="fas fa-users text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Support Komunitas</h4><p class="text-gray-600 text-sm">Grup diskusi & update materi.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ========== ABOUT SECTION (tanpa card lokasi) ========== -->
+  <!-- ========== ABOUT ========== -->
   <section id="about" class="bg-white section-spacing">
     <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center animate-fade-in">
       <i class="fas fa-building-shield text-5xl text-[#1E3A8A] mb-6 block"></i>
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">About Us</h2>
       <div class="bg-[#1E3A8A]/5 p-8 md:p-10 rounded-2xl shadow-subtle text-left">
-        <p class="text-gray-700 leading-relaxed mb-4 text-lg">
-          DevSec Indonesia adalah penyedia jasa dan edukasi cybersecurity yang berfokus pada keamanan sistem dan peningkatan skill. Kami percaya bahwa keamanan siber harus dapat diakses oleh semua kalangan, mulai dari startup hingga korporasi.
-        </p>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          Dengan kombinasi layanan penetration testing, secure development, dan program pelatihan terstruktur, kami membantu organisasi membangun pertahanan digital yang kuat.
-        </p>
+        <p class="text-gray-700 leading-relaxed mb-4 text-lg">DevSec Indonesia adalah penyedia jasa dan edukasi cybersecurity yang berfokus pada keamanan sistem dan peningkatan skill.</p>
+        <p class="text-gray-700 leading-relaxed text-lg">Dengan kombinasi layanan penetration testing, secure development, dan program pelatihan terstruktur, kami membantu organisasi membangun pertahanan digital yang kuat.</p>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTACT SECTION ========== -->
+  <!-- ========== CONTACT ========== -->
   <section id="contact" class="bg-light-gray section-spacing">
     <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 animate-fade-in">Hubungi Kami</h2>
-      <p class="text-gray-600 text-lg mb-12 max-w-xl mx-auto leading-relaxed animate-fade-in">Konsultasikan kebutuhan keamanan atau training Anda melalui WhatsApp atau email.</p>
-      
+      <p class="text-gray-600 text-lg mb-12 animate-fade-in">Konsultasikan kebutuhan via WhatsApp atau email.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-8 items-center animate-fade-in delay-200">
-        <a href="https://wa.me/6282221538876?text=Halo%20DevSec%20Indonesia%2C%20saya%20ingin%20konsultasi" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="whatsapp-float pulse-wa text-lg">
-          <i class="fab fa-whatsapp text-2xl"></i> WhatsApp Kami
-        </a>
-        <div class="text-gray-700 flex items-center gap-3 text-lg">
-          <i class="far fa-envelope text-[#1E3A8A] text-xl"></i> 
-          <span>devsecidn@gmail.com</span>
-        </div>
+        <a href="https://wa.me/6282221538876?text=Halo%20DevSec%20Indonesia%2C%20saya%20ingin%20konsultasi" target="_blank" rel="noopener noreferrer" class="whatsapp-float pulse-wa text-lg"><i class="fab fa-whatsapp text-2xl"></i> WhatsApp Kami</a>
+        <div class="text-gray-700 flex items-center gap-3 text-lg"><i class="far fa-envelope text-[#1E3A8A] text-xl"></i> <span>devsecidn@gmail.com</span></div>
       </div>
       <div class="mt-8 text-sm text-gray-500 flex flex-wrap justify-center gap-6 animate-fade-in delay-300">
-        <span class="flex items-center gap-2"><i class="fas fa-map-pin"></i> Sumenep, Indonesia</span>
-        <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#1E3A8A] transition-colors">
-          <i class="fab fa-instagram"></i> @devsec.id
-        </a>
+        <span><i class="fas fa-map-pin"></i> Sumenep, Indonesia</span>
+        <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="hover:text-[#1E3A8A]"><i class="fab fa-instagram"></i> @devsec.id</a>
       </div>
     </div>
   </section>
@@ -681,178 +547,106 @@
   <!-- ========== FOOTER ========== -->
   <footer class="bg-white border-t border-gray-200 py-12">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex items-center gap-1">
-        <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
+      <span class="text-2xl font-bold font-heading text-[#1E3A8A]">DevSec<span class="text-gray-800">.id</span></span>
+      <div class="flex gap-6 text-sm font-medium text-gray-600">
+        <a href="#home" class="hover:text-[#1E3A8A]">Home</a>
+        <a href="#services" class="hover:text-[#1E3A8A]">Services</a>
+        <a href="#kelas" class="hover:text-[#1E3A8A]">Kelas</a>
+        <a href="#contact" class="hover:text-[#1E3A8A]">Contact</a>
       </div>
-      <div class="flex flex-wrap justify-center gap-6 text-gray-600 text-sm font-medium">
-        <a href="#home" class="hover:text-[#1E3A8A] transition-colors">Home</a>
-        <a href="#services" class="hover:text-[#1E3A8A] transition-colors">Services</a>
-        <a href="#kelas" class="hover:text-[#1E3A8A] transition-colors">Kelas</a>
-        <a href="#contact" class="hover:text-[#1E3A8A] transition-colors">Contact</a>
-      </div>
-      <div class="flex space-x-4 text-gray-500 text-2xl">
-        <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="hover:text-[#1E3A8A] transition-colors" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+      <div class="text-2xl text-gray-500">
+        <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="hover:text-[#1E3A8A]"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <div class="text-center text-gray-400 text-xs mt-10">
-      © 2026 DevSec Indonesia. All rights reserved.
-    </div>
+    <div class="text-center text-gray-400 text-xs mt-10">© 2026 DevSec Indonesia. All rights reserved.</div>
   </footer>
 
-  <!-- ========== SCRIPTS ========== -->
   <script>
-    // --- Dark Mode Toggle ---
-    (function() {
-      const body = document.body;
-      
-      // Cek localStorage
-      if (localStorage.getItem('devsec-dark-mode') === 'true') {
-        body.classList.add('dark');
-        updateIcons(true);
-      }
-
-      function updateIcons(isDark) {
-        // Desktop icons
-        const darkIcon = document.getElementById('darkIcon');
-        const lightIcon = document.getElementById('lightIcon');
-        // Mobile icons
-        const darkIconMobile = document.getElementById('darkIconMobile');
-        const lightIconMobile = document.getElementById('lightIconMobile');
-        
-        if (isDark) {
-          if (darkIcon) darkIcon.classList.add('hidden');
-          if (lightIcon) lightIcon.classList.remove('hidden');
-          if (darkIconMobile) darkIconMobile.classList.add('hidden');
-          if (lightIconMobile) lightIconMobile.classList.remove('hidden');
-        } else {
-          if (darkIcon) darkIcon.classList.remove('hidden');
-          if (lightIcon) lightIcon.classList.add('hidden');
-          if (darkIconMobile) darkIconMobile.classList.remove('hidden');
-          if (lightIconMobile) lightIconMobile.classList.add('hidden');
+    // Dark Mode
+    (function(){
+      const body=document.body;
+      if(localStorage.getItem('devsec-dark-mode')==='true'){body.classList.add('dark');updateIcons(true);}
+      function updateIcons(d){
+        const di=document.getElementById('darkIcon'),li=document.getElementById('lightIcon');
+        const dim=document.getElementById('darkIconMobile'),lim=document.getElementById('lightIconMobile');
+        if(d){
+          if(di)di.classList.add('hidden');if(li)li.classList.remove('hidden');
+          if(dim)dim.classList.add('hidden');if(lim)lim.classList.remove('hidden');
+        }else{
+          if(di)di.classList.remove('hidden');if(li)li.classList.add('hidden');
+          if(dim)dim.classList.remove('hidden');if(lim)lim.classList.add('hidden');
         }
       }
-
-      function toggleDarkMode() {
-        const isDark = body.classList.toggle('dark');
-        localStorage.setItem('devsec-dark-mode', isDark);
-        updateIcons(isDark);
-      }
-
-      document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
-      document.getElementById('darkModeToggleMobile')?.addEventListener('click', toggleDarkMode);
+      function toggle(){const d=body.classList.toggle('dark');localStorage.setItem('devsec-dark-mode',d);updateIcons(d);}
+      document.getElementById('darkModeToggle')?.addEventListener('click',toggle);
+      document.getElementById('darkModeToggleMobile')?.addEventListener('click',toggle);
     })();
-
-    // --- Mobile Menu Toggle ---
-    (function() {
-      const menuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (menuButton && mobileMenu) {
-        menuButton.addEventListener('click', function() {
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href === "#") return;
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-              mobileMenu.classList.add('hidden');
-            }
-          }
-        });
-      });
+    // Mobile menu
+    (function(){
+      const btn=document.getElementById('mobile-menu-button'),menu=document.getElementById('mobile-menu');
+      btn?.addEventListener('click',()=>menu.classList.toggle('hidden'));
+      document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){
+        const t=document.querySelector(this.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});menu?.classList.add('hidden');}
+      }));
     })();
-
-    // --- Scroll Animation ---
-    (function() {
-      const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-fade-left, .animate-fade-right');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-      animatedElements.forEach(el => observer.observe(el));
+    // Scroll animation
+    (function(){
+      const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}})},{threshold:0.15});
+      document.querySelectorAll('.animate-fade-in,.animate-fade-left,.animate-fade-right').forEach(el=>obs.observe(el));
     })();
-
-    // --- Matrix Rain Animation ---
-    (function() {
-      const canvas = document.getElementById('matrix-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      function resizeCanvas() {
-        const section = document.getElementById('home');
-        if (section) {
-          canvas.width = section.offsetWidth;
-          canvas.height = section.offsetHeight;
-        }
+    // BLUE MATRIX RAIN - sel grid jelas, biru terang
+    (function(){
+      const canvas=document.getElementById('matrix-canvas');
+      if(!canvas)return;
+      const ctx=canvas.getContext('2d');
+      let w,h,cols,rows,grid=[];
+      const chars='アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
+      function resize(){
+        const s=document.getElementById('home');
+        w=s?canvas.width=s.offsetWidth:canvas.width=window.innerWidth;
+        h=s?canvas.height=s.offsetHeight:canvas.height=500;
+        const fs=16;cols=Math.floor(w/fs);rows=Math.floor(h/fs);
+        grid=Array.from({length:cols},()=>({y:Math.random()*-rows, speed:0.3+Math.random()*0.7, brightness:0.3+Math.random()*0.7}));
       }
-
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-
-      // Karakter Matrix (Latin + angka + simbol)
-      const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*';
-      const charArray = chars.split('');
-      const fontSize = 14;
-      let columns = Math.floor(canvas.width / fontSize);
-      let drops = [];
-
-      function initDrops() {
-        columns = Math.floor(canvas.width / fontSize);
-        drops = [];
-        for (let i = 0; i < columns; i++) {
-          drops[i] = Math.random() * -100;
-        }
-      }
-      initDrops();
-      window.addEventListener('resize', () => {
-        resizeCanvas();
-        initDrops();
-      });
-
-      function draw() {
-        // Background semi-transparan untuk efek fade
-        const isDark = document.body.classList.contains('dark');
-        if (isDark) {
-          ctx.fillStyle = 'rgba(15, 23, 42, 0.08)';
-        } else {
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-        }
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = '#0F0'; // Warna hijau Matrix
-        ctx.font = fontSize + 'px "Share Tech Mono", monospace';
-
-        for (let i = 0; i < drops.length; i++) {
-          const text = charArray[Math.floor(Math.random() * charArray.length)];
-          const x = i * fontSize;
-          const y = drops[i] * fontSize;
-          
-          // Variasi kecerahan
-          const brightness = Math.random() * 0.5 + 0.5;
-          ctx.fillStyle = `rgba(0, 255, 0, ${brightness})`;
-          ctx.fillText(text, x, y);
-
-          // Reset drop jika sudah melewati batas + random
-          if (y > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
+      resize();window.addEventListener('resize',resize);
+      function draw(){
+        const isDark=document.body.classList.contains('dark');
+        // Clear dengan fade
+        ctx.fillStyle=isDark?'rgba(15,23,42,0.12)':'rgba(255,255,255,0.12)';
+        ctx.fillRect(0,0,w,h);
+        const fs=16;ctx.font='bold '+fs+'px "Share Tech Mono", monospace';
+        ctx.textAlign='center';
+        for(let i=0;i<cols;i++){
+          const g=grid[i];
+          const x=i*fs+fs/2;
+          const y=g.y*fs;
+          // Warna biru menyala
+          const alpha=isDark?0.5+g.brightness*0.5:0.35+g.brightness*0.4;
+          if(isDark){
+            ctx.fillStyle=`rgba(96,165,250,${alpha})`; // blue-300 di dark
+            ctx.shadowColor='rgba(96,165,250,0.8)';
+          }else{
+            ctx.fillStyle=`rgba(30,58,138,${alpha})`; // navy blue di light
+            ctx.shadowColor='rgba(30,58,138,0.6)';
           }
-          drops[i]++;
+          ctx.shadowBlur=4;
+          const ch=chars[Math.floor(Math.random()*chars.length)];
+          ctx.fillText(ch,x,y);
+          // Karakter utama lebih terang
+          if(Math.random()>0.7){
+            ctx.fillStyle=isDark?'rgba(180,220,255,0.9)':'rgba(37,99,235,0.9)';
+            ctx.shadowColor=isDark?'rgba(180,220,255,1)':'rgba(37,99,235,0.8)';
+            ctx.shadowBlur=6;
+            ctx.fillText(ch,x,y);
+          }
+          g.y+=g.speed;
+          if(g.y>rows+2){g.y=-2;g.speed=0.3+Math.random()*0.7;g.brightness=0.3+Math.random()*0.7;}
         }
+        ctx.shadowBlur=0;
+        requestAnimationFrame(draw);
       }
-
-      // Jalankan animasi Matrix
-      setInterval(draw, 50);
+      draw();
     })();
   </script>
 </body>
