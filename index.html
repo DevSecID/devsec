@@ -360,16 +360,13 @@
 </head>
 <body class="antialiased">
 
-  <!-- ========== NAVBAR (CSS Grid 3 Kolom - Perfect Center) ========== -->
+  <!-- ========== NAVBAR ========== -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-colors">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="grid grid-cols-[1fr_auto_1fr] items-center py-4">
-        <!-- Logo - Kiri -->
         <div class="flex items-center gap-1">
           <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
         </div>
-        
-        <!-- Menu Navigasi - Center (hanya tampil di md ke atas) -->
         <div class="hidden md:flex items-center gap-8 lg:gap-10 justify-center">
           <a href="#home" class="nav-link text-sm lg:text-base">Home</a>
           <a href="#services" class="nav-link text-sm lg:text-base">Services</a>
@@ -377,8 +374,6 @@
           <a href="#about" class="nav-link text-sm lg:text-base">About</a>
           <a href="#contact" class="nav-link text-sm lg:text-base">Contact</a>
         </div>
-        
-        <!-- Right Actions - Kanan (hanya tampil di md ke atas) -->
         <div class="hidden md:flex items-center gap-3 justify-end">
           <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Dark/Light Mode">
             <i class="fas fa-moon" id="darkIcon"></i>
@@ -386,8 +381,6 @@
           </button>
           <a href="#contact" class="btn-primary text-sm px-6 py-2.5">Konsultasi Sekarang</a>
         </div>
-        
-        <!-- Mobile Actions -->
         <div class="md:hidden flex items-center gap-2 justify-end">
           <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon" id="darkIconMobile"></i>
@@ -398,8 +391,6 @@
           </button>
         </div>
       </div>
-      
-      <!-- Mobile Menu Dropdown -->
       <div id="mobile-menu" class="md:hidden hidden pb-5 space-y-3 pt-1">
         <a href="#home" class="block nav-link py-2 text-base">Home</a>
         <a href="#services" class="block nav-link py-2 text-base">Services</a>
@@ -414,7 +405,6 @@
   <!-- ========== HERO SECTION ========== -->
   <section id="home" class="relative bg-white overflow-hidden section-spacing">
     <canvas id="matrix-canvas"></canvas>
-    
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 hero-content">
       <div class="lg:w-1/2 space-y-7 animate-fade-left">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight tracking-tight">
@@ -474,7 +464,7 @@
     </div>
   </section>
 
-  <!-- ========== KELAS SECTION ========== -->
+  <!-- ========== KELAS SECTION (TANPA ICON JUDUL) ========== -->
   <section id="kelas" class="bg-white section-spacing">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-fade-in">
@@ -483,15 +473,16 @@
       </div>
       <div class="space-y-14">
         <!-- Malware Development -->
-        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-bug text-[#1E3A8A] text-3xl"></i> Malware Development</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Pengenalan Malware.</p><div class="price-tag">Rp 500.000</div><p class="text-xs text-gray-500 mb-4">4x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Pro</h4><p class="text-sm text-gray-500 leading-relaxed">Malware Analysis & Dev.</p><div class="price-tag">Rp 1.200.000</div><p class="text-xs text-gray-500 mb-4">8x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Expert</h4><p class="text-sm text-gray-500 leading-relaxed">Full Dev, Bypass & etc.</p><div class="price-tag">Rp 2.200.000</div><p class="text-xs text-gray-500 mb-4">15x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
+        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6">Malware Development</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Pengenalan Malware.</p><div class="price-tag">Rp 500.000</div><p class="text-xs text-gray-500 mb-4">4x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Pro</h4><p class="text-sm text-gray-500 leading-relaxed">Malware Analysis & Dev.</p><div class="price-tag">Rp 1.200.000</div><p class="text-xs text-gray-500 mb-4">8x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Expert</h4><p class="text-sm text-gray-500 leading-relaxed">Full Dev, Bypass & etc.</p><div class="price-tag">Rp 2.200.000</div><p class="text-xs text-gray-500 mb-4">15x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
         
         <!-- Red Team Fundamentals -->
-        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-user-secret text-[#1E3A8A] text-3xl"></i> Red Team Fundamentals</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Starter</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p><div class="price-tag">Rp 199.000</div><p class="text-xs text-gray-500 mb-4">3x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Ops</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p><div class="price-tag">Rp 399.000</div><p class="text-xs text-gray-500 mb-4">6x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Mastery</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p><div class="price-tag">Rp 799.000</div><p class="text-xs text-gray-500 mb-4">12x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
+        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6">Red Team Fundamentals</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Starter</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p><div class="price-tag">Rp 199.000</div><p class="text-xs text-gray-500 mb-4">3x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Ops</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p><div class="price-tag">Rp 399.000</div><p class="text-xs text-gray-500 mb-4">6x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Mastery</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p><div class="price-tag">Rp 799.000</div><p class="text-xs text-gray-500 mb-4">12x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
         
         <!-- Blue Team Defense -->
-        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-shield-virus text-[#1E3A8A] text-3xl"></i> Blue Team Defense</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Blue Team Essentials</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p><div class="price-tag">Rp 199.000</div><p class="text-xs text-gray-500 mb-4">3x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Threat Hunting</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p><div class="price-tag">Rp 399.000</div><p class="text-xs text-gray-500 mb-4">6x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">SOC Architect</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p><div class="price-tag">Rp 799.000</div><p class="text-xs text-gray-500 mb-4">12x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
+        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6">Blue Team Defense</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Blue Team Essentials</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p><div class="price-tag">Rp 199.000</div><p class="text-xs text-gray-500 mb-4">3x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Threat Hunting</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p><div class="price-tag">Rp 399.000</div><p class="text-xs text-gray-500 mb-4">6x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">SOC Architect</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p><div class="price-tag">Rp 799.000</div><p class="text-xs text-gray-500 mb-4">12x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
         
-        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-theater-masks text-[#1E3A8A] text-3xl"></i> Advanced Exploitation</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Exploit Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar eksploitasi & pengenalan tools.</p><div class="price-tag">Rp 450.000</div><p class="text-xs text-gray-500 mb-4">4x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Exploit Hunter</h4><p class="text-sm text-gray-500 leading-relaxed">Advanced exploitation & privilege escalation.</p><div class="price-tag">Rp 900.000</div><p class="text-xs text-gray-500 mb-4">7x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Advanced Exploit Dev</h4><p class="text-sm text-gray-500 leading-relaxed">Custom exploit, fuzzing & 0day research.</p><div class="price-tag">Rp 3.000.000</div><p class="text-xs text-gray-500 mb-4">15x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
+        <!-- Advanced Exploitation -->
+        <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6">Advanced Exploitation</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Exploit Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar eksploitasi & pengenalan tools.</p><div class="price-tag">Rp 450.000</div><p class="text-xs text-gray-500 mb-4">4x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Exploit Hunter</h4><p class="text-sm text-gray-500 leading-relaxed">Advanced exploitation & privilege escalation.</p><div class="price-tag">Rp 900.000</div><p class="text-xs text-gray-500 mb-4">7x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Advanced Exploit Dev</h4><p class="text-sm text-gray-500 leading-relaxed">Custom exploit, fuzzing & 0day research.</p><div class="price-tag">Rp 3.000.000</div><p class="text-xs text-gray-500 mb-4">15x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
       </div>
     </div>
   </section>
@@ -537,16 +528,13 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER (CSS Grid 3 Kolom - Simetris Navbar) ========== -->
+  <!-- ========== FOOTER ========== -->
   <footer class="bg-white border-t border-gray-200 py-12">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-8">
-        <!-- Logo - Kiri -->
         <div>
           <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
         </div>
-        
-        <!-- Quick Links - Center -->
         <div class="flex flex-wrap justify-center gap-6">
           <a href="#home" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Home</a>
           <a href="#services" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Services</a>
@@ -554,16 +542,12 @@
           <a href="#about" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">About</a>
           <a href="#contact" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Contact</a>
         </div>
-        
-        <!-- Social - Kanan -->
         <div class="flex justify-end">
           <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="text-gray-500 text-2xl hover:text-[#1E3A8A] transition-colors" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
       </div>
-      
-      <!-- Copyright -->
       <div class="text-center text-gray-400 text-xs mt-10">
         © 2026 DevSec Indonesia. All rights reserved.
       </div>
