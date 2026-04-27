@@ -356,57 +356,39 @@
     body.dark #darkModeToggle:hover, body.dark #darkModeToggleMobile:hover {
       background-color: rgba(255,255,255,0.1);
     }
-
-    /* ========== FOOTER PERBAIKAN ========== */
-    .footer-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    @media (min-width: 768px) {
-      .footer-grid {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- ========== NAVBAR (CSS Grid 3 Kolom - Perfect Center) ========== -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-colors">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
+      <div class="grid grid-cols-[1fr_auto_1fr] items-center py-4">
+        <!-- Logo - Kiri -->
         <div class="flex items-center gap-1">
           <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
         </div>
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8 lg:gap-10">
+        
+        <!-- Menu Navigasi - Center (hanya tampil di md ke atas) -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-10 justify-center">
           <a href="#home" class="nav-link text-sm lg:text-base">Home</a>
           <a href="#services" class="nav-link text-sm lg:text-base">Services</a>
           <a href="#kelas" class="nav-link text-sm lg:text-base">Kelas</a>
           <a href="#about" class="nav-link text-sm lg:text-base">About</a>
           <a href="#contact" class="nav-link text-sm lg:text-base">Contact</a>
         </div>
-        <!-- Right side: Dark Mode Toggle + CTA -->
-        <div class="hidden md:flex items-center gap-3">
+        
+        <!-- Right Actions - Kanan (hanya tampil di md ke atas) -->
+        <div class="hidden md:flex items-center gap-3 justify-end">
           <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Dark/Light Mode">
             <i class="fas fa-moon" id="darkIcon"></i>
             <i class="fas fa-sun hidden" id="lightIcon"></i>
           </button>
           <a href="#contact" class="btn-primary text-sm px-6 py-2.5">Konsultasi Sekarang</a>
         </div>
-        <!-- Mobile: Dark toggle + hamburger -->
-        <div class="md:hidden flex items-center gap-2">
+        
+        <!-- Mobile Actions -->
+        <div class="md:hidden flex items-center gap-2 justify-end">
           <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon" id="darkIconMobile"></i>
             <i class="fas fa-sun hidden" id="lightIconMobile"></i>
@@ -416,6 +398,7 @@
           </button>
         </div>
       </div>
+      
       <!-- Mobile Menu Dropdown -->
       <div id="mobile-menu" class="md:hidden hidden pb-5 space-y-3 pt-1">
         <a href="#home" class="block nav-link py-2 text-base">Home</a>
@@ -499,13 +482,9 @@
         <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">Tingkatkan skill Anda dengan kurikulum praktis dari mentor aktif di industri.</p>
       </div>
       <div class="space-y-14">
-        <!-- Malware Development -->
         <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-bug text-[#1E3A8A] text-3xl"></i> Malware Development</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Pengenalan Malware.</p><div class="price-tag">Rp 500.000</div><p class="text-xs text-gray-500 mb-4">4x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Pro</h4><p class="text-sm text-gray-500 leading-relaxed">Malware Analysis & Dev.</p><div class="price-tag">Rp 1.200.000</div><p class="text-xs text-gray-500 mb-4">8x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Malware Dev Expert</h4><p class="text-sm text-gray-500 leading-relaxed">Full Dev, Bypass & etc.</p><div class="price-tag">Rp 2.200.000</div><p class="text-xs text-gray-500 mb-4">15x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
-        <!-- Red Team -->
         <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-user-secret text-[#1E3A8A] text-3xl"></i> Red Team Fundamentals</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Starter</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p><div class="price-tag">Rp 199.000</div><p class="text-xs text-gray-500 mb-4">3x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Ops</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p><div class="price-tag">Rp 399.000</div><p class="text-xs text-gray-500 mb-4">6x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Red Team Mastery</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p><div class="price-tag">Rp 799.000</div><p class="text-xs text-gray-500 mb-4">12x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
-        <!-- Blue Team -->
         <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-shield-virus text-[#1E3A8A] text-3xl"></i> Blue Team Defense</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Blue Team Essentials</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p><div class="price-tag">Rp 199.000</div><p class="text-xs text-gray-500 mb-4">3x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Threat Hunting</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p><div class="price-tag">Rp 399.000</div><p class="text-xs text-gray-500 mb-4">6x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">SOC Architect</h4><p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p><div class="price-tag">Rp 799.000</div><p class="text-xs text-gray-500 mb-4">12x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
-        <!-- Greyhat Exploitation -->
         <div class="animate-fade-in"><h3 class="text-2xl font-heading font-semibold text-gray-800 mb-6 flex items-center gap-3"><i class="fas fa-code text-[#1E3A8A] text-3xl"></i> Greyhat Exploitation</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Beginner</span><h4 class="font-semibold text-xl mt-3 mb-2">Exploit Basic</h4><p class="text-sm text-gray-500 leading-relaxed">Dasar eksploitasi & pengenalan tools.</p><div class="price-tag">Rp 450.000</div><p class="text-xs text-gray-500 mb-4">4x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Intermediate</span><h4 class="font-semibold text-xl mt-3 mb-2">Exploit Hunter</h4><p class="text-sm text-gray-500 leading-relaxed">Advanced exploitation & privilege escalation.</p><div class="price-tag">Rp 900.000</div><p class="text-xs text-gray-500 mb-4">7x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div><div class="bg-light-gray p-7 rounded-xl shadow-subtle hover-lift"><span class="level-badge">Advanced</span><h4 class="font-semibold text-xl mt-3 mb-2">Advanced Exploit Dev</h4><p class="text-sm text-gray-500 leading-relaxed">Custom exploit, fuzzing & 0day research.</p><div class="price-tag">Rp 3.000.000</div><p class="text-xs text-gray-500 mb-4">15x Pertemuan</p><a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a></div></div></div>
       </div>
     </div>
@@ -552,34 +531,36 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER (SIMETRIS & RAPIH) ========== -->
+  <!-- ========== FOOTER (CSS Grid 3 Kolom - Simetris Navbar) ========== -->
   <footer class="bg-white border-t border-gray-200 py-12">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 footer-grid">
-      <!-- Logo - rata kiri di desktop, center di mobile -->
-      <div class="flex-shrink-0">
-        <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-8">
+        <!-- Logo - Kiri -->
+        <div>
+          <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
+        </div>
+        
+        <!-- Quick Links - Center -->
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="#home" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Home</a>
+          <a href="#services" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Services</a>
+          <a href="#kelas" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Kelas</a>
+          <a href="#about" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">About</a>
+          <a href="#contact" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Contact</a>
+        </div>
+        
+        <!-- Social - Kanan -->
+        <div class="flex justify-end">
+          <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="text-gray-500 text-2xl hover:text-[#1E3A8A] transition-colors" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
       </div>
       
-      <!-- Quick Links - center -->
-      <div class="footer-links">
-        <a href="#home" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Home</a>
-        <a href="#services" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Services</a>
-        <a href="#kelas" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Kelas</a>
-        <a href="#about" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">About</a>
-        <a href="#contact" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Contact</a>
+      <!-- Copyright -->
+      <div class="text-center text-gray-400 text-xs mt-10">
+        © 2026 DevSec Indonesia. All rights reserved.
       </div>
-      
-      <!-- Social Media - rata kanan di desktop, center di mobile -->
-      <div class="flex-shrink-0">
-        <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="text-gray-500 text-2xl hover:text-[#1E3A8A] transition-colors" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Copyright - sejajar center -->
-    <div class="text-center text-gray-400 text-xs mt-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      © 2026 DevSec Indonesia. All rights reserved.
     </div>
   </footer>
 
