@@ -363,25 +363,33 @@
   <!-- ========== NAVBAR ========== -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-colors">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-[1fr_auto_1fr] items-center py-4">
-        <div class="flex items-center gap-1">
+      <!-- DESKTOP NAVBAR: Flex dengan 3 bagian (kiri, tengah, kanan) -->
+      <div class="flex items-center justify-between py-4">
+        <!-- Logo (Kiri) -->
+        <div class="flex items-center gap-1 flex-shrink-0">
           <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
         </div>
-        <div class="hidden md:flex items-center gap-8 lg:gap-10 justify-center">
+
+        <!-- Menu Tengah (Desktop Only) -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-10">
           <a href="#home" class="nav-link text-sm lg:text-base">Home</a>
           <a href="#services" class="nav-link text-sm lg:text-base">Services</a>
           <a href="#kelas" class="nav-link text-sm lg:text-base">Kelas</a>
           <a href="#about" class="nav-link text-sm lg:text-base">About</a>
           <a href="#contact" class="nav-link text-sm lg:text-base">Contact</a>
         </div>
-        <div class="hidden md:flex items-center gap-3 justify-end">
+
+        <!-- Tombol Kanan (Desktop) -->
+        <div class="hidden md:flex items-center gap-3 flex-shrink-0">
           <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Dark/Light Mode">
             <i class="fas fa-moon" id="darkIcon"></i>
             <i class="fas fa-sun hidden" id="lightIcon"></i>
           </button>
           <a href="#contact" class="btn-primary text-sm px-6 py-2.5">Konsultasi Sekarang</a>
         </div>
-        <div class="md:hidden flex items-center gap-2 justify-end">
+
+        <!-- Tombol Kanan (Mobile): Dark mode + Hamburger -->
+        <div class="md:hidden flex items-center gap-2 flex-shrink-0">
           <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon" id="darkIconMobile"></i>
             <i class="fas fa-sun hidden" id="lightIconMobile"></i>
@@ -391,6 +399,8 @@
           </button>
         </div>
       </div>
+
+      <!-- Mobile Menu Dropdown -->
       <div id="mobile-menu" class="md:hidden hidden pb-5 space-y-3 pt-1">
         <a href="#home" class="block nav-link py-2 text-base">Home</a>
         <a href="#services" class="block nav-link py-2 text-base">Services</a>
@@ -464,7 +474,7 @@
     </div>
   </section>
 
-  <!-- ========== KELAS SECTION (TANPA ICON JUDUL) ========== -->
+  <!-- ========== KELAS SECTION ========== -->
   <section id="kelas" class="bg-white section-spacing">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-fade-in">
@@ -531,18 +541,18 @@
   <!-- ========== FOOTER ========== -->
   <footer class="bg-white border-t border-gray-200 py-12">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-8">
+      <div class="flex flex-wrap items-center justify-between gap-8">
         <div>
           <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
         </div>
-        <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex flex-wrap justify-center gap-6 order-3 md:order-none w-full md:w-auto">
           <a href="#home" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Home</a>
           <a href="#services" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Services</a>
           <a href="#kelas" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Kelas</a>
           <a href="#about" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">About</a>
           <a href="#contact" class="text-gray-600 text-sm font-medium hover:text-[#1E3A8A] transition-colors">Contact</a>
         </div>
-        <div class="flex justify-end">
+        <div>
           <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="text-gray-500 text-2xl hover:text-[#1E3A8A] transition-colors" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
