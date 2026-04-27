@@ -516,7 +516,13 @@
   <footer class="bg-white border-t border-gray-200 py-12">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
       <span class="text-2xl font-bold font-heading text-[#1E3A8A]">DevSec<span class="text-gray-800">.id</span></span>
-          <div class="text-2xl text-gray-500">
+      <div class="flex gap-6 text-sm font-medium text-gray-600">
+        <a href="#home" class="hover:text-[#1E3A8A]">Home</a>
+        <a href="#services" class="hover:text-[#1E3A8A]">Services</a>
+        <a href="#kelas" class="hover:text-[#1E3A8A]">Kelas</a>
+        <a href="#contact" class="hover:text-[#1E3A8A]">Contact</a>
+      </div>
+      <div class="text-2xl text-gray-500">
         <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="hover:text-[#1E3A8A]"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
@@ -553,44 +559,29 @@
       document.querySelectorAll('.animate-fade-in,.animate-fade-left,.animate-fade-right').forEach(el=>obs.observe(el));
     })();
 
-    // ========== PARTICLE NETWORK MESH - SEL BIRU SALING TERHUBUNG ==========
+    // ========== OPTIMIZED PARTICLE NETWORK ==========
     (function(){
       const canvas=document.getElementById('matrix-canvas');
       if(!canvas)return;
-      const ctx=canvas.getContext('2d');
+      const ctx=canvas.getContext('2d', { alpha: true }); // Optimasi: kasih tau ctx kita pakai alpha
       let w,h,particles=[];
-      const PARTICLE_COUNT=60;
-      const CONNECTION_DIST=120;
+      const PARTICLE_COUNT=25; // Kurangi dari 60 ke 25
+      const CONNECTION_DIST=100; // Kurangi jarak
+      const MAX_CONNECTIONS=3; // Batasi max koneksi per particle
       
       class Particle {
         constructor(){
-          this.reset();
-          this.y=Math.random()*h;
-        }
-        reset(){
           this.x=Math.random()*w;
           this.y=Math.random()*h;
-          this.vx=(Math.random()-0.5)*0.8;
-          this.vy=(Math.random()-0.5)*0.8;
-          this.radius=1.5+Math.random()*2.5;
-          this.pulse=Math.random()*Math.PI*2;
+          this.vx=(Math.random()-0.5)*0.6; // Pelan dikit
+          this.vy=(Math.random()-0.5)*0.6;
+          this.radius=2+Math.random()*2;
         }
         update(){
-          this.pulse+=0.02;
           this.x+=this.vx;
           this.y+=this.vy;
           if(this.x<0||this.x>w)this.vx*=-1;
           if(this.y<0||this.y>h)this.vy*=-1;
-        }
-        draw(ctx,color,glowColor){
-          const pulseRadius=this.radius+Math.sin(this.pulse)*0.5;
-          ctx.beginPath();
-          ctx.arc(this.x,this.y,pulseRadius,0,Math.PI*2);
-          ctx.fillStyle=color;
-          ctx.shadowColor=glowColor;
-          ctx.shadowBlur=6;
-          ctx.fill();
-          ctx.shadowBlur=0;
         }
       }
 
@@ -602,52 +593,53 @@
         for(let i=0;i<PARTICLE_COUNT;i++)particles.push(new Particle());
       }
       resize();
-      window.addEventListener('resize',resize);
+      let resizeTimer;
+      window.addEventListener('resize',()=>{
+        clearTimeout(resizeTimer);
+        resizeTimer=setTimeout(resize,150); // Debounce resize
+      });
+
+      // Pre-calculate colors untuk hindari string concat tiap frame
+      let darkLineColor='96,165,250', lightLineColor='30,58,138';
+      let darkDotColor='#60a5fa', lightDotColor='#1E3A8A';
 
       function draw(){
         const isDark=document.body.classList.contains('dark');
-        // Clear
-        ctx.fillStyle=isDark?'rgba(15,23,42,0.15)':'rgba(255,255,255,0.18)';
+        
+        // Clear dengan alpha lebih tinggi biar trail pendek (lebih ringan)
+        ctx.fillStyle=isDark?'rgba(15,23,42,0.2)':'rgba(255,255,255,0.25)';
         ctx.fillRect(0,0,w,h);
 
-        // Update & draw connections
-        for(let i=0;i<particles.length;i++){
-          particles[i].update();
-        }
+        // Update particles
+        for(let i=0;i<particles.length;i++)particles[i].update();
 
-        // Draw lines between close particles
+        // Draw connections (dibatasi)
         for(let i=0;i<particles.length;i++){
+          let connections=0;
           for(let j=i+1;j<particles.length;j++){
+            if(connections>=MAX_CONNECTIONS)break;
             const dx=particles[i].x-particles[j].x;
             const dy=particles[i].y-particles[j].y;
             const dist=Math.sqrt(dx*dx+dy*dy);
             if(dist<CONNECTION_DIST){
-              const alpha=(1-dist/CONNECTION_DIST)*0.6;
+              connections++;
+              const alpha=(1-dist/CONNECTION_DIST)*0.4; // Lebih transparan
               ctx.beginPath();
               ctx.moveTo(particles[i].x,particles[i].y);
               ctx.lineTo(particles[j].x,particles[j].y);
-              if(isDark){
-                ctx.strokeStyle=`rgba(96,165,250,${alpha})`;
-                ctx.shadowColor='rgba(96,165,250,0.5)';
-              }else{
-                ctx.strokeStyle=`rgba(30,58,138,${alpha})`;
-                ctx.shadowColor='rgba(30,58,138,0.4)';
-              }
-              ctx.shadowBlur=3;
-              ctx.lineWidth=1;
+              ctx.strokeStyle=isDark?`rgba(${darkLineColor},${alpha})`:`rgba(${lightLineColor},${alpha})`;
+              ctx.lineWidth=0.8;
               ctx.stroke();
-              ctx.shadowBlur=0;
             }
           }
         }
 
-        // Draw particles
+        // Draw dots (tanpa shadow = hemat GPU)
+        ctx.fillStyle=isDark?darkDotColor:lightDotColor;
         for(let i=0;i<particles.length;i++){
-          if(isDark){
-            particles[i].draw(ctx,'#60a5fa','rgba(96,165,250,0.9)');
-          }else{
-            particles[i].draw(ctx,'#1E3A8A','rgba(30,58,138,0.7)');
-          }
+          ctx.beginPath();
+          ctx.arc(particles[i].x,particles[i].y,particles[i].radius,0,Math.PI*2);
+          ctx.fill();
         }
 
         requestAnimationFrame(draw);
