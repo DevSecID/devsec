@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>DevSec Indonesia | Cybersecurity Services & Training</title>
+  <!-- Google Fonts: Inter & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -75,6 +78,9 @@
     body.dark .to-blue-50 {
       --tw-gradient-to: rgba(30, 58, 138, 0.1) !important;
     }
+    body.dark .bg-white\/70 {
+      background-color: rgba(30, 41, 59, 0.7) !important;
+    }
     body.dark .shadow-subtle {
       box-shadow: 0 4px 14px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.3) !important;
     }
@@ -91,6 +97,13 @@
     }
     body.dark .whatsapp-float {
       background-color: #1da851;
+    }
+    body.dark .pulse-wa {
+      animation-name: pulse-wa-dark;
+    }
+    @keyframes pulse-wa-dark {
+      0%, 100% { box-shadow: 0 8px 20px rgba(37,211,102,0.25); }
+      50% { box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
     }
 
     /* ========== ANIMATIONS ========== */
@@ -125,6 +138,7 @@
     .delay-200 { transition-delay: 0.2s; }
     .delay-300 { transition-delay: 0.3s; }
     .delay-400 { transition-delay: 0.4s; }
+    .delay-500 { transition-delay: 0.5s; }
 
     @keyframes pulse-wa {
       0%, 100% { box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
@@ -146,7 +160,7 @@
       box-shadow: 0 16px 28px rgba(30, 58, 138, 0.08), 0 6px 10px rgba(0,0,0,0.05);
     }
 
-    /* Navigation */
+    /* Navigation underline */
     .nav-link {
       position: relative;
       font-weight: 500;
@@ -284,7 +298,7 @@
       }
     }
 
-    /* ========== PARTICLE CANVAS ========== */
+    /* ========== PARTICLE NETWORK CANVAS ========== */
     #matrix-canvas {
       position: absolute;
       top: 0;
@@ -299,7 +313,27 @@
       z-index: 2;
     }
 
-    /* Dark mode toggle */
+    /* ========== LOGO PLACEHOLDER STYLING ========== */
+    .logo-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+    .logo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px rgba(30, 58, 138, 0.2));
+    }
+    body.dark .logo-placeholder img {
+      filter: drop-shadow(0 4px 6px rgba(96, 165, 250, 0.3));
+    }
+
+    /* Dark mode toggle button */
     #darkModeToggle, #darkModeToggleMobile {
       background: transparent;
       border: none;
@@ -319,15 +353,8 @@
     body.dark #darkModeToggle, body.dark #darkModeToggleMobile {
       color: #facc15;
     }
-
-    /* OS Animations styling */
-    .os-animation {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin: 0 auto 1.25rem;
-      display: block;
-      border-radius: 12px;
+    body.dark #darkModeToggle:hover, body.dark #darkModeToggleMobile:hover {
+      background-color: rgba(255,255,255,0.1);
     }
   </style>
 </head>
@@ -337,9 +364,11 @@
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-colors">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
         <div class="flex items-center gap-1">
           <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
         </div>
+        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8 lg:gap-10">
           <a href="#home" class="nav-link text-sm lg:text-base">Home</a>
           <a href="#services" class="nav-link text-sm lg:text-base">Services</a>
@@ -347,13 +376,15 @@
           <a href="#about" class="nav-link text-sm lg:text-base">About</a>
           <a href="#contact" class="nav-link text-sm lg:text-base">Contact</a>
         </div>
+        <!-- Right side: Dark Mode Toggle + CTA -->
         <div class="hidden md:flex items-center gap-3">
-          <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+          <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Dark/Light Mode">
             <i class="fas fa-moon" id="darkIcon"></i>
             <i class="fas fa-sun hidden" id="lightIcon"></i>
           </button>
           <a href="#contact" class="btn-primary text-sm px-6 py-2.5">Konsultasi Sekarang</a>
         </div>
+        <!-- Mobile: Dark toggle + hamburger -->
         <div class="md:hidden flex items-center gap-2">
           <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon" id="darkIconMobile"></i>
@@ -364,6 +395,7 @@
           </button>
         </div>
       </div>
+      <!-- Mobile Menu Dropdown -->
       <div id="mobile-menu" class="md:hidden hidden pb-5 space-y-3 pt-1">
         <a href="#home" class="block nav-link py-2 text-base">Home</a>
         <a href="#services" class="block nav-link py-2 text-base">Services</a>
@@ -375,9 +407,10 @@
     </div>
   </nav>
 
-  <!-- ========== HERO SECTION ========== -->
+  <!-- ========== HERO SECTION (dengan Particle Network Canvas) ========== -->
   <section id="home" class="relative bg-white overflow-hidden section-spacing">
     <canvas id="matrix-canvas"></canvas>
+    
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 hero-content">
       <div class="lg:w-1/2 space-y-7 animate-fade-left">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight tracking-tight">
@@ -393,16 +426,15 @@
       </div>
       <div class="lg:w-1/2 flex justify-center animate-fade-right">
         <div class="relative w-full max-w-md">
+          <!-- Card dengan placeholder logo BlackArch -->
           <div class="bg-gradient-to-br from-[#1E3A8A]/10 to-blue-50 rounded-3xl p-8 shadow-subtle border border-blue-100">
-            <!-- Grid OS Animations -->
-            <div class="grid grid-cols-3 gap-4 mb-4">
-              <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3U4eGQzN3o5eXh5dGZ3bGJxZnR6eGk3bG5kZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6Zt6KHxJTbCOYqTu/giphy.gif" alt="Kali Linux" class="os-animation bg-black/80 p-1 rounded-lg" loading="lazy">
-              <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZqZzRrM2NqdzJmZ2ZzZzY0Z3g0eGJmd2JxZjFkNmR6aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlBO7eyXzF2Z8mQ/giphy.gif" alt="Parrot OS" class="os-animation bg-black/80 p-1 rounded-lg" loading="lazy">
-              <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3NpM2FtZXF1eXkzODNzcHUydTJ6eTlvdjd0M2JqMWR6eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9DPldJHzZKtORo4g/giphy.gif" alt="BlackArch" class="os-animation bg-black/80 p-1 rounded-lg" loading="lazy">
+            <div class="logo-placeholder">
+              <img src="blackarch.jpg" alt="BlackArch Logo" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-shield-haltered text-7xl text-[#1E3A8A]\'></i>'">
             </div>
-            <div class="mt-4 space-y-2">
-              <div class="h-2 w-3/4 bg-[#1E3A8A]/20 rounded-full"></div>
-              <div class="h-2 w-1/2 bg-[#1E3A8A]/30 rounded-full"></div>
+            <div class="mt-6 space-y-3">
+              <div class="h-2 w-3/4 bg-[#1E3A8A]/20 rounded-full mx-auto"></div>
+              <div class="h-2 w-1/2 bg-[#1E3A8A]/30 rounded-full mx-auto"></div>
+              <p class="text-center text-sm text-[#1E3A8A] font-medium mt-4">Powered by BlackArch</p>
             </div>
           </div>
         </div>
@@ -419,17 +451,17 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
         <div class="card-service shadow-subtle hover-lift text-center animate-fade-in delay-100">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3U4eGQzN3o5eXh5dGZ3bGJxZnR6eGk3bG5kZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6Zt6KHxJTbCOYqTu/giphy.gif" alt="Kali" class="w-14 h-14 object-contain mx-auto mb-5 rounded-lg" loading="lazy">
+          <i class="fas fa-crosshairs text-4xl text-[#1E3A8A] mb-5"></i>
           <h3 class="font-heading font-semibold text-xl mb-3">Penetration Testing</h3>
           <p class="text-gray-600 text-sm leading-relaxed">Simulasi serangan untuk mengidentifikasi dan menutup celah keamanan sejak dini.</p>
         </div>
         <div class="card-service shadow-subtle hover-lift text-center animate-fade-in delay-200">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZqZzRrM2NqdzJmZ2ZzZzY0Z3g0eGJmd2JxZjFkNmR6aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlBO7eyXzF2Z8mQ/giphy.gif" alt="Parrot" class="w-14 h-14 object-contain mx-auto mb-5 rounded-lg" loading="lazy">
+          <i class="fas fa-shield-alt text-4xl text-[#1E3A8A] mb-5"></i>
           <h3 class="font-heading font-semibold text-xl mb-3">Vulnerability Assessment</h3>
           <p class="text-gray-600 text-sm leading-relaxed">Identifikasi kerentanan dan prioritaskan perbaikan secara efektif.</p>
         </div>
         <div class="card-service shadow-subtle hover-lift text-center animate-fade-in delay-300">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3NpM2FtZXF1eXkzODNzcHUydTJ6eTlvdjd0M2JqMWR6eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9DPldJHzZKtORo4g/giphy.gif" alt="BlackArch" class="w-14 h-14 object-contain mx-auto mb-5 rounded-lg" loading="lazy">
+          <i class="fas fa-cogs text-4xl text-[#1E3A8A] mb-5"></i>
           <h3 class="font-heading font-semibold text-xl mb-3">Secure Development</h3>
           <p class="text-gray-600 text-sm leading-relaxed">Keamanan terintegrasi di setiap tahap pengembangan aplikasi.</p>
         </div>
@@ -546,7 +578,7 @@
       document.querySelectorAll('.animate-fade-in,.animate-fade-left,.animate-fade-right').forEach(el=>obs.observe(el));
     })();
 
-    // Optimized Particle Network
+    // ========== OPTIMIZED PARTICLE NETWORK ==========
     (function(){
       const canvas=document.getElementById('matrix-canvas');
       if(!canvas)return;
@@ -593,9 +625,7 @@
         const isDark=document.body.classList.contains('dark');
         ctx.fillStyle=isDark?'rgba(15,23,42,0.2)':'rgba(255,255,255,0.25)';
         ctx.fillRect(0,0,w,h);
-
         for(let i=0;i<particles.length;i++)particles[i].update();
-
         for(let i=0;i<particles.length;i++){
           let connections=0;
           for(let j=i+1;j<particles.length;j++){
@@ -615,14 +645,12 @@
             }
           }
         }
-
         ctx.fillStyle=isDark?darkDotColor:lightDotColor;
         for(let i=0;i<particles.length;i++){
           ctx.beginPath();
           ctx.arc(particles[i].x,particles[i].y,particles[i].radius,0,Math.PI*2);
           ctx.fill();
         }
-
         requestAnimationFrame(draw);
       }
       draw();
