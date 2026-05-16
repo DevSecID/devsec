@@ -402,32 +402,81 @@
             transform: translateY(-4px);
         }
 
-        /* ========== TAG/BADGE STYLES ========== */
+        /* ========== TAG/BADGE STYLES - UPDATED FOR BLOG CONSISTENCY ========== */
         .tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 9999px;
             background-color: #dbe4ff;
             color: #364fc7;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 9999px;
-            letter-spacing: 0.025em;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
             white-space: nowrap;
+            letter-spacing: 0.01em;
         }
 
         .tag-green {
-            background-color: #d3f9d8;
-            color: #2b8a3e;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            background-color: #dbe4ff;
+            color: #364fc7;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
         }
 
         .tag-orange {
-            background-color: #fff3bf;
-            color: #e67700;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            background-color: #dbe4ff;
+            color: #364fc7;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
         }
 
         .tag-red {
-            background-color: #ffe3e3;
-            color: #c92a2a;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            background-color: #dbe4ff;
+            color: #364fc7;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+        }
+
+        /* Blog category badge - identical to .tag for consistency */
+        .blog-category-badge {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            background-color: #dbe4ff;
+            color: #364fc7;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
         }
 
         /* ========== TABLE STYLES ========== */
@@ -570,7 +619,8 @@
 <body>
     <!-- Skip to content -->
     <a href="#main-content" class="skip-to-content">Skip to Content</a>
-        <!-- ==================== NAVIGATION BAR ==================== -->
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
     <header class="navbar" id="navbar" role="banner">
         <div class="container-custom">
             <div class="flex items-center justify-between h-16 lg:h-20">
@@ -752,8 +802,7 @@
                 </a>
             </div>
         </section>
-
-        <!-- ==================== ABOUT / COMPANY PROFILE SECTION ==================== -->
+                <!-- ==================== ABOUT / COMPANY PROFILE SECTION ==================== -->
         <section 
             id="about" 
             class="section-padding bg-white"
@@ -862,7 +911,8 @@
                 </div>
             </div>
         </section>
-                <!-- ==================== SERVICES SECTION ==================== -->
+
+        <!-- ==================== SERVICES SECTION ==================== -->
         <section 
             id="services" 
             class="section-padding bg-kali-dark-50"
@@ -1068,7 +1118,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                                 </svg>
                             </div>
-                            <span class="tag-red text-xs">Advanced Track</span>
+                            <span class="tag">Advanced Track</span>
                         </div>
                         <h3 class="text-lg font-bold text-kali-dark-900 mb-2">Malware Development</h3>
                         <p class="text-sm text-kali-dark-500 leading-relaxed mb-4">
@@ -1101,7 +1151,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
                             </div>
-                            <span class="tag-orange text-xs">Intermediate</span>
+                            <span class="tag">Intermediate</span>
                         </div>
                         <h3 class="text-lg font-bold text-kali-dark-900 mb-2">Red Team Operations</h3>
                         <p class="text-sm text-kali-dark-500 leading-relaxed mb-4">
@@ -1134,7 +1184,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
-                            <span class="tag-green text-xs">Defensive</span>
+                            <span class="tag">Defensive</span>
                         </div>
                         <h3 class="text-lg font-bold text-kali-dark-900 mb-2">Blue Team Defense</h3>
                         <p class="text-sm text-kali-dark-500 leading-relaxed mb-4">
@@ -1167,7 +1217,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                                 </svg>
                             </div>
-                            <span class="tag-red text-xs">Expert Level</span>
+                            <span class="tag">Expert Level</span>
                         </div>
                         <h3 class="text-lg font-bold text-kali-dark-900 mb-2">Advanced Exploitation</h3>
                         <p class="text-sm text-kali-dark-500 leading-relaxed mb-4">
@@ -1265,21 +1315,21 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><span class="tag-green text-xs">Beginner</span></td>
+                                        <td><span class="tag">Beginner</span></td>
                                         <td class="font-semibold">4x</td>
                                         <td class="text-sm">Malware fundamentals, types, basic analysis</td>
                                         <td class="font-bold text-kali-blue-700">Rp 500K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-orange text-xs">Intermediate</span></td>
+                                        <td><span class="tag">Intermediate</span></td>
                                         <td class="font-semibold">8x</td>
                                         <td class="text-sm">Malware analysis, development, persistence</td>
                                         <td class="font-bold text-kali-blue-700">Rp 1.2M</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-red text-xs">Advanced</span></td>
+                                        <td><span class="tag">Advanced</span></td>
                                         <td class="font-semibold">15x</td>
                                         <td class="text-sm">Full development, bypass techniques, rootkits</td>
                                         <td class="font-bold text-kali-blue-700">Rp 2.2M</td>
@@ -1309,21 +1359,21 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><span class="tag-green text-xs">Beginner</span></td>
+                                        <td><span class="tag">Beginner</span></td>
                                         <td class="font-semibold">3x</td>
                                         <td class="text-sm">Pentesting basics, reconnaissance, scanning</td>
                                         <td class="font-bold text-kali-blue-700">Rp 199K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-orange text-xs">Intermediate</span></td>
+                                        <td><span class="tag">Intermediate</span></td>
                                         <td class="font-semibold">6x</td>
                                         <td class="text-sm">Exploitation, post-exploitation, reporting</td>
                                         <td class="font-bold text-kali-blue-700">Rp 399K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-red text-xs">Advanced</span></td>
+                                        <td><span class="tag">Advanced</span></td>
                                         <td class="font-semibold">12x</td>
                                         <td class="text-sm">Full red team ops, C2 infrastructure, evasion</td>
                                         <td class="font-bold text-kali-blue-700">Rp 799K</td>
@@ -1353,21 +1403,21 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><span class="tag-green text-xs">Beginner</span></td>
+                                        <td><span class="tag">Beginner</span></td>
                                         <td class="font-semibold">3x</td>
                                         <td class="text-sm">Security fundamentals, monitoring basics</td>
                                         <td class="font-bold text-kali-blue-700">Rp 199K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-orange text-xs">Intermediate</span></td>
+                                        <td><span class="tag">Intermediate</span></td>
                                         <td class="font-semibold">6x</td>
                                         <td class="text-sm">Threat hunting, SIEM, log analysis</td>
                                         <td class="font-bold text-kali-blue-700">Rp 399K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-red text-xs">Advanced</span></td>
+                                        <td><span class="tag">Advanced</span></td>
                                         <td class="font-semibold">12x</td>
                                         <td class="text-sm">SOC architecture, IR planning, forensics</td>
                                         <td class="font-bold text-kali-blue-700">Rp 799K</td>
@@ -1397,21 +1447,21 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><span class="tag-green text-xs">Beginner</span></td>
+                                        <td><span class="tag">Beginner</span></td>
                                         <td class="font-semibold">4x</td>
                                         <td class="text-sm">Exploitation basics, common tools intro</td>
                                         <td class="font-bold text-kali-blue-700">Rp 450K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-orange text-xs">Intermediate</span></td>
+                                        <td><span class="tag">Intermediate</span></td>
                                         <td class="font-semibold">7x</td>
                                         <td class="text-sm">Advanced exploitation, privilege escalation</td>
                                         <td class="font-bold text-kali-blue-700">Rp 900K</td>
                                         <td><a href="#contact" class="text-kali-blue-600 text-sm font-semibold hover:text-kali-blue-800">Enroll</a></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="tag-red text-xs">Advanced</span></td>
+                                        <td><span class="tag">Advanced</span></td>
                                         <td class="font-semibold">15x</td>
                                         <td class="text-sm">Custom exploits, fuzzing, 0day research</td>
                                         <td class="font-bold text-kali-blue-700">Rp 3M</td>
@@ -1476,9 +1526,9 @@
                             10+ years in cybersecurity. Specialized in network penetration testing and red team operations.
                         </p>
                         <div class="flex flex-wrap justify-center gap-1.5">
-                            <span class="tag text-xs">OSCP</span>
-                            <span class="tag text-xs">OSCE</span>
-                            <span class="tag text-xs">CISSP</span>
+                            <span class="tag">OSCP</span>
+                            <span class="tag">OSCE</span>
+                            <span class="tag">CISSP</span>
                         </div>
                     </div>
 
@@ -1501,8 +1551,8 @@
                             8+ years in application security. Expert in secure code review and DevSecOps implementation.
                         </p>
                         <div class="flex flex-wrap justify-center gap-1.5">
-                            <span class="tag text-xs">GWAPT</span>
-                            <span class="tag text-xs">AWS Security</span>
+                            <span class="tag">GWAPT</span>
+                            <span class="tag">AWS Security</span>
                         </div>
                     </div>
 
@@ -1525,8 +1575,8 @@
                             6+ years in malware analysis. Focuses on reverse engineering and threat intelligence.
                         </p>
                         <div class="flex flex-wrap justify-center gap-1.5">
-                            <span class="tag text-xs">GREM</span>
-                            <span class="tag text-xs">OSCE</span>
+                            <span class="tag">GREM</span>
+                            <span class="tag">OSCE</span>
                         </div>
                     </div>
 
@@ -1549,8 +1599,8 @@
                             5+ years in cloud security. Helps organizations secure multi-cloud environments.
                         </p>
                         <div class="flex flex-wrap justify-center gap-1.5">
-                            <span class="tag text-xs">CCSP</span>
-                            <span class="tag text-xs">Azure Security</span>
+                            <span class="tag">CCSP</span>
+                            <span class="tag">Azure Security</span>
                         </div>
                     </div>
                 </div>
@@ -1581,7 +1631,8 @@
                 </div>
             </div>
         </section>
-                <!-- ==================== PARTNERS & CLIENTS SECTION ==================== -->
+
+        <!-- ==================== PARTNERS & CLIENTS SECTION ==================== -->
         <section 
             id="partners" 
             class="section-padding bg-kali-dark-50"
@@ -1678,8 +1729,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- ==================== TESTIMONIALS SECTION ==================== -->
+                <!-- ==================== TESTIMONIALS SECTION ==================== -->
         <section 
             id="testimonials" 
             class="section-padding bg-white"
@@ -1829,7 +1879,7 @@
             </div>
         </section>
 
-        <!-- ==================== BLOG / ARTICLES SECTION ==================== -->
+        <!-- ==================== BLOG / ARTICLES SECTION (BADGES FIXED) ==================== -->
         <section 
             id="blog" 
             class="section-padding bg-kali-dark-50"
@@ -1858,7 +1908,7 @@
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="tag text-xs">Penetration Testing</span>
+                                <span class="blog-category-badge">Penetration Testing</span>
                                 <span class="text-xs text-kali-dark-400">12 May 2026</span>
                             </div>
                             <h3 class="text-lg font-bold text-kali-dark-900 mb-2">
@@ -1886,7 +1936,7 @@
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="tag-green text-xs">Blue Team</span>
+                                <span class="blog-category-badge">Blue Team</span>
                                 <span class="text-xs text-kali-dark-400">05 May 2026</span>
                             </div>
                             <h3 class="text-lg font-bold text-kali-dark-900 mb-2">
@@ -1914,7 +1964,7 @@
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="tag-orange text-xs">Malware Analysis</span>
+                                <span class="blog-category-badge">Malware Analysis</span>
                                 <span class="text-xs text-kali-dark-400">28 Apr 2026</span>
                             </div>
                             <h3 class="text-lg font-bold text-kali-dark-900 mb-2">
@@ -2082,7 +2132,8 @@
                 </div>
             </div>
         </section>
-                <!-- ==================== CONTACT SECTION ==================== -->
+
+        <!-- ==================== CONTACT SECTION ==================== -->
         <section 
             id="contact" 
             class="section-padding bg-kali-dark-50"
@@ -2428,7 +2479,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
         </svg>
     </button>
-        <!-- ==================== JAVASCRIPT ==================== -->
+
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
         (function() {
             'use strict';
@@ -2554,17 +2606,14 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     
-                    // Only process internal links
                     if (href && href.startsWith('#') && href.length > 1) {
                         e.preventDefault();
                         
                         const targetElement = document.querySelector(href);
                         
                         if (targetElement) {
-                            // Close mobile menu first
                             closeMobileMenu();
                             
-                            // Calculate offset for fixed navbar
                             const navbarHeight = navbar ? navbar.offsetHeight : 0;
                             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 10;
                             
@@ -2573,14 +2622,12 @@
                                 behavior: 'smooth'
                             });
                             
-                            // Update URL hash without jumping
                             if (history.pushState) {
                                 history.pushState(null, null, href);
                             } else {
                                 window.location.hash = href;
                             }
                             
-                            // Set focus to target for accessibility
                             setTimeout(function() {
                                 if (!targetElement.hasAttribute('tabindex')) {
                                     targetElement.setAttribute('tabindex', '-1');
@@ -2599,7 +2646,6 @@
                     const icon = this.querySelector('.accordion-icon');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     
-                    // Close all other accordions
                     accordionTriggers.forEach(function(otherTrigger) {
                         if (otherTrigger !== trigger) {
                             const otherContent = otherTrigger.nextElementSibling;
@@ -2615,7 +2661,6 @@
                         }
                     });
                     
-                    // Toggle current accordion
                     if (isExpanded) {
                         this.setAttribute('aria-expanded', 'false');
                         if (content) {
@@ -2635,7 +2680,6 @@
                     }
                 });
                 
-                // Set initial ARIA state
                 if (!trigger.hasAttribute('aria-expanded')) {
                     trigger.setAttribute('aria-expanded', 'false');
                 }
@@ -2653,7 +2697,6 @@
                     entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('visible');
-                            // Stop observing once visible
                             observer.unobserve(entry.target);
                         }
                     });
@@ -2663,7 +2706,6 @@
                     observer.observe(element);
                 });
             } else {
-                // Fallback for browsers that don't support IntersectionObserver
                 fadeElements.forEach(function(element) {
                     element.classList.add('visible');
                 });
@@ -2674,7 +2716,6 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Get form data
                     const formData = new FormData(this);
                     const formValues = {};
                     
@@ -2682,7 +2723,6 @@
                         formValues[key] = value;
                     });
                     
-                    // Basic validation
                     let isValid = true;
                     const requiredFields = this.querySelectorAll('[required]');
                     
@@ -2691,7 +2731,6 @@
                             isValid = false;
                             field.classList.add('border-red-400');
                             
-                            // Remove error styling on input
                             field.addEventListener('input', function() {
                                 field.classList.remove('border-red-400');
                             }, { once: true });
@@ -2703,7 +2742,6 @@
                     });
                     
                     if (!isValid) {
-                        // Scroll to first invalid field
                         const firstInvalid = this.querySelector('.border-red-400');
                         if (firstInvalid) {
                             firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -2712,7 +2750,6 @@
                         return;
                     }
                     
-                    // Simulate form submission (replace with actual API endpoint)
                     const submitButton = this.querySelector('button[type="submit"]');
                     const originalText = submitButton.innerHTML;
                     
@@ -2720,7 +2757,6 @@
                     submitButton.innerHTML = '<span class="inline-block animate-spin mr-2">&#9696;</span> Sending...';
                     
                     setTimeout(function() {
-                        // Show success message
                         const successMessage = document.createElement('div');
                         successMessage.className = 'bg-green-50 border border-green-200 text-green-800 rounded-xl p-6 mb-6';
                         successMessage.innerHTML = '<p class="font-bold text-lg mb-2">Message Sent Successfully!</p><p class="text-sm">Thank you for contacting us. We will get back to you within 1 business day.</p>';
@@ -2728,14 +2764,11 @@
                         contactForm.parentNode.insertBefore(successMessage, contactForm);
                         contactForm.reset();
                         
-                        // Reset button
                         submitButton.disabled = false;
                         submitButton.innerHTML = originalText;
                         
-                        // Scroll to success message
                         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         
-                        // Remove success message after 5 seconds
                         setTimeout(function() {
                             successMessage.style.opacity = '0';
                             successMessage.style.transition = 'opacity 0.5s ease';
@@ -2749,7 +2782,6 @@
 
             // ========== KEYBOARD NAVIGATION FOR ACCORDION ==========
             document.addEventListener('keydown', function(e) {
-                // Handle accordion keyboard navigation
                 if (e.target.classList.contains('accordion-trigger')) {
                     const currentTrigger = e.target;
                     const allTriggers = Array.from(accordionTriggers);
@@ -2829,14 +2861,12 @@
 
             // ========== INITIALIZATION ON DOM LOAD ==========
             function initializePage() {
-                // Set initial ARIA attributes for accordions
                 accordionTriggers.forEach(function(trigger) {
                     if (!trigger.hasAttribute('aria-expanded')) {
                         trigger.setAttribute('aria-expanded', 'false');
                     }
                 });
                 
-                // Add tabindex to section headings for focus management
                 const sectionHeadings = document.querySelectorAll('section[id] h2[id]');
                 sectionHeadings.forEach(function(heading) {
                     if (!heading.hasAttribute('tabindex')) {
@@ -2845,40 +2875,15 @@
                 });
             }
 
-            // Run on page load
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initializePage);
             } else {
                 initializePage();
             }
 
-            // ========== SERVICE WORKER REGISTRATION FOR PWA (OPTIONAL) ==========
-            if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-                // Uncomment and create sw.js for PWA support
-                // navigator.serviceWorker.register('/sw.js').catch(function(error) {
-                //     console.log('Service Worker registration failed:', error);
-                // });
-            }
-
-            // ========== PERFORMANCE OBSERVER FOR LCP ==========
-            if ('PerformanceObserver' in window) {
-                try {
-                    const lcpObserver = new PerformanceObserver(function(list) {
-                        const entries = list.getEntries();
-                        const lastEntry = entries[entries.length - 1];
-                        // LCP data available for analytics (optional)
-                        // console.log('LCP:', lastEntry.startTime);
-                    });
-                    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-                } catch (e) {
-                    // Observer not supported
-                }
-            }
-
             // ========== ERROR HANDLING FOR IMAGES ==========
             document.querySelectorAll('img').forEach(function(img) {
                 img.addEventListener('error', function() {
-                    // Fallback for broken images
                     if (!this.src.includes('placehold.co')) {
                         this.src = 'https://placehold.co/400x400/e9ecef/495057?text=Image+Not+Found';
                     }
@@ -2890,11 +2895,9 @@
                 });
             });
 
-            // ========== PREVENT DOUBLE TAP ZOOM ON MOBILE BUTTONS ==========
+            // ========== PREVENT DOUBLE TAP ZOOM ON MOBILE ==========
             document.querySelectorAll('button, .btn-primary, .btn-outline, .btn-light, a').forEach(function(el) {
-                el.addEventListener('touchstart', function() {
-                    // Prevent double-tap zoom on interactive elements
-                }, { passive: true });
+                el.addEventListener('touchstart', function() {}, { passive: true });
             });
 
             // ========== CONSOLE EASTER EGG ==========
