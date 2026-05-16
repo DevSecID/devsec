@@ -1,991 +1,474 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>DevSec Indonesia | Cybersecurity Services & Training</title>
-  <!-- Google Fonts: Inter & Poppins -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #FFFFFF;
-      color: #1F2937;
-      transition: background-color 0.35s ease, color 0.35s ease;
-    }
-    h1, h2, h3, .font-heading {
-      font-family: 'Poppins', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSec Indonesia | Cybersecurity Services & Training</title>
 
-    /* ========== DARK MODE ========== */
-    body.dark {
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
-    body.dark .bg-white {
-      background-color: #1e293b !important;
-    }
-    body.dark .bg-light-gray {
-      background-color: #1e293b !important;
-    }
-    body.dark .bg-\[\#1E3A8A\]\/5 {
-      background-color: rgba(30, 58, 138, 0.15) !important;
-    }
-    body.dark .text-gray-900 {
-      color: #f1f5f9 !important;
-    }
-    body.dark .text-gray-800 {
-      color: #e2e8f0 !important;
-    }
-    body.dark .text-gray-700 {
-      color: #cbd5e1 !important;
-    }
-    body.dark .text-gray-600 {
-      color: #94a3b8 !important;
-    }
-    body.dark .text-gray-500 {
-      color: #94a3b8 !important;
-    }
-    body.dark .text-gray-400 {
-      color: #94a3b8 !important;
-    }
-    body.dark .bg-white\/90 {
-      background-color: rgba(15, 23, 42, 0.9) !important;
-    }
-    body.dark .border-gray-100 {
-      border-color: #334155 !important;
-    }
-    body.dark .border-gray-200 {
-      border-color: #334155 !important;
-    }
-    body.dark .border-blue-100 {
-      border-color: #1e3a5f !important;
-    }
-    body.dark .from-\[\#1E3A8A\]\/10 {
-      background-image: linear-gradient(to bottom right, rgba(30, 58, 138, 0.2), rgba(30, 58, 138, 0.05)) !important;
-    }
-    body.dark .to-blue-50 {
-      --tw-gradient-to: rgba(30, 58, 138, 0.1) !important;
-    }
-    body.dark .bg-white\/70 {
-      background-color: rgba(30, 41, 59, 0.7) !important;
-    }
-    body.dark .shadow-subtle {
-      box-shadow: 0 4px 14px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.3) !important;
-    }
-    body.dark .hover-lift:hover {
-      box-shadow: 0 16px 28px rgba(0,0,0,0.35), 0 6px 10px rgba(0,0,0,0.25) !important;
-    }
-    body.dark .btn-outline {
-      border-color: #60a5fa;
-      color: #60a5fa;
-    }
-    body.dark .btn-outline:hover {
-      background-color: #60a5fa;
-      color: #0f172a;
-    }
-    body.dark .whatsapp-float {
-      background-color: #1da851;
-    }
-    body.dark .pulse-wa {
-      animation-name: pulse-wa-dark;
-    }
-    @keyframes pulse-wa-dark {
-      0%, 100% { box-shadow: 0 8px 20px rgba(37,211,102,0.25); }
-      50% { box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    /* ========== ANIMATIONS ========== */
-    .animate-fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-    }
-    .animate-fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .animate-fade-left {
-      opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-    }
-    .animate-fade-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .animate-fade-right {
-      opacity: 0;
-      transform: translateX(30px);
-      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-    }
-    .animate-fade-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .delay-100 { transition-delay: 0.1s; }
-    .delay-200 { transition-delay: 0.2s; }
-    .delay-300 { transition-delay: 0.3s; }
-    .delay-400 { transition-delay: 0.4s; }
-    .delay-500 { transition-delay: 0.5s; }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    @keyframes pulse-wa {
-      0%, 100% { box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
-      50% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55), 0 0 0 10px rgba(37, 211, 102, 0.1); }
-    }
-    .pulse-wa {
-      animation: pulse-wa 2.2s infinite;
-    }
-
-    /* Shadow & hover */
-    .shadow-subtle {
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-    .hover-lift {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .hover-lift:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 28px rgba(30, 58, 138, 0.08), 0 6px 10px rgba(0,0,0,0.05);
-    }
-    .hover-lift-category {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-lift-category:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 35px rgba(30, 58, 138, 0.12), 0 8px 15px rgba(0,0,0,0.08);
-    }
-
-    /* Navigation underline */
-    .nav-link {
-      position: relative;
-      font-weight: 500;
-      color: #4B5563;
-      transition: color 0.2s;
-      padding-bottom: 2px;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background-color: #1E3A8A;
-      transition: width 0.25s ease;
-    }
-    .nav-link:hover {
-      color: #1E3A8A;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    body.dark .nav-link {
-      color: #cbd5e1;
-    }
-    body.dark .nav-link:hover {
-      color: #60a5fa;
-    }
-    body.dark .nav-link::after {
-      background-color: #60a5fa;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background-color: #1E3A8A;
-      color: white;
-      font-weight: 600;
-      border-radius: 10px;
-      padding: 0.8rem 2rem;
-      transition: all 0.25s;
-      display: inline-block;
-      text-align: center;
-      letter-spacing: 0.2px;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary:hover {
-      background-color: #152e6e;
-      box-shadow: 0 8px 22px rgba(30, 58, 138, 0.3);
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      border: 2px solid #1E3A8A;
-      color: #1E3A8A;
-      font-weight: 600;
-      border-radius: 10px;
-      padding: 0.8rem 2rem;
-      transition: all 0.25s;
-      background: transparent;
-      letter-spacing: 0.2px;
-      cursor: pointer;
-    }
-    .btn-outline:hover {
-      background-color: #1E3A8A;
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    /* Cards */
-    .card-service {
-      background: white;
-      border-radius: 18px;
-      padding: 2rem 1.75rem;
-      transition: all 0.25s ease;
-    }
-    .level-badge {
-      background-color: #E0E7FF;
-      color: #1E3A8A;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.25rem 0.9rem;
-      border-radius: 20px;
-      letter-spacing: 0.3px;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-    body.dark .level-badge {
-      background-color: #1e3a5f;
-      color: #93c5fd;
-    }
-    .price-tag {
-      font-weight: 700;
-      color: #1E3A8A;
-      font-size: 1.3rem;
-      letter-spacing: -0.3px;
-      margin-top: 0.75rem;
-      margin-bottom: 0.25rem;
-    }
-    body.dark .price-tag {
-      color: #60a5fa;
-    }
-    .whatsapp-float {
-      background-color: #25D366;
-      color: white;
-      border-radius: 50px;
-      padding: 0.85rem 2rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: all 0.25s;
-      font-size: 1.05rem;
-      text-decoration: none;
-    }
-    .whatsapp-float:hover {
-      background-color: #1da851;
-      transform: scale(1.03);
-    }
-    .bg-light-gray {
-      background-color: #F3F4F6;
-    }
-    .section-spacing {
-      padding: 5rem 0;
-    }
-    @media (min-width: 768px) {
-      .section-spacing {
-        padding: 6rem 0;
-      }
-    }
-    @media (max-width: 640px) {
-      .btn-primary, .btn-outline {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
-      }
-    }
-
-    /* ========== PARTICLE NETWORK CANVAS ========== */
-    #matrix-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ========== LOGO PLACEHOLDER STYLING ========== */
-    .logo-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      aspect-ratio: 1/1;
-      max-width: 200px;
-      margin: 0 auto;
-    }
-    .logo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 6px rgba(30, 58, 138, 0.2));
-    }
-    body.dark .logo-placeholder img {
-      filter: drop-shadow(0 4px 6px rgba(96, 165, 250, 0.3));
-    }
-
-    /* Dark mode toggle button */
-    #darkModeToggle, #darkModeToggleMobile {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: #4B5563;
-      padding: 0.3rem 0.6rem;
-      border-radius: 8px;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #darkModeToggle:hover, #darkModeToggleMobile:hover {
-      background-color: rgba(0,0,0,0.05);
-    }
-    body.dark #darkModeToggle, body.dark #darkModeToggleMobile {
-      color: #facc15;
-    }
-    body.dark #darkModeToggle:hover, body.dark #darkModeToggleMobile:hover {
-      background-color: rgba(255,255,255,0.1);
-    }
-
-    /* ========== MODAL STYLES ========== */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .modal-content {
-      background: white;
-      border-radius: 1.5rem;
-      max-width: 900px;
-      width: 100%;
-      max-height: 85vh;
-      overflow-y: auto;
-      padding: 2.5rem;
-      position: relative;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-      transform: scale(0.9) translateY(20px);
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .modal-overlay.active .modal-content {
-      transform: scale(1) translateY(0);
-    }
-    body.dark .modal-content {
-      background: #1e293b;
-      color: #e2e8f0;
-    }
-    .modal-close {
-      position: sticky;
-      top: 0;
-      float: right;
-      background: #f3f4f6;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-      color: #4b5563;
-      z-index: 10;
-    }
-    .modal-close:hover {
-      background: #e5e7eb;
-      transform: rotate(90deg);
-    }
-    body.dark .modal-close {
-      background: #334155;
-      color: #e2e8f0;
-    }
-    body.dark .modal-close:hover {
-      background: #475569;
-    }
-    .modal-content::-webkit-scrollbar {
-      width: 6px;
-    }
-    .modal-content::-webkit-scrollbar-track {
-      background: transparent;
-      border-radius: 10px;
-    }
-    .modal-content::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 10px;
-    }
-    body.dark .modal-content::-webkit-scrollbar-thumb {
-      background: #475569;
-    }
-  </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+        .section-light {
+            background-color: #ffffff;
+        }
+        .section-muted {
+            background-color: #f8fafc;
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-  <!-- ========== NAVBAR ========== -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-colors">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <!-- DESKTOP NAVBAR: Flex dengan 3 bagian (kiri, tengah, kanan) -->
-      <div class="flex items-center justify-between py-4">
-        <!-- Logo (Kiri) -->
-        <div class="flex items-center gap-1 flex-shrink-0">
-          <span class="text-2xl font-bold font-heading text-[#1E3A8A] tracking-tight">DevSec<span class="text-gray-800">.id</span></span>
-        </div>
+    <!-- ==================== NAVIGATION ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <span class="text-xl lg:text-2xl font-extrabold text-brand-900 tracking-tight">DevSec<span class="text-slate-800">.id</span></span>
+                </a>
 
-        <!-- Menu Tengah (Desktop Only) -->
-        <div class="hidden md:flex items-center gap-8 lg:gap-10">
-          <a href="#home" class="nav-link text-sm lg:text-base">Home</a>
-          <a href="#services" class="nav-link text-sm lg:text-base">Services</a>
-          <a href="#kelas" class="nav-link text-sm lg:text-base">Kelas</a>
-          <a href="#about" class="nav-link text-sm lg:text-base">About</a>
-          <a href="#contact" class="nav-link text-sm lg:text-base">Contact</a>
-        </div>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 lg:gap-10">
+                    <a href="#home" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Home</a>
+                    <a href="#stats" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">About</a>
+                    <a href="#services" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Services</a>
+                    <a href="#training" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Training</a>
+                    <a href="#partners" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Partners</a>
+                </nav>
 
-        <!-- Tombol Kanan (Desktop) -->
-        <div class="hidden md:flex items-center gap-3 flex-shrink-0">
-          <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Dark/Light Mode">
-            <i class="fas fa-moon" id="darkIcon"></i>
-            <i class="fas fa-sun hidden" id="lightIcon"></i>
-          </button>
-          <a href="#contact" class="btn-primary text-sm px-6 py-2.5">Konsultasi Sekarang</a>
-        </div>
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="inline-flex items-center px-5 py-2.5 bg-brand-900 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors">
+                        Contact Us
+                    </a>
+                </div>
 
-        <!-- Tombol Kanan (Mobile): Dark mode + Hamburger -->
-        <div class="md:hidden flex items-center gap-2 flex-shrink-0">
-          <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode">
-            <i class="fas fa-moon" id="darkIconMobile"></i>
-            <i class="fas fa-sun hidden" id="lightIconMobile"></i>
-          </button>
-          <button class="text-gray-700 focus:outline-none p-2" id="mobile-menu-button" aria-label="Menu">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Dropdown -->
-      <div id="mobile-menu" class="md:hidden hidden pb-5 space-y-3 pt-1">
-        <a href="#home" class="block nav-link py-2 text-base">Home</a>
-        <a href="#services" class="block nav-link py-2 text-base">Services</a>
-        <a href="#kelas" class="block nav-link py-2 text-base">Kelas</a>
-        <a href="#about" class="block nav-link py-2 text-base">About</a>
-        <a href="#contact" class="block nav-link py-2 text-base">Contact</a>
-        <a href="#contact" class="btn-primary text-center w-full mt-3">Konsultasi Sekarang</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ========== HERO SECTION ========== -->
-  <section id="home" class="relative bg-white overflow-hidden section-spacing">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 hero-content">
-      <div class="lg:w-1/2 space-y-7 animate-fade-left">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight tracking-tight">
-          Cyber Security <span class="text-[#1E3A8A]">& Training</span> for Professionals
-        </h1>
-        <p class="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
-          Perkuat keamanan sistem bisnis Anda dan tingkatkan kapabilitas cybersecurity melalui pendekatan praktis yang didukung oleh mentor berpengalaman.
-        </p>
-        <div class="flex flex-wrap gap-4 pt-3">
-          <a href="#services" class="btn-primary text-base">Lihat Layanan</a>
-          <a href="#kelas" class="btn-outline text-base">Lihat Kelas</a>
-        </div>
-      </div>
-      <div class="lg:w-1/2 flex justify-center animate-fade-right">
-        <div class="relative w-full max-w-md">
-          <div class="bg-gradient-to-br from-[#1E3A8A]/10 to-blue-50 rounded-3xl p-8 shadow-subtle border border-blue-100">
-            <div class="logo-placeholder">
-              <img src="blackarch.png" alt="BlackArch Logo" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-shield-alt text-7xl text-[#1E3A8A]\'></i>'">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-700 hover:text-brand-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
-            <div class="mt-6 space-y-3">
-              <div class="h-2 w-3/4 bg-[#1E3A8A]/20 rounded-full mx-auto"></div>
-              <div class="h-2 w-1/2 bg-[#1E3A8A]/30 rounded-full mx-auto"></div>
-              <p class="text-center text-sm text-[#1E3A8A] font-medium mt-4">Newbie to Professional</p>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-6 space-y-3">
+                <a href="#home" class="block py-2 text-sm font-medium text-slate-700 hover:text-brand-700">Home</a>
+                <a href="#stats" class="block py-2 text-sm font-medium text-slate-700 hover:text-brand-700">About</a>
+                <a href="#services" class="block py-2 text-sm font-medium text-slate-700 hover:text-brand-700">Services</a>
+                <a href="#training" class="block py-2 text-sm font-medium text-slate-700 hover:text-brand-700">Training</a>
+                <a href="#partners" class="block py-2 text-sm font-medium text-slate-700 hover:text-brand-700">Partners</a>
+                <a href="#contact" class="inline-flex items-center px-5 py-2.5 bg-brand-900 text-white text-sm font-semibold rounded-lg">
+                    Contact Us
+                </a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- ========== SERVICES SECTION ========== -->
-  <section id="services" class="bg-light-gray section-spacing">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 animate-fade-in">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">Layanan Kami</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">Layanan keamanan siber komprehensif untuk melindungi aset digital, meminimalkan risiko, dan memperkuat ketahanan sistem Anda.</p>
-      </div>
-      <div class="flex justify-center">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full max-w-4xl">
-          <div class="card-service shadow-subtle hover-lift text-center animate-fade-in delay-100">
-            <i class="fas fa-crosshairs text-4xl text-[#1E3A8A] mb-5"></i>
-            <h3 class="font-heading font-semibold text-xl mb-3">Penetration Testing</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Mengidentifikasi dan menutup celah keamanan.</p>
-          </div>
-          <div class="card-service shadow-subtle hover-lift text-center animate-fade-in delay-200">
-            <i class="fas fa-cogs text-4xl text-[#1E3A8A] mb-5"></i>
-            <h3 class="font-heading font-semibold text-xl mb-3">Secure Development</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Keamanan terintegrasi di setiap tahap pengembangan aplikasi.</p>
-          </div>
-          <div class="card-service shadow-subtle hover-lift text-center animate-fade-in delay-300">
-            <i class="fas fa-globe text-4xl text-[#1E3A8A] mb-5"></i>
-            <h3 class="font-heading font-semibold text-xl mb-3">Web & API Security</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Pengujian keamanan web dan API untuk menemukan kerentanan kritis.</p>
-          </div>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="section-light pt-28 lg:pt-36 pb-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight text-balance">
+                    Cybersecurity Services & Training for Professionals
+                </h1>
+                <p class="mt-6 text-lg lg:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto text-balance">
+                    We help organizations secure their digital assets and empower individuals with practical cybersecurity skills through real-world training programs.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3.5 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-colors text-base">
+                        Explore Services
+                    </a>
+                    <a href="#training" class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-brand-900 text-brand-900 font-semibold rounded-lg hover:bg-brand-900 hover:text-white transition-colors text-base">
+                        View Training
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== KELAS SECTION (REDESIGNED) ========== -->
-  <section id="kelas" class="bg-white section-spacing">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 animate-fade-in">
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">Kelas Cybersecurity</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">Pilih kategori yang sesuai dengan minat dan tingkatkan skill cybersecurity Anda bersama mentor profesional.</p>
-      </div>
+    <!-- ==================== STATS / ABOUT SECTION ==================== -->
+    <section id="stats" class="section-muted py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 text-center">
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold text-brand-900">50+</div>
+                    <p class="mt-2 text-slate-600 text-lg">Projects Completed</p>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold text-brand-900">200+</div>
+                    <p class="mt-2 text-slate-600 text-lg">Students Trained</p>
+                </div>
+                <div>
+                    <div class="text-4xl lg:text-5xl font-extrabold text-brand-900">5+</div>
+                    <p class="mt-2 text-slate-600 text-lg">Years Experience</p>
+                </div>
+            </div>
 
-      <!-- 4 Category Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        
-        <!-- Malware Development -->
-        <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-subtle hover-lift-category cursor-pointer animate-fade-in delay-100" onclick="openModal('modal-malware')">
-          <div class="w-16 h-16 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center mb-5">
-            <i class="fas fa-bug text-3xl text-[#1E3A8A]"></i>
-          </div>
-          <h3 class="font-heading font-semibold text-xl text-gray-900 mb-2">Malware Development</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Pelajari cara malware dibuat, dianalisis, dan dihindari dari tingkat dasar hingga expert.</p>
-          <span class="text-[#1E3A8A] font-semibold text-sm flex items-center gap-1">Lihat Paket <i class="fas fa-arrow-right text-xs"></i></span>
+            <!-- About Text -->
+            <div class="mt-20 max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    About DevSec Indonesia
+                </h2>
+                <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+                    DevSec Indonesia is a cybersecurity company focused on protecting digital assets through penetration testing, secure development consulting, and structured training programs. We combine deep technical expertise with real-world experience to deliver practical security solutions for businesses and individuals.
+                </p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-bold text-slate-900">Our Vision</h3>
+                        <p class="mt-2 text-slate-600">To become the most trusted cybersecurity partner in Indonesia, enabling organizations to operate safely in the digital age.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-bold text-slate-900">Our Mission</h3>
+                        <p class="mt-2 text-slate-600">Deliver high-quality security assessments and practical training that bridge the gap between theory and real-world threats.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Red Team Fundamentals -->
-        <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-subtle hover-lift-category cursor-pointer animate-fade-in delay-200" onclick="openModal('modal-redteam')">
-          <div class="w-16 h-16 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center mb-5">
-            <i class="fas fa-user-secret text-3xl text-[#1E3A8A]"></i>
-          </div>
-          <h3 class="font-heading font-semibold text-xl text-gray-900 mb-2">Red Team Fundamentals</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Kuasai teknik offensive security, penetration testing, dan simulasi serangan.</p>
-          <span class="text-[#1E3A8A] font-semibold text-sm flex items-center gap-1">Lihat Paket <i class="fas fa-arrow-right text-xs"></i></span>
-        </div>
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="services" class="section-light py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Our Services
+                </h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Comprehensive cybersecurity services to protect your organization's digital infrastructure.
+                </p>
+            </div>
 
-        <!-- Blue Team Defense -->
-        <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-subtle hover-lift-category cursor-pointer animate-fade-in delay-300" onclick="openModal('modal-blueteam')">
-          <div class="w-16 h-16 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center mb-5">
-            <i class="fas fa-shield-alt text-3xl text-[#1E3A8A]"></i>
-          </div>
-          <h3 class="font-heading font-semibold text-xl text-gray-900 mb-2">Blue Team Defense</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Bangun pertahanan siber, threat hunting, monitoring, dan incident response.</p>
-          <span class="text-[#1E3A8A] font-semibold text-sm flex items-center gap-1">Lihat Paket <i class="fas fa-arrow-right text-xs"></i></span>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-8 hover:border-brand-300 transition-colors">
+                    <h3 class="text-xl font-bold text-slate-900">Penetration Testing</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        Identify vulnerabilities before attackers do. Our penetration testing services simulate real-world attacks to uncover security gaps in your systems, networks, and applications.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center mt-6 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        Learn more →
+                    </a>
+                </div>
 
-        <!-- Advanced Exploitation -->
-        <div class="bg-white border border-gray-100 rounded-2xl p-7 shadow-subtle hover-lift-category cursor-pointer animate-fade-in delay-400" onclick="openModal('modal-exploit')">
-          <div class="w-16 h-16 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center mb-5">
-            <i class="fas fa-skull text-3xl text-[#1E3A8A]"></i>
-          </div>
-          <h3 class="font-heading font-semibold text-xl text-gray-900 mb-2">Advanced Exploitation</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Eksploitasi lanjutan, custom exploit development, fuzzing, dan 0day research.</p>
-          <span class="text-[#1E3A8A] font-semibold text-sm flex items-center gap-1">Lihat Paket <i class="fas fa-arrow-right text-xs"></i></span>
-        </div>
+                <!-- Service 2 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-8 hover:border-brand-300 transition-colors">
+                    <h3 class="text-xl font-bold text-slate-900">Secure Development</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        Build security into your software from the start. We provide secure code review, security architecture consulting, and DevSecOps integration for your development pipeline.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center mt-6 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        Learn more →
+                    </a>
+                </div>
 
-      </div>
-    </div>
-  </section>
+                <!-- Service 3 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-8 hover:border-brand-300 transition-colors">
+                    <h3 class="text-xl font-bold text-slate-900">Web & API Security</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        Protect your web applications and APIs from common threats. We conduct thorough security assessments following OWASP standards to ensure your digital services are resilient.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center mt-6 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        Learn more →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ========== MODALS ========== -->
-  
-  <!-- Modal: Malware Development -->
-  <div id="modal-malware" class="modal-overlay" onclick="closeModalOutside(event, 'modal-malware')">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('modal-malware')">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="flex items-center gap-4 mb-8">
-        <div class="w-14 h-14 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-          <i class="fas fa-bug text-2xl text-[#1E3A8A]"></i>
-        </div>
-        <div>
-          <h2 class="text-2xl font-heading font-bold text-gray-900">Malware Development</h2>
-          <p class="text-gray-500 text-sm">Pilih level sesuai kemampuan Anda</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Beginner</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Malware Dev Basic</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Pengenalan Malware.</p>
-          <div class="price-tag">Rp 500.000</div>
-          <p class="text-xs text-gray-500 mb-4">4x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Intermediate</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Malware Dev Pro</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Malware Analysis & Dev.</p>
-          <div class="price-tag">Rp 1.200.000</div>
-          <p class="text-xs text-gray-500 mb-4">8x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Advanced</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Malware Dev Expert</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Full Dev, Bypass & etc.</p>
-          <div class="price-tag">Rp 2.200.000</div>
-          <p class="text-xs text-gray-500 mb-4">15x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- ==================== TRAINING SECTION ==================== -->
+    <section id="training" class="section-muted py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Training Programs
+                </h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Structured cybersecurity training for different skill levels, taught by active practitioners.
+                </p>
+            </div>
 
-  <!-- Modal: Red Team -->
-  <div id="modal-redteam" class="modal-overlay" onclick="closeModalOutside(event, 'modal-redteam')">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('modal-redteam')">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="flex items-center gap-4 mb-8">
-        <div class="w-14 h-14 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-          <i class="fas fa-user-secret text-2xl text-[#1E3A8A]"></i>
-        </div>
-        <div>
-          <h2 class="text-2xl font-heading font-bold text-gray-900">Red Team Fundamentals</h2>
-          <p class="text-gray-500 text-sm">Pilih level sesuai kemampuan Anda</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Beginner</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Red Team Starter</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p>
-          <div class="price-tag">Rp 199.000</div>
-          <p class="text-xs text-gray-500 mb-4">3x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Intermediate</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Red Team Ops</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p>
-          <div class="price-tag">Rp 399.000</div>
-          <p class="text-xs text-gray-500 mb-4">6x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Advanced</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Red Team Mastery</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p>
-          <div class="price-tag">Rp 799.000</div>
-          <p class="text-xs text-gray-500 mb-4">12x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Training 1 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-brand-300 transition-colors">
+                    <h3 class="text-lg font-bold text-slate-900">Malware Development</h3>
+                    <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                        Learn malware creation, analysis, and evasion techniques from basic to expert level.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="text-sm text-slate-500">3 Levels Available</div>
+                        <div class="mt-1 text-brand-700 font-bold">Rp 500K – 2.2M</div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center mt-4 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        View details →
+                    </a>
+                </div>
 
-  <!-- Modal: Blue Team -->
-  <div id="modal-blueteam" class="modal-overlay" onclick="closeModalOutside(event, 'modal-blueteam')">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('modal-blueteam')">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="flex items-center gap-4 mb-8">
-        <div class="w-14 h-14 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-          <i class="fas fa-shield-alt text-2xl text-[#1E3A8A]"></i>
-        </div>
-        <div>
-          <h2 class="text-2xl font-heading font-bold text-gray-900">Blue Team Defense</h2>
-          <p class="text-gray-500 text-sm">Pilih level sesuai kemampuan Anda</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Beginner</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Blue Team Essentials</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Dasar dan Pengenalan.</p>
-          <div class="price-tag">Rp 199.000</div>
-          <p class="text-xs text-gray-500 mb-4">3x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Intermediate</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Threat Hunting</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Dasar dan Lanjutan.</p>
-          <div class="price-tag">Rp 399.000</div>
-          <p class="text-xs text-gray-500 mb-4">6x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Advanced</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">SOC Architect</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Full engagement.</p>
-          <div class="price-tag">Rp 799.000</div>
-          <p class="text-xs text-gray-500 mb-4">12x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
-        </div>
-      </div>
-    </div>
-  </div>
+                <!-- Training 2 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-brand-300 transition-colors">
+                    <h3 class="text-lg font-bold text-slate-900">Red Team Fundamentals</h3>
+                    <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                        Master offensive security, penetration testing methodology, and attack simulation.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="text-sm text-slate-500">3 Levels Available</div>
+                        <div class="mt-1 text-brand-700 font-bold">Rp 199K – 799K</div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center mt-4 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        View details →
+                    </a>
+                </div>
 
-  <!-- Modal: Advanced Exploitation -->
-  <div id="modal-exploit" class="modal-overlay" onclick="closeModalOutside(event, 'modal-exploit')">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('modal-exploit')">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="flex items-center gap-4 mb-8">
-        <div class="w-14 h-14 bg-[#1E3A8A]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-          <i class="fas fa-skull text-2xl text-[#1E3A8A]"></i>
+                <!-- Training 3 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-brand-300 transition-colors">
+                    <h3 class="text-lg font-bold text-slate-900">Blue Team Defense</h3>
+                    <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                        Build defensive capabilities: threat hunting, monitoring, and incident response.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="text-sm text-slate-500">3 Levels Available</div>
+                        <div class="mt-1 text-brand-700 font-bold">Rp 199K – 799K</div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center mt-4 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        View details →
+                    </a>
+                </div>
+
+                <!-- Training 4 -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-brand-300 transition-colors">
+                    <h3 class="text-lg font-bold text-slate-900">Advanced Exploitation</h3>
+                    <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+                        Custom exploit development, fuzzing techniques, and zero-day research.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="text-sm text-slate-500">3 Levels Available</div>
+                        <div class="mt-1 text-brand-700 font-bold">Rp 450K – 3M</div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center mt-4 text-brand-700 font-semibold text-sm hover:text-brand-900">
+                        View details →
+                    </a>
+                </div>
+            </div>
         </div>
-        <div>
-          <h2 class="text-2xl font-heading font-bold text-gray-900">Advanced Exploitation</h2>
-          <p class="text-gray-500 text-sm">Pilih level sesuai kemampuan Anda</p>
+    </section>
+
+    <!-- ==================== TEAM SECTION ==================== -->
+    <section class="section-light py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Our Team
+                </h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Experienced cybersecurity professionals dedicated to securing your digital assets.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Team Member 1 -->
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-slate-200 rounded-full mx-auto overflow-hidden">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=Photo" alt="Team member" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/e2e8f0/64748b?text=Photo'">
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-slate-900">Your Name</h3>
+                    <p class="text-sm text-slate-500">Founder & Lead Pentester</p>
+                    <p class="mt-2 text-sm text-slate-600">10+ years in offensive security. OSCP, OSCE certified.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-slate-200 rounded-full mx-auto overflow-hidden">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=Photo" alt="Team member" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/e2e8f0/64748b?text=Photo'">
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-slate-900">Team Member</h3>
+                    <p class="text-sm text-slate-500">Security Engineer</p>
+                    <p class="mt-2 text-sm text-slate-600">Specialist in web application security and code review.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-slate-200 rounded-full mx-auto overflow-hidden">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=Photo" alt="Team member" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/e2e8f0/64748b?text=Photo'">
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-slate-900">Team Member</h3>
+                    <p class="text-sm text-slate-500">Trainer & Researcher</p>
+                    <p class="mt-2 text-sm text-slate-600">Focuses on malware analysis and reverse engineering.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Beginner</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Exploit Basic</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Dasar eksploitasi & pengenalan tools.</p>
-          <div class="price-tag">Rp 450.000</div>
-          <p class="text-xs text-gray-500 mb-4">4x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
+    </section>
+
+    <!-- ==================== PARTNERS SECTION ==================== -->
+    <section id="partners" class="section-muted py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                Trusted By
+            </h2>
+            <p class="mt-4 text-lg text-slate-600">
+                Organizations and institutions that have worked with us.
+            </p>
+
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+                <div class="bg-slate-300 h-16 rounded-lg flex items-center justify-center text-slate-500 font-semibold text-sm">
+                    Partner Logo
+                </div>
+                <div class="bg-slate-300 h-16 rounded-lg flex items-center justify-center text-slate-500 font-semibold text-sm">
+                    Partner Logo
+                </div>
+                <div class="bg-slate-300 h-16 rounded-lg flex items-center justify-center text-slate-500 font-semibold text-sm">
+                    Partner Logo
+                </div>
+                <div class="bg-slate-300 h-16 rounded-lg flex items-center justify-center text-slate-500 font-semibold text-sm">
+                    Partner Logo
+                </div>
+            </div>
         </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Intermediate</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Exploit Hunter</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Advanced exploitation & privilege escalation.</p>
-          <div class="price-tag">Rp 900.000</div>
-          <p class="text-xs text-gray-500 mb-4">7x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section-light py-20 lg:py-28">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                What Our Clients Say
+            </h2>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 text-left">
+                    <p class="text-slate-600 italic leading-relaxed">
+                        "DevSec Indonesia helped us identify critical vulnerabilities we didn't know existed. Their penetration testing report was thorough and actionable."
+                    </p>
+                    <div class="mt-4 font-semibold text-slate-900">Client Name</div>
+                    <div class="text-sm text-slate-500">CTO, Company Name</div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 text-left">
+                    <p class="text-slate-600 italic leading-relaxed">
+                        "The training program was practical and well-structured. Our team gained skills they could immediately apply to real security challenges."
+                    </p>
+                    <div class="mt-4 font-semibold text-slate-900">Client Name</div>
+                    <div class="text-sm text-slate-500">IT Manager, Company Name</div>
+                </div>
+            </div>
         </div>
-        <div class="bg-light-gray p-6 rounded-xl shadow-subtle">
-          <span class="level-badge">Advanced</span>
-          <h4 class="font-semibold text-lg mt-3 mb-2">Advanced Exploit Dev</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Custom exploit, fuzzing & 0day research.</p>
-          <div class="price-tag">Rp 3.000.000</div>
-          <p class="text-xs text-gray-500 mb-4">15x Pertemuan</p>
-          <a href="#contact" class="btn-primary text-sm w-full block text-center">Daftar Sekarang</a>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section-muted py-20 lg:py-28">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                Get In Touch
+            </h2>
+            <p class="mt-4 text-lg text-slate-600">
+                Ready to secure your systems or level up your cybersecurity skills? Contact us today.
+            </p>
+
+            <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="https://wa.me/6282221538876" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-900 text-white font-semibold rounded-lg hover:bg-brand-800 transition-colors text-base">
+                    WhatsApp Us
+                </a>
+                <a href="mailto:devsecidn@gmail.com" class="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-brand-900 text-brand-900 font-semibold rounded-lg hover:bg-brand-900 hover:text-white transition-colors text-base">
+                    Email Us
+                </a>
+            </div>
+
+            <div class="mt-8 text-slate-500 text-sm">
+                <p>Sumenep, Indonesia</p>
+                <p class="mt-1">devsecidn@gmail.com</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- ========== KENAPA PILIH KAMI ========== -->
-  <section class="bg-light-gray section-spacing">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-14 animate-fade-in">Kenapa Pilih Kami?</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-100"><i class="fas fa-briefcase text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Berpengalaman</h4><p class="text-gray-600 text-sm">Proyek keamanan skala enterprise.</p></div>
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-200"><i class="fas fa-chalkboard-teacher text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Mentor Praktisi</h4><p class="text-gray-600 text-sm">Profesional aktif di industri.</p></div>
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-300"><i class="fas fa-flask text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Materi Real-World</h4><p class="text-gray-600 text-sm">Studi kasus aktual, bukan teori.</p></div>
-        <div class="bg-white p-7 rounded-xl shadow-subtle hover-lift animate-fade-in delay-400"><i class="fas fa-users text-3xl text-[#1E3A8A] mb-4"></i><h4 class="font-semibold text-xl mb-2">Support Komunitas</h4><p class="text-gray-600 text-sm">Grup diskusi & update materi.</p></div>
-      </div>
-    </div>
-  </section>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight">DevSec<span class="text-brand-400">.id</span></span>
+                    <p class="mt-2 text-sm text-slate-400">Cybersecurity Services & Training</p>
+                </div>
 
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="bg-white section-spacing">
-    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center animate-fade-in">
-      <i class="fas fa-building-shield text-5xl text-[#1E3A8A] mb-6 block"></i>
-      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">About Us</h2>
-      <div class="bg-[#1E3A8A]/5 p-8 md:p-10 rounded-2xl shadow-subtle text-left">
-        <p class="text-gray-700 leading-relaxed mb-4 text-lg">DevSec Indonesia adalah penyedia jasa dan edukasi cybersecurity yang berfokus pada keamanan sistem dan peningkatan skill.</p>
-        <p class="text-gray-700 leading-relaxed text-lg">Dengan kombinasi layanan penetration testing, secure development, dan program pelatihan terstruktur, kami membantu organisasi membangun pertahanan digital yang kuat dan aman.</p>
-      </div>
-    </div>
-  </section>
+                <div class="flex gap-6 text-sm text-slate-400">
+                    <a href="#home" class="hover:text-white transition-colors">Home</a>
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#training" class="hover:text-white transition-colors">Training</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
 
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="bg-light-gray section-spacing">
-    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 animate-fade-in">Hubungi Kami</h2>
-      <p class="text-gray-600 text-lg mb-12 animate-fade-in">Konsultasikan kebutuhan via WhatsApp atau email.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-8 items-center animate-fade-in delay-200">
-        <a href="https://wa.me/6282221538876?text=Halo%20DevSec%20Indonesia%2C%20saya%20ingin%20konsultasi" target="_blank" rel="noopener noreferrer" class="whatsapp-float pulse-wa text-lg"><i class="fab fa-whatsapp text-2xl"></i> WhatsApp Kami</a>
-        <div class="text-gray-700 flex items-center gap-3 text-lg"><i class="far fa-envelope text-[#1E3A8A] text-xl"></i> <span>devsecidn@gmail.com</span></div>
-      </div>
-      <div class="mt-8 text-sm text-gray-500 flex flex-wrap justify-center gap-6 animate-fade-in delay-300">
-        <span><i class="fas fa-map-pin"></i> Sumenep, Indonesia</span>
-        <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="hover:text-[#1E3A8A]"><i class="fab fa-instagram"></i> devsec.id</a>
-      </div>
-    </div>
-  </section>
+                <div class="text-sm text-slate-400">
+                    <a href="https://instagram.com/devsec.id" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram: @devsec.id</a>
+                </div>
+            </div>
 
-  <!-- ========== FOOTER SIMPLE ========== -->
-  <footer class="bg-white border-t border-gray-200 py-8">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-500 text-sm">© 2026 DevSec Indonesia. All rights reserved.</p>
-    </div>
-  </footer>
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+                &copy; 2026 DevSec Indonesia. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-  <script>
-    // Dark Mode
-    (function(){
-      const body=document.body;
-      if(localStorage.getItem('devsec-dark-mode')==='true'){body.classList.add('dark');updateIcons(true);}
-      function updateIcons(d){
-        const di=document.getElementById('darkIcon'),li=document.getElementById('lightIcon');
-        const dim=document.getElementById('darkIconMobile'),lim=document.getElementById('lightIconMobile');
-        if(d){if(di)di.classList.add('hidden');if(li)li.classList.remove('hidden');if(dim)dim.classList.add('hidden');if(lim)lim.classList.remove('hidden');}
-        else{if(di)di.classList.remove('hidden');if(li)li.classList.add('hidden');if(dim)dim.classList.remove('hidden');if(lim)lim.classList.add('hidden');}
-      }
-      function toggle(){const d=body.classList.toggle('dark');localStorage.setItem('devsec-dark-mode',d);updateIcons(d);}
-      document.getElementById('darkModeToggle')?.addEventListener('click',toggle);
-      document.getElementById('darkModeToggleMobile')?.addEventListener('click',toggle);
-    })();
-    // Mobile menu
-    (function(){
-      const btn=document.getElementById('mobile-menu-button'),menu=document.getElementById('mobile-menu');
-      btn?.addEventListener('click',()=>menu.classList.toggle('hidden'));
-      document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){
-        const t=document.querySelector(this.getAttribute('href'));
-        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});menu?.classList.add('hidden');}
-      }));
-    })();
-    // Scroll animation
-    (function(){
-      const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}})},{threshold:0.15});
-      document.querySelectorAll('.animate-fade-in,.animate-fade-left,.animate-fade-right').forEach(el=>obs.observe(el));
-    })();
-
-    // ========== MODAL LOGIC ==========
-    function openModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    function closeModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-
-    function closeModalOutside(event, modalId) {
-      if (event.target === event.currentTarget) {
-        closeModal(modalId);
-      }
-    }
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.modal-overlay.active').forEach(modal => {
-          modal.classList.remove('active');
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-        document.body.style.overflow = '';
-      }
-    });
 
-    // ========== OPTIMIZED PARTICLE NETWORK ==========
-    (function(){
-      const canvas=document.getElementById('matrix-canvas');
-      if(!canvas)return;
-      const ctx=canvas.getContext('2d', { alpha: true });
-      let w,h,particles=[];
-      const PARTICLE_COUNT=25;
-      const CONNECTION_DIST=100;
-      const MAX_CONNECTIONS=3;
-      
-      class Particle {
-        constructor(){
-          this.x=Math.random()*w;
-          this.y=Math.random()*h;
-          this.vx=(Math.random()-0.5)*0.6;
-          this.vy=(Math.random()-0.5)*0.6;
-          this.radius=2+Math.random()*2;
-        }
-        update(){
-          this.x+=this.vx;
-          this.y+=this.vy;
-          if(this.x<0||this.x>w)this.vx*=-1;
-          if(this.y<0||this.y>h)this.vy*=-1;
-        }
-      }
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
 
-      function resize(){
-        const s=document.getElementById('home');
-        w=s?canvas.width=s.offsetWidth:canvas.width=800;
-        h=s?canvas.height=s.offsetHeight:canvas.height=500;
-        particles=[];
-        for(let i=0;i<PARTICLE_COUNT;i++)particles.push(new Particle());
-      }
-      resize();
-      let resizeTimer;
-      window.addEventListener('resize',()=>{
-        clearTimeout(resizeTimer);
-        resizeTimer=setTimeout(resize,150);
-      });
-
-      const darkLineColor='96,165,250', lightLineColor='30,58,138';
-      const darkDotColor='#60a5fa', lightDotColor='#1E3A8A';
-
-      function draw(){
-        const isDark=document.body.classList.contains('dark');
-        ctx.fillStyle=isDark?'rgba(15,23,42,0.2)':'rgba(255,255,255,0.25)';
-        ctx.fillRect(0,0,w,h);
-        for(let i=0;i<particles.length;i++)particles[i].update();
-        for(let i=0;i<particles.length;i++){
-          let connections=0;
-          for(let j=i+1;j<particles.length;j++){
-            if(connections>=MAX_CONNECTIONS)break;
-            const dx=particles[i].x-particles[j].x;
-            const dy=particles[i].y-particles[j].y;
-            const dist=Math.sqrt(dx*dx+dy*dy);
-            if(dist<CONNECTION_DIST){
-              connections++;
-              const alpha=(1-dist/CONNECTION_DIST)*0.4;
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x,particles[i].y);
-              ctx.lineTo(particles[j].x,particles[j].y);
-              ctx.strokeStyle=isDark?`rgba(${darkLineColor},${alpha})`:`rgba(${lightLineColor},${alpha})`;
-              ctx.lineWidth=0.8;
-              ctx.stroke();
-            }
-          }
-        }
-        ctx.fillStyle=isDark?darkDotColor:lightDotColor;
-        for(let i=0;i<particles.length;i++){
-          ctx.beginPath();
-          ctx.arc(particles[i].x,particles[i].y,particles[i].radius,0,Math.PI*2);
-          ctx.fill();
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-  </script>
 </body>
 </html>
