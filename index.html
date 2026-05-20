@@ -320,7 +320,7 @@
         }
 
         /* =================================================================== */
-        /* NAVIGATION STYLES                                                   */
+        /* NAVIGATION STYLES - FIXED FOR VISIBILITY                           */
         /* =================================================================== */
         .navbar {
             position: fixed;
@@ -340,13 +340,14 @@
         }
         .nav-link {
             position: relative;
-            font-weight: 500;
-            font-size: 0.925rem;
-            color: var(--dark-700);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1f2937;
             padding: 0.5rem 0;
             transition: color 0.25s ease;
             white-space: nowrap;
             letter-spacing: 0.01em;
+            text-decoration: none;
         }
         .nav-link::after {
             content: '';
@@ -360,7 +361,7 @@
             transition: width var(--transition-base);
         }
         .nav-link:hover {
-            color: var(--brand-950);
+            color: var(--brand-700);
         }
         .nav-link:hover::after {
             width: 100%;
@@ -419,9 +420,6 @@
             box-shadow: 0 8px 25px rgba(30, 58, 138, 0.2);
             transform: translateY(-2px);
         }
-        .btn-outline:active {
-            transform: translateY(0);
-        }
         .btn-light {
             background-color: #ffffff;
             color: var(--brand-950);
@@ -449,7 +447,7 @@
         }
 
         /* =================================================================== */
-        /* CARD STYLES                                                         */
+        /* CARD STYLES - CONSISTENT HEIGHTS                                    */
         /* =================================================================== */
         .card {
             background-color: #ffffff;
@@ -457,6 +455,9 @@
             border-radius: 1rem;
             overflow: hidden;
             transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .card-hover:hover {
             border-color: #bac8ff;
@@ -468,6 +469,38 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Service Card - consistent height */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 480px;
+        }
+        .service-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card .card-footer {
+            margin-top: auto;
+        }
+
+        /* Training Card - consistent height */
+        .training-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 480px;
+        }
+        .training-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .training-card .card-footer {
+            margin-top: auto;
         }
 
         /* =================================================================== */
@@ -746,23 +779,6 @@
             background: linear-gradient(90deg, transparent, #e9ecef, transparent);
             border: none;
             margin: 1.5rem 0;
-        }
-
-        /* =================================================================== */
-        /* CUSTOM SCROLLBAR FOR SPECIFIC ELEMENTS                              */
-        /* =================================================================== */
-        .custom-scrollbar::-webkit-scrollbar {
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #dee2e6;
-            border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #adb5bd;
         }
 
         /* =================================================================== */
@@ -1112,7 +1128,7 @@
         </section>
 
         <!-- =================================================================== -->
-        <!-- SERVICES SECTION                                                    -->
+        <!-- SERVICES SECTION - CONSISTENT CARD HEIGHTS                         -->
         <!-- =================================================================== -->
         <section id="services" class="section-padding bg-dark-50" aria-labelledby="services-heading">
             <div class="container-xl">
@@ -1128,73 +1144,85 @@
                     </p>
                 </div>
 
-                <!-- Main Services Grid -->
+                <!-- Main Services Grid - Consistent Heights -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <!-- Service 1 -->
-                    <div class="card card-hover p-8 animate-on-scroll">
-                        <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6">
+                    <div class="card card-hover p-8 animate-on-scroll service-card">
+                        <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 flex-shrink-0">
                             <svg class="w-7 h-7 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-dark-900 mb-3">Penetration Testing</h3>
-                        <p class="text-dark-600 leading-relaxed mb-5">
-                            Identify and fix security gaps before attackers exploit them. Our testing 
-                            simulates real-world attacks across your network, applications, and APIs.
-                        </p>
-                        <ul class="space-y-2.5 mb-6 text-sm text-dark-600">
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Network & Infrastructure Testing</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Web & Mobile Application Assessment</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> API & Microservice Security Testing</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Cloud Configuration Review</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-700 font-semibold text-sm hover:text-brand-900 transition-colors inline-flex items-center gap-1">
-                            Inquire Now
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold text-dark-900 mb-3">Penetration Testing</h3>
+                            <p class="text-dark-600 leading-relaxed mb-5">
+                                Identify and fix security gaps before attackers exploit them. Our testing 
+                                simulates real-world attacks across your network, applications, and APIs.
+                            </p>
+                            <ul class="space-y-2.5 mb-6 text-sm text-dark-600">
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Network & Infrastructure Testing</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Web & Mobile Application Assessment</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> API & Microservice Security Testing</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Cloud Configuration Review</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="text-brand-700 font-semibold text-sm hover:text-brand-900 transition-colors inline-flex items-center gap-1">
+                                Inquire Now
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="card card-hover p-8 animate-on-scroll delay-1">
-                        <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6">
+                    <div class="card card-hover p-8 animate-on-scroll delay-1 service-card">
+                        <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 flex-shrink-0">
                             <svg class="w-7 h-7 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-dark-900 mb-3">Secure Development</h3>
-                        <p class="text-dark-600 leading-relaxed mb-5">
-                            Build security into your software from day one. We integrate security practices 
-                            into your development lifecycle.
-                        </p>
-                        <ul class="space-y-2.5 mb-6 text-sm text-dark-600">
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Secure Code Review</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Security Architecture Consulting</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> DevSecOps Pipeline Integration</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Threat Modeling Workshops</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-700 font-semibold text-sm hover:text-brand-900 transition-colors inline-flex items-center gap-1">
-                            Inquire Now
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold text-dark-900 mb-3">Secure Development</h3>
+                            <p class="text-dark-600 leading-relaxed mb-5">
+                                Build security into your software from day one. We integrate security practices 
+                                into your development lifecycle.
+                            </p>
+                            <ul class="space-y-2.5 mb-6 text-sm text-dark-600">
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Secure Code Review</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Security Architecture Consulting</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> DevSecOps Pipeline Integration</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Threat Modeling Workshops</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="text-brand-700 font-semibold text-sm hover:text-brand-900 transition-colors inline-flex items-center gap-1">
+                                Inquire Now
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Service 3 -->
-                    <div class="card card-hover p-8 animate-on-scroll delay-2">
-                        <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6">
+                    <div class="card card-hover p-8 animate-on-scroll delay-2 service-card">
+                        <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 flex-shrink-0">
                             <svg class="w-7 h-7 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                         </div>
-                        <h3 class="text-xl font-bold text-dark-900 mb-3">Incident Response</h3>
-                        <p class="text-dark-600 leading-relaxed mb-5">
-                            Fast, effective response when security incidents occur. Contain threats, 
-                            recover systems, and prevent recurrence.
-                        </p>
-                        <ul class="space-y-2.5 mb-6 text-sm text-dark-600">
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> 24/7 Emergency Response</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Digital Forensics Investigation</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Malware Analysis & Reversal</li>
-                            <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Post-Incident Hardening</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-700 font-semibold text-sm hover:text-brand-900 transition-colors inline-flex items-center gap-1">
-                            Inquire Now
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold text-dark-900 mb-3">Incident Response</h3>
+                            <p class="text-dark-600 leading-relaxed mb-5">
+                                Fast, effective response when security incidents occur. Contain threats, 
+                                recover systems, and prevent recurrence.
+                            </p>
+                            <ul class="space-y-2.5 mb-6 text-sm text-dark-600">
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> 24/7 Emergency Response</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Digital Forensics Investigation</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Malware Analysis & Reversal</li>
+                                <li class="flex items-start gap-2"><span class="text-brand-600 font-bold mt-0.5">•</span> Post-Incident Hardening</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="text-brand-700 font-semibold text-sm hover:text-brand-900 transition-colors inline-flex items-center gap-1">
+                                Inquire Now
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -1232,8 +1260,9 @@
                 </div>
             </div>
         </section>
-                <!-- =================================================================== -->
-        <!-- TRAINING PROGRAMS SECTION                                           -->
+        
+        <!-- =================================================================== -->
+        <!-- TRAINING PROGRAMS SECTION - CONSISTENT CARD HEIGHTS                -->
         <!-- =================================================================== -->
         <section id="training" class="section-padding bg-white" aria-labelledby="training-heading">
             <div class="container-xl">
@@ -1250,12 +1279,12 @@
                     </p>
                 </div>
 
-                <!-- Training Categories Grid -->
+                <!-- Training Categories Grid - Consistent Heights -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
                     
                     <!-- Training 1: Malware Development -->
-                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll">
-                        <div class="flex items-center justify-between mb-4">
+                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll training-card">
+                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
                             <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center">
                                 <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
@@ -1263,33 +1292,37 @@
                             </div>
                             <span class="badge">Advanced Track</span>
                         </div>
-                        <h3 class="text-lg font-bold text-dark-900 mb-2">Malware Development</h3>
-                        <p class="text-sm text-dark-500 leading-relaxed mb-4">
-                            Learn how malware is created, analyzed, and detected. Covers everything 
-                            from basic trojans to advanced rootkits and evasion techniques.
-                        </p>
-                        <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Skill Levels:</span>
-                                <span class="font-semibold text-dark-700">3 Levels</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Total Sessions:</span>
-                                <span class="font-semibold text-dark-700">4 - 15</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Price Range:</span>
-                                <span class="font-bold text-brand-700">Rp 500K - 2.2M</span>
+                        <div class="card-body">
+                            <h3 class="text-lg font-bold text-dark-900 mb-2">Malware Development</h3>
+                            <p class="text-sm text-dark-500 leading-relaxed mb-4">
+                                Learn how malware is created, analyzed, and detected. Covers everything 
+                                from basic trojans to advanced rootkits and evasion techniques.
+                            </p>
+                            <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Skill Levels:</span>
+                                    <span class="font-semibold text-dark-700">3 Levels</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Total Sessions:</span>
+                                    <span class="font-semibold text-dark-700">4 - 15</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Price Range:</span>
+                                    <span class="font-bold text-brand-700">Rp 500K - 2.2M</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
-                            View Syllabus & Pricing
-                        </a>
+                        <div class="card-footer">
+                            <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
+                                View Syllabus & Pricing
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Training 2: Red Team Operations -->
-                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll delay-1">
-                        <div class="flex items-center justify-between mb-4">
+                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll delay-1 training-card">
+                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
                             <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center">
                                 <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -1297,33 +1330,37 @@
                             </div>
                             <span class="badge">Offensive</span>
                         </div>
-                        <h3 class="text-lg font-bold text-dark-900 mb-2">Red Team Operations</h3>
-                        <p class="text-sm text-dark-500 leading-relaxed mb-4">
-                            Master offensive security methodologies. From reconnaissance and scanning 
-                            to exploitation, post-exploitation, and full red team engagements.
-                        </p>
-                        <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Skill Levels:</span>
-                                <span class="font-semibold text-dark-700">3 Levels</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Total Sessions:</span>
-                                <span class="font-semibold text-dark-700">3 - 12</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Price Range:</span>
-                                <span class="font-bold text-brand-700">Rp 199K - 799K</span>
+                        <div class="card-body">
+                            <h3 class="text-lg font-bold text-dark-900 mb-2">Red Team Operations</h3>
+                            <p class="text-sm text-dark-500 leading-relaxed mb-4">
+                                Master offensive security methodologies. From reconnaissance and scanning 
+                                to exploitation, post-exploitation, and full red team engagements.
+                            </p>
+                            <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Skill Levels:</span>
+                                    <span class="font-semibold text-dark-700">3 Levels</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Total Sessions:</span>
+                                    <span class="font-semibold text-dark-700">3 - 12</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Price Range:</span>
+                                    <span class="font-bold text-brand-700">Rp 199K - 799K</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
-                            View Syllabus & Pricing
-                        </a>
+                        <div class="card-footer">
+                            <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
+                                View Syllabus & Pricing
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Training 3: Blue Team Defense -->
-                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll delay-2">
-                        <div class="flex items-center justify-between mb-4">
+                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll delay-2 training-card">
+                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
                             <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center">
                                 <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -1331,33 +1368,37 @@
                             </div>
                             <span class="badge">Defensive</span>
                         </div>
-                        <h3 class="text-lg font-bold text-dark-900 mb-2">Blue Team Defense</h3>
-                        <p class="text-sm text-dark-500 leading-relaxed mb-4">
-                            Build robust defensive capabilities. Learn threat hunting, security 
-                            monitoring, SIEM management, and incident response procedures.
-                        </p>
-                        <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Skill Levels:</span>
-                                <span class="font-semibold text-dark-700">3 Levels</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Total Sessions:</span>
-                                <span class="font-semibold text-dark-700">3 - 12</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Price Range:</span>
-                                <span class="font-bold text-brand-700">Rp 199K - 799K</span>
+                        <div class="card-body">
+                            <h3 class="text-lg font-bold text-dark-900 mb-2">Blue Team Defense</h3>
+                            <p class="text-sm text-dark-500 leading-relaxed mb-4">
+                                Build robust defensive capabilities. Learn threat hunting, security 
+                                monitoring, SIEM management, and incident response procedures.
+                            </p>
+                            <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Skill Levels:</span>
+                                    <span class="font-semibold text-dark-700">3 Levels</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Total Sessions:</span>
+                                    <span class="font-semibold text-dark-700">3 - 12</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Price Range:</span>
+                                    <span class="font-bold text-brand-700">Rp 199K - 799K</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
-                            View Syllabus & Pricing
-                        </a>
+                        <div class="card-footer">
+                            <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
+                                View Syllabus & Pricing
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Training 4: Advanced Exploitation -->
-                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll delay-3">
-                        <div class="flex items-center justify-between mb-4">
+                    <div class="card card-hover p-6 lg:p-7 animate-on-scroll delay-3 training-card">
+                        <div class="flex items-center justify-between mb-4 flex-shrink-0">
                             <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center">
                                 <svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -1365,28 +1406,32 @@
                             </div>
                             <span class="badge">Expert Level</span>
                         </div>
-                        <h3 class="text-lg font-bold text-dark-900 mb-2">Advanced Exploitation</h3>
-                        <p class="text-sm text-dark-500 leading-relaxed mb-4">
-                            Custom exploit development, fuzzing, reverse engineering, and zero-day 
-                            research. For experienced security professionals.
-                        </p>
-                        <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Skill Levels:</span>
-                                <span class="font-semibold text-dark-700">3 Levels</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Total Sessions:</span>
-                                <span class="font-semibold text-dark-700">4 - 15</span>
-                            </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-dark-500">Price Range:</span>
-                                <span class="font-bold text-brand-700">Rp 450K - 3M</span>
+                        <div class="card-body">
+                            <h3 class="text-lg font-bold text-dark-900 mb-2">Advanced Exploitation</h3>
+                            <p class="text-sm text-dark-500 leading-relaxed mb-4">
+                                Custom exploit development, fuzzing, reverse engineering, and zero-day 
+                                research. For experienced security professionals.
+                            </p>
+                            <div class="border-t border-dark-100 pt-4 mb-4 space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Skill Levels:</span>
+                                    <span class="font-semibold text-dark-700">3 Levels</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Total Sessions:</span>
+                                    <span class="font-semibold text-dark-700">4 - 15</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-dark-500">Price Range:</span>
+                                    <span class="font-bold text-brand-700">Rp 450K - 3M</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
-                            View Syllabus & Pricing
-                        </a>
+                        <div class="card-footer">
+                            <a href="#pricing" class="block w-full text-center py-2.5 border-2 border-brand-700 text-brand-700 font-semibold rounded-lg hover:bg-brand-700 hover:text-white transition-all text-sm">
+                                View Syllabus & Pricing
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -1727,7 +1772,7 @@
         </section>
 
         <!-- =================================================================== -->
-        <!-- TEAM / FOUNDER SECTION                                              -->
+        <!-- TEAM / FOUNDER SECTION - Updated with Yudi Ardata                   -->
         <!-- =================================================================== -->
         <section id="team" class="section-padding bg-white" aria-labelledby="team-heading">
             <div class="container-xl">
@@ -1762,12 +1807,12 @@
                             <!-- Founder Info -->
                             <div class="md:col-span-3 p-8 lg:p-10 flex flex-col justify-center">
                                 <span class="badge mb-3">Founder & CEO</span>
-                                <h3 class="text-2xl lg:text-3xl font-extrabold text-dark-900 mb-2">Ahmad Fauzi</h3>
+                                <h3 class="text-2xl lg:text-3xl font-extrabold text-dark-900 mb-2">Yudi Ardata</h3>
                                 <p class="text-brand-700 font-semibold text-base mb-4">Founder & Lead Penetration Tester</p>
                                 <div class="space-y-3 text-dark-600 leading-relaxed text-sm">
                                     <p>
                                         With over 10 years of hands-on experience in cybersecurity, 
-                                        Ahmad has led penetration testing engagements for enterprises, 
+                                        Yudi has led penetration testing engagements for enterprises, 
                                         financial institutions, and government agencies across Indonesia.
                                     </p>
                                     <p>
@@ -1834,100 +1879,9 @@
         </section>
 
         <!-- =================================================================== -->
-        <!-- PARTNERS & CLIENTS SECTION                                          -->
-        <!-- =================================================================== -->
-        <section id="partners" class="section-padding bg-dark-50" aria-labelledby="partners-heading">
-            <div class="container-xl">
-                <!-- Section Header -->
-                <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20 animate-on-scroll">
-                    <span class="badge mb-4">Trusted By</span>
-                    <h2 id="partners-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-900 tracking-tight mt-4 text-balance">
-                        Organizations That Trust Us
-                    </h2>
-                    <p class="mt-5 text-lg text-dark-600 leading-relaxed max-w-2xl mx-auto text-pretty">
-                        We are proud to have worked with enterprises, startups, government agencies, 
-                        and educational institutions across Indonesia.
-                    </p>
-                </div>
-
-                <!-- Partner Categories -->
-                <div class="space-y-12 max-w-5xl mx-auto">
-                    
-                    <!-- Enterprise Clients -->
-                    <div class="animate-on-scroll">
-                        <h3 class="text-lg font-bold text-dark-900 text-center mb-6">Enterprise Clients</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Client Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Client Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Client Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Client Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Client Logo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Educational Partners -->
-                    <div class="animate-on-scroll delay-1">
-                        <h3 class="text-lg font-bold text-dark-900 text-center mb-6">Educational Partners</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">University Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">University Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">University Logo</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">University Logo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Technology Partners -->
-                    <div class="animate-on-scroll delay-2">
-                        <h3 class="text-lg font-bold text-dark-900 text-center mb-6">Technology Partners</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Tech Partner</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Tech Partner</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Tech Partner</span>
-                            </div>
-                            <div class="bg-white border border-dark-200 rounded-xl p-6 h-24 flex items-center justify-center hover:border-brand-300 hover:shadow-md transition-all cursor-default">
-                                <span class="text-dark-400 font-semibold text-xs text-center">Tech Partner</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Partnership CTA -->
-                <div class="mt-12 text-center animate-on-scroll delay-3">
-                    <p class="text-dark-500 mb-4 text-lg">Want to partner with us?</p>
-                    <a href="#contact" class="btn btn-outline btn-lg">
-                        Become a Partner
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-                <!-- =================================================================== -->
         <!-- TESTIMONIALS SECTION                                                -->
         <!-- =================================================================== -->
-        <section id="testimonials" class="section-padding bg-white" aria-labelledby="testimonials-heading">
+        <section id="testimonials" class="section-padding bg-dark-50" aria-labelledby="testimonials-heading">
             <div class="container-xl">
                 <!-- Section Header -->
                 <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20 animate-on-scroll">
@@ -1945,7 +1899,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
                     
                     <!-- Testimonial 1 -->
-                    <div class="bg-dark-50 border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll">
+                    <div class="bg-white border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll">
                         <div class="flex items-center gap-1 mb-4">
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
@@ -1967,7 +1921,7 @@
                     </div>
 
                     <!-- Testimonial 2 -->
-                    <div class="bg-dark-50 border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-1">
+                    <div class="bg-white border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-1">
                         <div class="flex items-center gap-1 mb-4">
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
@@ -1989,7 +1943,7 @@
                     </div>
 
                     <!-- Testimonial 3 -->
-                    <div class="bg-dark-50 border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-2">
+                    <div class="bg-white border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-2">
                         <div class="flex items-center gap-1 mb-4">
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
@@ -2015,7 +1969,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <!-- Testimonial 4 -->
-                    <div class="bg-dark-50 border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll">
+                    <div class="bg-white border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll">
                         <div class="flex items-center gap-1 mb-4">
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
@@ -2037,7 +1991,7 @@
                     </div>
 
                     <!-- Testimonial 5 -->
-                    <div class="bg-dark-50 border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-1">
+                    <div class="bg-white border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-1">
                         <div class="flex items-center gap-1 mb-4">
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
@@ -2058,7 +2012,7 @@
                     </div>
 
                     <!-- Testimonial 6 -->
-                    <div class="bg-dark-50 border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-2">
+                    <div class="bg-white border border-dark-200 rounded-2xl p-7 hover:border-brand-200 transition-all animate-on-scroll delay-2">
                         <div class="flex items-center gap-1 mb-4">
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
                             <span class="text-yellow-500 text-lg" aria-hidden="true">★</span>
@@ -2096,7 +2050,7 @@
         <!-- =================================================================== -->
         <!-- BLOG / ARTICLES SECTION (CONSISTENT BADGES)                         -->
         <!-- =================================================================== -->
-        <section id="blog" class="section-padding bg-dark-50" aria-labelledby="blog-heading">
+        <section id="blog" class="section-padding bg-white" aria-labelledby="blog-heading">
             <div class="container-xl">
                 <!-- Section Header -->
                 <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20 animate-on-scroll">
@@ -2324,7 +2278,7 @@
         <!-- =================================================================== -->
         <!-- FAQ SECTION                                                         -->
         <!-- =================================================================== -->
-        <section id="faq" class="section-padding bg-white" aria-labelledby="faq-heading">
+        <section id="faq" class="section-padding bg-dark-50" aria-labelledby="faq-heading">
             <div class="container-lg">
                 <!-- Section Header -->
                 <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20 animate-on-scroll">
@@ -2554,10 +2508,11 @@
                 </div>
             </div>
         </section>
-                <!-- =================================================================== -->
+        
+        <!-- =================================================================== -->
         <!-- CONTACT SECTION                                                     -->
         <!-- =================================================================== -->
-        <section id="contact" class="section-padding bg-dark-50" aria-labelledby="contact-heading">
+        <section id="contact" class="section-padding bg-white" aria-labelledby="contact-heading">
             <div class="container-xl">
                 <!-- Section Header -->
                 <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20 animate-on-scroll">
@@ -2856,7 +2811,7 @@
     <footer class="bg-dark-950 text-white" role="contentinfo" aria-label="Site Footer">
         <!-- Main Footer Content -->
         <div class="container-xl py-16 lg:py-20">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
                 
                 <!-- Brand Column (Spans 2) -->
                 <div class="lg:col-span-2">
@@ -2932,22 +2887,9 @@
                     <ul class="space-y-3">
                         <li><a href="#about" class="text-dark-400 hover:text-white transition-colors text-sm">About Us</a></li>
                         <li><a href="#team" class="text-dark-400 hover:text-white transition-colors text-sm">Our Founder</a></li>
-                        <li><a href="#partners" class="text-dark-400 hover:text-white transition-colors text-sm">Partners & Clients</a></li>
                         <li><a href="#blog" class="text-dark-400 hover:text-white transition-colors text-sm">Blog & Articles</a></li>
                         <li><a href="#testimonials" class="text-dark-400 hover:text-white transition-colors text-sm">Testimonials</a></li>
                         <li><a href="#contact" class="text-dark-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legal Links -->
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-dark-300 mb-5">Legal</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-dark-400 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
-                        <li><a href="#" class="text-dark-400 hover:text-white transition-colors text-sm">Terms of Service</a></li>
-                        <li><a href="#" class="text-dark-400 hover:text-white transition-colors text-sm">Cookie Policy</a></li>
-                        <li><a href="#" class="text-dark-400 hover:text-white transition-colors text-sm">Disclaimer</a></li>
-                        <li><a href="#" class="text-dark-400 hover:text-white transition-colors text-sm">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
@@ -3210,29 +3152,14 @@
             accordionTriggers.forEach(function(trigger) {
                 trigger.addEventListener('click', function() {
                     const content = this.nextElementSibling;
-                    const icon = this.querySelector('.accordion-icon');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     
-                    // Optional: Close other accordions (comment out for independent accordions)
-                    // accordionTriggers.forEach(function(other) {
-                    //     if (other !== trigger) {
-                    //         other.setAttribute('aria-expanded', 'false');
-                    //         const otherContent = other.nextElementSibling;
-                    //         const otherIcon = other.querySelector('.accordion-icon');
-                    //         if (otherContent) otherContent.classList.remove('open');
-                    //         if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                    //     }
-                    // });
-                    
-                    // Toggle current
                     if (isExpanded) {
                         this.setAttribute('aria-expanded', 'false');
                         if (content) content.classList.remove('open');
-                        if (icon) icon.style.transform = 'rotate(0deg)';
                     } else {
                         this.setAttribute('aria-expanded', 'true');
                         if (content) content.classList.add('open');
-                        if (icon) icon.style.transform = 'rotate(180deg)';
                     }
                 });
                 
@@ -3364,13 +3291,11 @@
                 });
                 
                 navLinks.forEach(function(link) {
-                    link.classList.remove('active', 'text-brand-700');
-                    link.style.color = '';
+                    link.classList.remove('active');
                     
                     const href = link.getAttribute('href');
                     if (href && href.substring(1) === currentSectionId) {
-                        link.classList.add('active', 'text-brand-700');
-                        link.style.color = '#364fc7';
+                        link.classList.add('active');
                     }
                 });
             }
@@ -3396,41 +3321,6 @@
                         closeMobileMenu();
                     }
                 }, 250);
-            });
-
-            // ================================================================
-            // KEYBOARD NAVIGATION FOR ACCORDION
-            // ================================================================
-            document.addEventListener('keydown', function(e) {
-                if (e.target.classList.contains('accordion-trigger')) {
-                    const allTriggers = Array.from(accordionTriggers);
-                    const currentIndex = allTriggers.indexOf(e.target);
-                    
-                    switch(e.key) {
-                        case 'ArrowDown':
-                        case 'ArrowRight':
-                            e.preventDefault();
-                            if (currentIndex < allTriggers.length - 1) {
-                                allTriggers[currentIndex + 1].focus();
-                            }
-                            break;
-                        case 'ArrowUp':
-                        case 'ArrowLeft':
-                            e.preventDefault();
-                            if (currentIndex > 0) {
-                                allTriggers[currentIndex - 1].focus();
-                            }
-                            break;
-                        case 'Home':
-                            e.preventDefault();
-                            if (allTriggers.length > 0) allTriggers[0].focus();
-                            break;
-                        case 'End':
-                            e.preventDefault();
-                            if (allTriggers.length > 0) allTriggers[allTriggers.length - 1].focus();
-                            break;
-                    }
-                }
             });
 
             // ================================================================
@@ -3493,7 +3383,6 @@
                 'color: #495057;',
                 'color: #495057;'
             );
-            console.log('%c💡 Interested in our code? Check out our training programs!', 'color: #868e96; font-style: italic;');
 
         })();
     </script>
@@ -3528,7 +3417,7 @@
             },
             "founder": {
                 "@type": "Person",
-                "name": "Ahmad Fauzi",
+                "name": "Yudi Ardata",
                 "jobTitle": "Founder & Lead Penetration Tester",
                 "image": "https://devsec.id/founder.jpg"
             },
