@@ -44,7 +44,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 2rem;
             opacity: 0;
             animation: fadeInSplash 0.8s ease forwards;
             animation-delay: 0.2s;
@@ -56,14 +56,36 @@
             }
         }
 
-        /* Loading Square Wrapper */
-        .loading-square-wrapper {
+        /* Splash Text - di atas square */
+        .splash-text {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 500;
+            color: #4F6EF7;
+            letter-spacing: 0.3px;
+            animation: pulseText 2.8s ease-in-out infinite;
+            text-align: center;
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.45; }
+        }
+
+        /* Main loading area */
+        .loading-area {
             position: relative;
-            width: clamp(90px, 16vw, 120px);
-            height: clamp(90px, 16vw, 120px);
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        /* Square di tengah */
+        .square-frame {
+            position: relative;
+            width: clamp(80px, 14vw, 110px);
+            height: clamp(80px, 14vw, 110px);
+            z-index: 3;
+            pointer-events: none;
         }
 
         /* SVG Border Loading */
@@ -73,8 +95,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 2;
         }
 
         .loading-border-base {
@@ -124,63 +144,82 @@
             }
         }
 
-        /* Logo container (no background box) */
-        .logo-slides-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Scroll container - lebar memenuhi layar, hanya square yang terlihat */
+        .scroll-track {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: clamp(80px, 14vw, 110px);
+            overflow: visible;
             z-index: 1;
         }
 
-        .logo-slide {
+        .scroll-inner {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            animation: scrollHorizontal 15s linear infinite;
+            width: max-content;
             position: absolute;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes scrollHorizontal {
+            0% {
+                transform: translateX(50vw) translateY(-50%);
+            }
+            100% {
+                transform: translateX(calc(-100% + 50vw)) translateY(-50%);
+            }
+        }
+
+        .scroll-logo-item {
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transform: scale(0.9);
-            filter: blur(6px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            width: clamp(80px, 14vw, 110px);
+            height: clamp(80px, 14vw, 110px);
+            transition: filter 0.5s ease, opacity 0.5s ease;
+            filter: blur(5px);
+            opacity: 0.5;
         }
 
-        .logo-slide.active {
-            opacity: 1;
-            transform: scale(1);
-            filter: blur(0);
-        }
-
-        .logo-slide.exit {
-            opacity: 0;
-            transform: scale(1.05);
-            filter: blur(4px);
-        }
-
-        .logo-slide-img {
-            width: clamp(50px, 9vw, 70px);
-            height: clamp(50px, 9vw, 70px);
-            border-radius: 12px;
+        .scroll-logo-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
             object-fit: cover;
             background: #f5f6fa;
         }
 
-        /* Splash Text */
-        .splash-text {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            font-weight: 500;
-            color: #4F6EF7;
-            letter-spacing: 0.3px;
-            animation: pulseText 2.8s ease-in-out infinite;
-            text-align: center;
+        /* Overlay mask untuk blur di luar square */
+        .blur-mask-left,
+        .blur-mask-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
-        @keyframes pulseText {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.45; }
+        .blur-mask-left {
+            left: 0;
+            right: 50%;
+            margin-right: calc(clamp(40px, 7vw, 55px));
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .blur-mask-right {
+            right: 0;
+            left: 50%;
+            margin-left: calc(clamp(40px, 7vw, 55px));
+            background: rgba(255, 255, 255, 0.7);
         }
 
         /* ========== MAIN WEBSITE ========== */
@@ -887,7 +926,7 @@
             }
 
             .splash-container {
-                gap: 1.75rem;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -896,39 +935,51 @@
     <!-- ========== SPLASH SCREEN ========== -->
     <div class="splash-screen" id="splashScreen">
         <div class="splash-container">
-            <!-- Loading Square -->
-            <div class="loading-square-wrapper">
-                <!-- SVG Border Loading -->
-                <svg class="loading-border-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="3" width="114" height="114" class="loading-border-base" />
-                    <rect x="3" y="3" width="114" height="114" class="loading-border-progress" />
-                </svg>
+            <!-- Teks di atas square -->
+            <p class="splash-text">Hi! Please wait...</p>
 
-                <!-- Logo slides -->
-                <div class="logo-slides-container">
-                    <div class="logo-slide active" data-index="0">
-                        <img src="kalilinux.png" alt="Kali Linux" class="logo-slide-img">
-                    </div>
-                    <div class="logo-slide" data-index="1">
-                        <img src="andrax.jpg" alt="Andrax" class="logo-slide-img">
-                    </div>
-                    <div class="logo-slide" data-index="2">
-                        <img src="nethunter.jpg" alt="NetHunter" class="logo-slide-img">
-                    </div>
-                    <div class="logo-slide" data-index="3">
-                        <img src="parrotos.jpg" alt="Parrot OS" class="logo-slide-img">
-                    </div>
-                    <div class="logo-slide" data-index="4">
-                        <img src="debian.png" alt="Debian" class="logo-slide-img">
-                    </div>
-                    <div class="logo-slide" data-index="5">
-                        <img src="ubuntu.png" alt="Ubuntu" class="logo-slide-img">
+            <!-- Loading Area -->
+            <div class="loading-area">
+                <!-- Scroll track - gambar berjalan horizontal -->
+                <div class="scroll-track">
+                    <div class="scroll-inner" id="scrollInner">
+                        <!-- Set 1 -->
+                        <div class="scroll-logo-item"><img src="kalilinux.png" alt="Kali Linux" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="andrax.jpg" alt="Andrax" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="nethunter.jpg" alt="NetHunter" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="parrotos.jpg" alt="Parrot OS" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="debian.png" alt="Debian" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="ubuntu.png" alt="Ubuntu" class="scroll-logo-img"></div>
+                        <!-- Set 2 (duplicate) -->
+                        <div class="scroll-logo-item"><img src="kalilinux.png" alt="Kali Linux" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="andrax.jpg" alt="Andrax" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="nethunter.jpg" alt="NetHunter" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="parrotos.jpg" alt="Parrot OS" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="debian.png" alt="Debian" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="ubuntu.png" alt="Ubuntu" class="scroll-logo-img"></div>
+                        <!-- Set 3 (duplicate) -->
+                        <div class="scroll-logo-item"><img src="kalilinux.png" alt="Kali Linux" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="andrax.jpg" alt="Andrax" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="nethunter.jpg" alt="NetHunter" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="parrotos.jpg" alt="Parrot OS" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="debian.png" alt="Debian" class="scroll-logo-img"></div>
+                        <div class="scroll-logo-item"><img src="ubuntu.png" alt="Ubuntu" class="scroll-logo-img"></div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Teks -->
-            <p class="splash-text">Hi! Please wait...</p>
+                <!-- Blur mask kiri -->
+                <div class="blur-mask-left"></div>
+                <!-- Blur mask kanan -->
+                <div class="blur-mask-right"></div>
+
+                <!-- Square frame di tengah -->
+                <div class="square-frame">
+                    <svg class="loading-border-svg" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="104" height="104" class="loading-border-base" />
+                        <rect x="3" y="3" width="104" height="104" class="loading-border-progress" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1113,54 +1164,15 @@
     </div>
 
     <script>
-        // Splash Screen Logic
-        (function() {
-            const slides = document.querySelectorAll('.logo-slide');
-            const totalSlides = slides.length;
-            const totalDuration = 15000;
-            const slideInterval = totalDuration / totalSlides;
-            let currentIndex = 0;
-
-            function showSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                    slide.classList.remove('exit');
-                });
-
-                const currentSlide = document.querySelector('.logo-slide.active');
-                if (currentSlide) {
-                    currentSlide.classList.add('exit');
-                }
-
-                setTimeout(() => {
-                    slides.forEach(slide => {
-                        slide.classList.remove('exit');
-                    });
-                    slides[index].classList.add('active');
-                }, 350);
-
-                currentIndex = index;
-            }
-
-            function nextSlide() {
-                let next = currentIndex + 1;
-                if (next >= totalSlides) {
-                    next = 0;
-                }
-                showSlide(next);
-            }
-
-            const slideTimer = setInterval(nextSlide, slideInterval);
-
+        // Splash Screen - 15 detik
+        window.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
-                clearInterval(slideTimer);
                 const splash = document.getElementById('splashScreen');
                 const main = document.getElementById('mainContent');
                 splash.classList.add('hidden');
                 main.classList.add('show');
-            }, totalDuration);
-
-        })();
+            }, 15000);
+        });
 
         // Mobile Menu
         function toggleMenu() {
