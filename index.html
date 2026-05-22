@@ -56,20 +56,17 @@
             }
         }
 
-        /* Loading Square - SVG Border */
+        /* Loading Square Wrapper */
         .loading-square-wrapper {
             position: relative;
-            width: clamp(100px, 18vw, 130px);
-            height: clamp(100px, 18vw, 130px);
+            width: clamp(90px, 16vw, 120px);
+            height: clamp(90px, 16vw, 120px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .loading-square-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* SVG untuk border animasi */
+        /* SVG Border Loading */
         .loading-border-svg {
             position: absolute;
             top: 0;
@@ -80,21 +77,21 @@
             z-index: 2;
         }
 
-        .loading-border-rect {
+        .loading-border-base {
             fill: none;
-            stroke: #dce3f5;
-            stroke-width: 3;
-            rx: 16;
-            ry: 16;
+            stroke: #e8ecf4;
+            stroke-width: 2.5;
+            rx: 14;
+            ry: 14;
         }
 
         .loading-border-progress {
             fill: none;
             stroke: #4F6EF7;
-            stroke-width: 3;
+            stroke-width: 2.5;
             stroke-linecap: round;
-            rx: 16;
-            ry: 16;
+            rx: 14;
+            ry: 14;
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
             animation: drawBorder 15s ease forwards;
@@ -127,84 +124,17 @@
             }
         }
 
-        /* Glow effect pada border progres */
-        .loading-border-glow {
-            fill: none;
-            stroke: #4F6EF7;
-            stroke-width: 6;
-            stroke-linecap: round;
-            rx: 16;
-            ry: 16;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            opacity: 0;
-            animation: drawBorderGlow 15s ease forwards;
-            filter: blur(4px);
-        }
-
-        @keyframes drawBorderGlow {
-            0% {
-                stroke-dashoffset: 1000;
-                opacity: 0;
-            }
-            15% {
-                opacity: 0.3;
-            }
-            30% {
-                opacity: 0.5;
-            }
-            60% {
-                opacity: 0.7;
-            }
-            85% {
-                opacity: 0.5;
-            }
-            100% {
-                stroke-dashoffset: 0;
-                opacity: 0.3;
-            }
-        }
-
-        /* Inner square (background logo) */
-        .loading-square-inner {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            right: 6px;
-            bottom: 6px;
-            border-radius: 12px;
-            background: #fafbff;
+        /* Logo container (no background box) */
+        .logo-slides-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             z-index: 1;
-            opacity: 0.4;
-            animation: revealSquare 15s ease forwards;
         }
 
-        @keyframes revealSquare {
-            0% {
-                opacity: 0.4;
-            }
-            20% {
-                opacity: 0.6;
-            }
-            40% {
-                opacity: 0.75;
-            }
-            60% {
-                opacity: 0.85;
-            }
-            80% {
-                opacity: 0.95;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Logo items inside square */
         .logo-slide {
             position: absolute;
             width: 100%;
@@ -231,9 +161,9 @@
         }
 
         .logo-slide-img {
-            width: clamp(55px, 10vw, 75px);
-            height: clamp(55px, 10vw, 75px);
-            border-radius: 14px;
+            width: clamp(50px, 9vw, 70px);
+            height: clamp(50px, 9vw, 70px);
+            border-radius: 12px;
             object-fit: cover;
             background: #f5f6fa;
         }
@@ -968,43 +898,31 @@
         <div class="splash-container">
             <!-- Loading Square -->
             <div class="loading-square-wrapper">
-                <div class="loading-square-container">
-                    <!-- SVG Border Loading -->
-                    <svg class="loading-border-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Border dasar (samar) -->
-                        <rect x="3" y="3" width="124" height="124" class="loading-border-rect" />
-                        <!-- Border glow -->
-                        <rect x="3" y="3" width="124" height="124" class="loading-border-glow" />
-                        <!-- Border progress -->
-                        <rect x="3" y="3" width="124" height="124" class="loading-border-progress" />
-                    </svg>
+                <!-- SVG Border Loading -->
+                <svg class="loading-border-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="114" height="114" class="loading-border-base" />
+                    <rect x="3" y="3" width="114" height="114" class="loading-border-progress" />
+                </svg>
 
-                    <!-- Inner square with logos -->
-                    <div class="loading-square-inner" id="loadingSquareInner">
-                        <!-- Kali Linux -->
-                        <div class="logo-slide active" data-index="0">
-                            <img src="kalilinux.jpg" alt="Kali Linux" class="logo-slide-img">
-                        </div>
-                        <!-- Andrax -->
-                        <div class="logo-slide" data-index="1">
-                            <img src="andrax.jpg" alt="Andrax" class="logo-slide-img">
-                        </div>
-                        <!-- NetHunter -->
-                        <div class="logo-slide" data-index="2">
-                            <img src="nethunter.jpg" alt="NetHunter" class="logo-slide-img">
-                        </div>
-                        <!-- Parrot OS -->
-                        <div class="logo-slide" data-index="3">
-                            <img src="parrotos.png" alt="Parrot OS" class="logo-slide-img">
-                        </div>
-                        <!-- Debian -->
-                        <div class="logo-slide" data-index="4">
-                            <img src="debian.png" alt="Debian" class="logo-slide-img">
-                        </div>
-                        <!-- Ubuntu -->
-                        <div class="logo-slide" data-index="5">
-                            <img src="ubuntu.png" alt="Ubuntu" class="logo-slide-img">
-                        </div>
+                <!-- Logo slides -->
+                <div class="logo-slides-container">
+                    <div class="logo-slide active" data-index="0">
+                        <img src="kalilinux.png" alt="Kali Linux" class="logo-slide-img">
+                    </div>
+                    <div class="logo-slide" data-index="1">
+                        <img src="andrax.jpg" alt="Andrax" class="logo-slide-img">
+                    </div>
+                    <div class="logo-slide" data-index="2">
+                        <img src="nethunter.jpg" alt="NetHunter" class="logo-slide-img">
+                    </div>
+                    <div class="logo-slide" data-index="3">
+                        <img src="parrotos.png" alt="Parrot OS" class="logo-slide-img">
+                    </div>
+                    <div class="logo-slide" data-index="4">
+                        <img src="debian.png" alt="Debian" class="logo-slide-img">
+                    </div>
+                    <div class="logo-slide" data-index="5">
+                        <img src="ubuntu.png" alt="Ubuntu" class="logo-slide-img">
                     </div>
                 </div>
             </div>
