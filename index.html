@@ -56,25 +56,152 @@
             }
         }
 
-        /* Loading Square */
+        /* Loading Square - SVG Border */
         .loading-square-wrapper {
             position: relative;
-            width: clamp(180px, 30vw, 240px);
-            height: clamp(180px, 30vw, 240px);
+            width: clamp(100px, 18vw, 130px);
+            height: clamp(100px, 18vw, 130px);
         }
 
-        .loading-square {
+        .loading-square-container {
+            position: relative;
             width: 100%;
             height: 100%;
-            border: 2px solid #e0e5f5;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
+        }
+
+        /* SVG untuk border animasi */
+        .loading-border-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .loading-border-rect {
+            fill: none;
+            stroke: #dce3f5;
+            stroke-width: 3;
+            rx: 16;
+            ry: 16;
+        }
+
+        .loading-border-progress {
+            fill: none;
+            stroke: #4F6EF7;
+            stroke-width: 3;
+            stroke-linecap: round;
+            rx: 16;
+            ry: 16;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawBorder 15s ease forwards;
+        }
+
+        @keyframes drawBorder {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+            10% {
+                stroke-dashoffset: 900;
+            }
+            25% {
+                stroke-dashoffset: 750;
+            }
+            40% {
+                stroke-dashoffset: 600;
+            }
+            55% {
+                stroke-dashoffset: 450;
+            }
+            70% {
+                stroke-dashoffset: 300;
+            }
+            85% {
+                stroke-dashoffset: 150;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Glow effect pada border progres */
+        .loading-border-glow {
+            fill: none;
+            stroke: #4F6EF7;
+            stroke-width: 6;
+            stroke-linecap: round;
+            rx: 16;
+            ry: 16;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            opacity: 0;
+            animation: drawBorderGlow 15s ease forwards;
+            filter: blur(4px);
+        }
+
+        @keyframes drawBorderGlow {
+            0% {
+                stroke-dashoffset: 1000;
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.3;
+            }
+            30% {
+                opacity: 0.5;
+            }
+            60% {
+                opacity: 0.7;
+            }
+            85% {
+                opacity: 0.5;
+            }
+            100% {
+                stroke-dashoffset: 0;
+                opacity: 0.3;
+            }
+        }
+
+        /* Inner square (background logo) */
+        .loading-square-inner {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border-radius: 12px;
             background: #fafbff;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 32px rgba(79, 110, 247, 0.06);
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0.4;
+            animation: revealSquare 15s ease forwards;
+        }
+
+        @keyframes revealSquare {
+            0% {
+                opacity: 0.4;
+            }
+            20% {
+                opacity: 0.6;
+            }
+            40% {
+                opacity: 0.75;
+            }
+            60% {
+                opacity: 0.85;
+            }
+            80% {
+                opacity: 0.95;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         /* Logo items inside square */
@@ -83,10 +210,8 @@
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0.6rem;
             opacity: 0;
             transform: scale(0.9);
             filter: blur(6px);
@@ -106,73 +231,11 @@
         }
 
         .logo-slide-img {
-            width: clamp(60px, 10vw, 80px);
-            height: clamp(60px, 10vw, 80px);
-            border-radius: 16px;
+            width: clamp(55px, 10vw, 75px);
+            height: clamp(55px, 10vw, 75px);
+            border-radius: 14px;
             object-fit: cover;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
             background: #f5f6fa;
-        }
-
-        .logo-slide span {
-            font-size: clamp(0.7rem, 1.2vw, 0.8rem);
-            font-weight: 600;
-            color: #4a4a6a;
-            letter-spacing: 0.3px;
-        }
-
-        /* Progress dots */
-        .progress-dots {
-            display: flex;
-            gap: 8px;
-            margin-top: 1.25rem;
-            justify-content: center;
-        }
-
-        .progress-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #dce3f5;
-            transition: all 0.5s ease;
-        }
-
-        .progress-dot.done {
-            background: #4F6EF7;
-            box-shadow: 0 0 8px rgba(79, 110, 247, 0.4);
-        }
-
-        .progress-dot.current {
-            background: #4F6EF7;
-            animation: pulseDot 1s ease-in-out infinite;
-        }
-
-        @keyframes pulseDot {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 4px rgba(79, 110, 247, 0.3); }
-            50% { transform: scale(1.6); box-shadow: 0 0 14px rgba(79, 110, 247, 0.6); }
-        }
-
-        /* Border glow animation */
-        .loading-square::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 22px;
-            border: 2px solid transparent;
-            background: linear-gradient(135deg, #4F6EF7, #6A84FF, #4F6EF7) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.7s ease;
-        }
-
-        .loading-square.glow::after {
-            opacity: 1;
         }
 
         /* Splash Text */
@@ -798,11 +861,6 @@
             .hero-card {
                 max-width: 100%;
             }
-
-            .loading-square-wrapper {
-                width: clamp(150px, 40vw, 200px);
-                height: clamp(150px, 40vw, 200px);
-            }
         }
 
         @media (max-width: 768px) {
@@ -898,11 +956,6 @@
                 height: 20px;
             }
 
-            .loading-square-wrapper {
-                width: clamp(130px, 50vw, 160px);
-                height: clamp(130px, 50vw, 160px);
-            }
-
             .splash-container {
                 gap: 1.75rem;
             }
@@ -915,46 +968,44 @@
         <div class="splash-container">
             <!-- Loading Square -->
             <div class="loading-square-wrapper">
-                <div class="loading-square glow" id="loadingSquare">
-                    <!-- Kali Linux -->
-                    <div class="logo-slide active" data-index="0">
-                        <img src="kalilinux.jpg" alt="Kali Linux" class="logo-slide-img">
-                        <span>Kali Linux</span>
+                <div class="loading-square-container">
+                    <!-- SVG Border Loading -->
+                    <svg class="loading-border-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Border dasar (samar) -->
+                        <rect x="3" y="3" width="124" height="124" class="loading-border-rect" />
+                        <!-- Border glow -->
+                        <rect x="3" y="3" width="124" height="124" class="loading-border-glow" />
+                        <!-- Border progress -->
+                        <rect x="3" y="3" width="124" height="124" class="loading-border-progress" />
+                    </svg>
+
+                    <!-- Inner square with logos -->
+                    <div class="loading-square-inner" id="loadingSquareInner">
+                        <!-- Kali Linux -->
+                        <div class="logo-slide active" data-index="0">
+                            <img src="kalilinux.jpg" alt="Kali Linux" class="logo-slide-img">
+                        </div>
+                        <!-- Andrax -->
+                        <div class="logo-slide" data-index="1">
+                            <img src="andrax.jpg" alt="Andrax" class="logo-slide-img">
+                        </div>
+                        <!-- NetHunter -->
+                        <div class="logo-slide" data-index="2">
+                            <img src="nethunter.jpg" alt="NetHunter" class="logo-slide-img">
+                        </div>
+                        <!-- Parrot OS -->
+                        <div class="logo-slide" data-index="3">
+                            <img src="parrotos.png" alt="Parrot OS" class="logo-slide-img">
+                        </div>
+                        <!-- Debian -->
+                        <div class="logo-slide" data-index="4">
+                            <img src="debian.png" alt="Debian" class="logo-slide-img">
+                        </div>
+                        <!-- Ubuntu -->
+                        <div class="logo-slide" data-index="5">
+                            <img src="ubuntu.png" alt="Ubuntu" class="logo-slide-img">
+                        </div>
                     </div>
-                    <!-- Andrax -->
-                    <div class="logo-slide" data-index="1">
-                        <img src="andrax.jpg" alt="Andrax" class="logo-slide-img">
-                        <span>Andrax</span>
-                    </div>
-                    <!-- NetHunter -->
-                    <div class="logo-slide" data-index="2">
-                        <img src="nethunter.jpg" alt="NetHunter" class="logo-slide-img">
-                        <span>NetHunter</span>
-                    </div>
-                    <!-- Parrot OS -->
-                    <div class="logo-slide" data-index="3">
-                        <img src="parrotos.png" alt="Parrot OS" class="logo-slide-img">
-                        <span>Parrot OS</span>
-                    </div>
-                    <!-- Debian -->
-                    <div class="logo-slide" data-index="4">
-                        <img src="debian.png" alt="Debian" class="logo-slide-img">
-                        <span>Debian</span>
-                    </div>
-                    <!-- Ubuntu -->
-                    <div class="logo-slide" data-index="5">
-                        <img src="ubuntu.png" alt="Ubuntu" class="logo-slide-img">
-                        <span>Ubuntu</span>
-                    </div>
-                </div>
-                <!-- Progress Dots -->
-                <div class="progress-dots" id="progressDots">
-                    <span class="progress-dot current"></span>
-                    <span class="progress-dot"></span>
-                    <span class="progress-dot"></span>
-                    <span class="progress-dot"></span>
-                    <span class="progress-dot"></span>
-                    <span class="progress-dot"></span>
                 </div>
             </div>
 
@@ -1147,68 +1198,42 @@
         // Splash Screen Logic
         (function() {
             const slides = document.querySelectorAll('.logo-slide');
-            const dots = document.querySelectorAll('.progress-dot');
-            const loadingSquare = document.getElementById('loadingSquare');
             const totalSlides = slides.length;
-            const totalDuration = 15000; // 15 detik
-            const slideInterval = totalDuration / totalSlides; // 2500ms per slide
+            const totalDuration = 15000;
+            const slideInterval = totalDuration / totalSlides;
             let currentIndex = 0;
 
             function showSlide(index) {
-                // Remove active from all slides
                 slides.forEach(slide => {
                     slide.classList.remove('active');
                     slide.classList.remove('exit');
                 });
 
-                // Add exit to current
                 const currentSlide = document.querySelector('.logo-slide.active');
                 if (currentSlide) {
                     currentSlide.classList.add('exit');
                 }
 
-                // Show new slide
                 setTimeout(() => {
                     slides.forEach(slide => {
                         slide.classList.remove('exit');
                     });
                     slides[index].classList.add('active');
-
-                    // Update dots
-                    dots.forEach((dot, i) => {
-                        dot.classList.remove('done', 'current');
-                        if (i < index) {
-                            dot.classList.add('done');
-                        } else if (i === index) {
-                            dot.classList.add('current');
-                        }
-                    });
-
-                    // Glow effect on square
-                    loadingSquare.classList.add('glow');
-                    setTimeout(() => {
-                        loadingSquare.classList.remove('glow');
-                    }, 600);
-
                 }, 350);
+
+                currentIndex = index;
             }
 
-            // Initial state
-            dots[0].classList.add('current');
-
-            // Cycle through slides
             function nextSlide() {
-                currentIndex++;
-                if (currentIndex >= totalSlides) {
-                    currentIndex = 0;
+                let next = currentIndex + 1;
+                if (next >= totalSlides) {
+                    next = 0;
                 }
-                showSlide(currentIndex);
+                showSlide(next);
             }
 
-            // Start the cycle
             const slideTimer = setInterval(nextSlide, slideInterval);
 
-            // After total duration, hide splash and show main
             setTimeout(function() {
                 clearInterval(slideTimer);
                 const splash = document.getElementById('splashScreen');
