@@ -44,11 +44,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 90%;
-            max-width: 650px;
-            gap: 3rem;
+            gap: 2.5rem;
             opacity: 0;
-            animation: fadeInSplash 1s ease forwards;
+            animation: fadeInSplash 0.8s ease forwards;
             animation-delay: 0.2s;
         }
 
@@ -58,8 +56,128 @@
             }
         }
 
+        /* Loading Square */
+        .loading-square-wrapper {
+            position: relative;
+            width: clamp(180px, 30vw, 240px);
+            height: clamp(180px, 30vw, 240px);
+        }
+
+        .loading-square {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #e0e5f5;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: #fafbff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(79, 110, 247, 0.06);
+        }
+
+        /* Logo items inside square */
+        .logo-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            opacity: 0;
+            transform: scale(0.9);
+            filter: blur(6px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+        }
+
+        .logo-slide.exit {
+            opacity: 0;
+            transform: scale(1.05);
+            filter: blur(4px);
+        }
+
+        .logo-slide-img {
+            width: clamp(60px, 10vw, 80px);
+            height: clamp(60px, 10vw, 80px);
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            background: #f5f6fa;
+        }
+
+        .logo-slide span {
+            font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+            font-weight: 600;
+            color: #4a4a6a;
+            letter-spacing: 0.3px;
+        }
+
+        /* Progress dots */
+        .progress-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 1.25rem;
+            justify-content: center;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #dce3f5;
+            transition: all 0.5s ease;
+        }
+
+        .progress-dot.done {
+            background: #4F6EF7;
+            box-shadow: 0 0 8px rgba(79, 110, 247, 0.4);
+        }
+
+        .progress-dot.current {
+            background: #4F6EF7;
+            animation: pulseDot 1s ease-in-out infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 4px rgba(79, 110, 247, 0.3); }
+            50% { transform: scale(1.6); box-shadow: 0 0 14px rgba(79, 110, 247, 0.6); }
+        }
+
+        /* Border glow animation */
+        .loading-square::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 22px;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #4F6EF7, #6A84FF, #4F6EF7) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        .loading-square.glow::after {
+            opacity: 1;
+        }
+
+        /* Splash Text */
         .splash-text {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.3rem);
             font-weight: 500;
             color: #4F6EF7;
             letter-spacing: 0.3px;
@@ -70,117 +188,6 @@
         @keyframes pulseText {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.45; }
-        }
-
-        /* Logo Scroller */
-        .logo-scroller-section {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .logo-scroller-wrapper {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .logo-scroller-wrapper::before,
-        .logo-scroller-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 70px;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .logo-scroller-wrapper::before {
-            left: 0;
-            background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0) 100%);
-        }
-
-        .logo-scroller-wrapper::after {
-            right: 0;
-            background: linear-gradient(to left, #ffffff 0%, rgba(255,255,255,0) 100%);
-        }
-
-        .logo-scroller {
-            display: flex;
-            gap: 2rem;
-            animation: scrollLogos 22s linear infinite;
-            width: max-content;
-            align-items: center;
-        }
-
-        @keyframes scrollLogos {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .logo-item {
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .logo-img {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            object-fit: cover;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #f5f6fa;
-        }
-
-        .logo-item span {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #6a6a88;
-            letter-spacing: 0.3px;
-        }
-
-        /* Loading Bar */
-        .splash-loader {
-            width: 100%;
-            max-width: 380px;
-        }
-
-        .loader-progress {
-            height: 3px;
-            background: #eef1ff;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .loader-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #4F6EF7, #6A84FF);
-            border-radius: 3px;
-            width: 0%;
-            animation: progressBar 15s ease forwards;
-        }
-
-        @keyframes progressBar {
-            0% { width: 0%; }
-            10% { width: 8%; }
-            25% { width: 22%; }
-            40% { width: 38%; }
-            55% { width: 55%; }
-            70% { width: 72%; }
-            85% { width: 88%; }
-            100% { width: 100%; }
         }
 
         /* ========== MAIN WEBSITE ========== */
@@ -792,14 +799,9 @@
                 max-width: 100%;
             }
 
-            .logo-img {
-                width: 58px;
-                height: 58px;
-                border-radius: 14px;
-            }
-
-            .splash-container {
-                gap: 2.5rem;
+            .loading-square-wrapper {
+                width: clamp(150px, 40vw, 200px);
+                height: clamp(150px, 40vw, 200px);
             }
         }
 
@@ -896,18 +898,13 @@
                 height: 20px;
             }
 
-            .logo-img {
-                width: 48px;
-                height: 48px;
-                border-radius: 12px;
-            }
-
-            .logo-scroller {
-                gap: 1.25rem;
+            .loading-square-wrapper {
+                width: clamp(130px, 50vw, 160px);
+                height: clamp(130px, 50vw, 160px);
             }
 
             .splash-container {
-                gap: 2rem;
+                gap: 1.75rem;
             }
         }
     </style>
@@ -916,73 +913,53 @@
     <!-- ========== SPLASH SCREEN ========== -->
     <div class="splash-screen" id="splashScreen">
         <div class="splash-container">
-            <!-- Teks -->
-            <p class="splash-text">Hi! Please wait...</p>
-
-            <!-- Logo Scroller -->
-            <div class="logo-scroller-section">
-                <div class="logo-scroller-wrapper">
-                    <div class="logo-scroller">
-                        <!-- Set 1 -->
-                        <div class="logo-item">
-                            <img src="kalilinux.jpg" alt="Kali Linux" class="logo-img">
-                            <span>Kali Linux</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="andrax.jpg" alt="Andrax" class="logo-img">
-                            <span>Andrax</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="nethunter.jpg" alt="NetHunter" class="logo-img">
-                            <span>NetHunter</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="parrotos.jpg" alt="Parrot OS" class="logo-img">
-                            <span>Parrot OS</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="debian.jpg" alt="Debian" class="logo-img">
-                            <span>Debian</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="ubuntu.jpg" alt="Ubuntu" class="logo-img">
-                            <span>Ubuntu</span>
-                        </div>
-                        <!-- Set 2 (duplicate for seamless loop) -->
-                        <div class="logo-item">
-                            <img src="kalilinux.jpg" alt="Kali Linux" class="logo-img">
-                            <span>Kali Linux</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="andrax.jpg" alt="Andrax" class="logo-img">
-                            <span>Andrax</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="nethunter.jpg" alt="NetHunter" class="logo-img">
-                            <span>NetHunter</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="parrotos.jpg" alt="Parrot OS" class="logo-img">
-                            <span>Parrot OS</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="debian.jpg" alt="Debian" class="logo-img">
-                            <span>Debian</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="ubuntu.jpg" alt="Ubuntu" class="logo-img">
-                            <span>Ubuntu</span>
-                        </div>
+            <!-- Loading Square -->
+            <div class="loading-square-wrapper">
+                <div class="loading-square glow" id="loadingSquare">
+                    <!-- Kali Linux -->
+                    <div class="logo-slide active" data-index="0">
+                        <img src="kalilinux.jpg" alt="Kali Linux" class="logo-slide-img">
+                        <span>Kali Linux</span>
+                    </div>
+                    <!-- Andrax -->
+                    <div class="logo-slide" data-index="1">
+                        <img src="andrax.jpg" alt="Andrax" class="logo-slide-img">
+                        <span>Andrax</span>
+                    </div>
+                    <!-- NetHunter -->
+                    <div class="logo-slide" data-index="2">
+                        <img src="nethunter.jpg" alt="NetHunter" class="logo-slide-img">
+                        <span>NetHunter</span>
+                    </div>
+                    <!-- Parrot OS -->
+                    <div class="logo-slide" data-index="3">
+                        <img src="parrotos.png" alt="Parrot OS" class="logo-slide-img">
+                        <span>Parrot OS</span>
+                    </div>
+                    <!-- Debian -->
+                    <div class="logo-slide" data-index="4">
+                        <img src="debian.png" alt="Debian" class="logo-slide-img">
+                        <span>Debian</span>
+                    </div>
+                    <!-- Ubuntu -->
+                    <div class="logo-slide" data-index="5">
+                        <img src="ubuntu.png" alt="Ubuntu" class="logo-slide-img">
+                        <span>Ubuntu</span>
                     </div>
                 </div>
-
-                <!-- Loading Bar -->
-                <div class="splash-loader">
-                    <div class="loader-progress">
-                        <div class="loader-progress-bar"></div>
-                    </div>
+                <!-- Progress Dots -->
+                <div class="progress-dots" id="progressDots">
+                    <span class="progress-dot current"></span>
+                    <span class="progress-dot"></span>
+                    <span class="progress-dot"></span>
+                    <span class="progress-dot"></span>
+                    <span class="progress-dot"></span>
+                    <span class="progress-dot"></span>
                 </div>
             </div>
+
+            <!-- Teks -->
+            <p class="splash-text">Hi! Please wait...</p>
         </div>
     </div>
 
@@ -1167,15 +1144,80 @@
     </div>
 
     <script>
-        // Splash Screen - 15 detik
-        window.addEventListener('DOMContentLoaded', function() {
+        // Splash Screen Logic
+        (function() {
+            const slides = document.querySelectorAll('.logo-slide');
+            const dots = document.querySelectorAll('.progress-dot');
+            const loadingSquare = document.getElementById('loadingSquare');
+            const totalSlides = slides.length;
+            const totalDuration = 15000; // 15 detik
+            const slideInterval = totalDuration / totalSlides; // 2500ms per slide
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                // Remove active from all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.classList.remove('exit');
+                });
+
+                // Add exit to current
+                const currentSlide = document.querySelector('.logo-slide.active');
+                if (currentSlide) {
+                    currentSlide.classList.add('exit');
+                }
+
+                // Show new slide
+                setTimeout(() => {
+                    slides.forEach(slide => {
+                        slide.classList.remove('exit');
+                    });
+                    slides[index].classList.add('active');
+
+                    // Update dots
+                    dots.forEach((dot, i) => {
+                        dot.classList.remove('done', 'current');
+                        if (i < index) {
+                            dot.classList.add('done');
+                        } else if (i === index) {
+                            dot.classList.add('current');
+                        }
+                    });
+
+                    // Glow effect on square
+                    loadingSquare.classList.add('glow');
+                    setTimeout(() => {
+                        loadingSquare.classList.remove('glow');
+                    }, 600);
+
+                }, 350);
+            }
+
+            // Initial state
+            dots[0].classList.add('current');
+
+            // Cycle through slides
+            function nextSlide() {
+                currentIndex++;
+                if (currentIndex >= totalSlides) {
+                    currentIndex = 0;
+                }
+                showSlide(currentIndex);
+            }
+
+            // Start the cycle
+            const slideTimer = setInterval(nextSlide, slideInterval);
+
+            // After total duration, hide splash and show main
             setTimeout(function() {
+                clearInterval(slideTimer);
                 const splash = document.getElementById('splashScreen');
                 const main = document.getElementById('mainContent');
                 splash.classList.add('hidden');
                 main.classList.add('show');
-            }, 15000);
-        });
+            }, totalDuration);
+
+        })();
 
         // Mobile Menu
         function toggleMenu() {
