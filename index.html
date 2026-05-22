@@ -24,46 +24,42 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 6rem;
+            padding: 1rem 5%;
             background: #ffffff;
             border-bottom: 1px solid #e8ecf4;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #1a1a2e;
+            color: #0d0d1f;
             letter-spacing: -0.5px;
             text-decoration: none;
+            white-space: nowrap;
         }
 
-        .logo-img {
-            height: 40px;
-            width: auto;
-            margin-right: 0;
-            border-radius: 4px;
+        .logo span {
+            color: #4F6EF7;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 1.5rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #4a4a6a;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -73,14 +69,33 @@
         .nav-cta {
             background: #4F6EF7;
             color: #ffffff !important;
-            padding: 0.6rem 1.5rem;
+            padding: 0.5rem 1.25rem;
             border-radius: 6px;
             font-weight: 600;
             transition: background 0.2s ease;
+            font-size: 0.85rem;
         }
 
         .nav-cta:hover {
             background: #3d5ce5;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #0d0d1f;
+            margin: 5px 0;
+            transition: 0.3s;
         }
 
         /* Hero Section */
@@ -88,36 +103,37 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 5rem 6rem;
+            padding: 4rem 5%;
             background: #ffffff;
-            min-height: 85vh;
-            gap: 4rem;
+            min-height: auto;
+            gap: 2.5rem;
         }
 
         .hero-content {
             flex: 1;
-            max-width: 600px;
+            min-width: 0;
         }
 
         .hero-badge {
             display: inline-block;
             background: #eef1ff;
             color: #4F6EF7;
-            padding: 0.4rem 1rem;
+            padding: 0.35rem 0.9rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             letter-spacing: 0.5px;
         }
 
         .hero-content h1 {
-            font-size: 3.2rem;
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
             font-weight: 800;
             line-height: 1.2;
             color: #0d0d1f;
-            margin-bottom: 1.25rem;
-            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            word-break: break-word;
         }
 
         .hero-content h1 span {
@@ -125,50 +141,51 @@
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
             color: #5a5a7a;
-            margin-bottom: 2rem;
-            max-width: 480px;
+            margin-bottom: 1.75rem;
+            max-width: 500px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
         .btn-primary {
             background: #4F6EF7;
             color: #ffffff;
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
             border: 2px solid #4F6EF7;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .btn-primary:hover {
             background: #3d5ce5;
             border-color: #3d5ce5;
-            transform: translateY(-1px);
             box-shadow: 0 8px 24px rgba(79, 110, 247, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             color: #4F6EF7;
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
             border: 2px solid #4F6EF7;
+            white-space: nowrap;
         }
 
         .btn-secondary:hover {
@@ -180,48 +197,44 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            min-width: 0;
         }
 
         .hero-card {
             background: #ffffff;
             border: 1px solid #e0e5f5;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             box-shadow: 0 20px 50px rgba(79, 110, 247, 0.08);
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
         }
 
         .terminal-bar {
             display: flex;
-            gap: 8px;
-            margin-bottom: 1.5rem;
+            gap: 6px;
+            margin-bottom: 1.25rem;
         }
 
         .terminal-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
 
-        .terminal-dot.red {
-            background: #ff5f57;
-        }
-        .terminal-dot.yellow {
-            background: #ffbd2e;
-        }
-        .terminal-dot.green {
-            background: #28ca41;
-        }
+        .terminal-dot.red { background: #ff5f57; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #28ca41; }
 
         .terminal-content {
             font-family: 'Fira Code', 'Consolas', monospace;
-            font-size: 0.9rem;
+            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
             color: #2d2d4f;
+            word-break: break-word;
         }
 
         .terminal-line {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .terminal-prompt {
@@ -231,8 +244,8 @@
 
         .terminal-cursor {
             display: inline-block;
-            width: 8px;
-            height: 16px;
+            width: 7px;
+            height: 14px;
             background: #4F6EF7;
             animation: blink 1s step-end infinite;
             vertical-align: middle;
@@ -240,63 +253,72 @@
         }
 
         @keyframes blink {
-            50% {
-                opacity: 0;
-            }
+            50% { opacity: 0; }
         }
 
         .terminal-output {
             color: #5a5a7a;
-            margin-top: 0.75rem;
+            margin-top: 0.6rem;
             padding-left: 0.5rem;
             border-left: 2px solid #4F6EF7;
         }
 
-        /* Services Section */
+        /* Sections General */
+        .services, .courses, .cta-section {
+            padding: 4rem 5%;
+        }
+
         .services {
-            padding: 6rem 6rem;
             background: #f8f9fd;
+        }
+
+        .courses {
+            background: #ffffff;
         }
 
         .section-label {
             text-align: center;
             color: #4F6EF7;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
             font-weight: 700;
             color: #0d0d1f;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.5px;
+            word-break: break-word;
         }
 
         .section-subtitle {
             text-align: center;
             color: #5a5a7a;
-            margin-bottom: 3.5rem;
-            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .services-grid {
+        /* Grids */
+        .services-grid, .courses-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
         }
 
         .service-card {
             background: #ffffff;
             border: 1px solid #e8ecf4;
             border-radius: 12px;
-            padding: 2rem 1.75rem;
+            padding: 1.75rem 1.5rem;
             transition: all 0.3s ease;
-            position: relative;
         }
 
         .service-card:hover {
@@ -306,35 +328,23 @@
         }
 
         .service-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #0d0d1f;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
         }
 
         .service-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #5a5a7a;
             line-height: 1.5;
-        }
-
-        /* Courses Section */
-        .courses {
-            padding: 6rem 6rem;
-            background: #ffffff;
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
         }
 
         .course-card {
             background: #ffffff;
             border: 1px solid #e8ecf4;
             border-radius: 12px;
-            padding: 2rem 1.75rem;
+            padding: 1.75rem 1.5rem;
             transition: all 0.3s ease;
             border-top: 3px solid #4F6EF7;
         }
@@ -345,47 +355,48 @@
         }
 
         .course-card h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #0d0d1f;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .course-tag {
             display: inline-block;
             background: #eef1ff;
             color: #4F6EF7;
-            padding: 0.25rem 0.75rem;
+            padding: 0.2rem 0.65rem;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem;
         }
 
         .course-card p {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #5a5a7a;
             line-height: 1.5;
         }
 
         /* CTA Section */
         .cta-section {
-            padding: 5rem 6rem;
             background: linear-gradient(135deg, #4F6EF7 0%, #5B7CFF 50%, #6A84FF 100%);
             text-align: center;
             color: #ffffff;
+            padding: 4rem 5%;
         }
 
         .cta-section h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.5px;
+            word-break: break-word;
         }
 
         .cta-section p {
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
+            font-size: clamp(0.85rem, 1.3vw, 1rem);
+            margin-bottom: 1.75rem;
             opacity: 0.9;
             max-width: 550px;
             margin-left: auto;
@@ -394,7 +405,7 @@
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -402,33 +413,34 @@
         .btn-white {
             background: #ffffff;
             color: #4F6EF7;
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .btn-white:hover {
             background: #f0f2ff;
-            transform: translateY(-1px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
         .btn-outline-white {
             background: transparent;
             color: #ffffff;
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
             border: 2px solid #ffffff;
+            white-space: nowrap;
         }
 
         .btn-outline-white:hover {
@@ -439,42 +451,42 @@
         footer {
             background: #0d0d1f;
             color: #c5c5d8;
-            padding: 3rem 6rem 2rem;
+            padding: 3rem 5% 2rem;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .footer-brand .logo-footer {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
         }
 
-        .footer-brand .logo-img-footer {
-            height: 36px;
-            width: auto;
-            border-radius: 4px;
+        .footer-brand .logo-footer span {
+            color: #6A84FF;
         }
 
         .footer-brand p {
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #8a8aa8;
             max-width: 300px;
+            margin-top: 0.5rem;
+            line-height: 1.5;
         }
 
         .footer-links h4 {
             color: #ffffff;
             font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
         }
 
         .footer-links ul {
@@ -482,13 +494,13 @@
         }
 
         .footer-links ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .footer-links ul li a {
             color: #8a8aa8;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: color 0.2s ease;
         }
 
@@ -498,16 +510,18 @@
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             margin-top: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
             color: #8a8aa8;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s ease;
+            white-space: nowrap;
         }
 
         .social-links a:hover {
@@ -520,8 +534,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #6a6a88;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .footer-bottom a {
@@ -532,12 +548,12 @@
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 28px;
-            right: 28px;
+            bottom: 24px;
+            right: 24px;
             background: #4F6EF7;
             color: #ffffff;
-            width: 56px;
-            height: 56px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -555,8 +571,8 @@
         }
 
         .whatsapp-float svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: #ffffff;
         }
 
@@ -567,57 +583,136 @@
         }
 
         .phone-icon svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 5%;
+                gap: 2rem;
+            }
+
+            .hero-content p {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-card {
+                max-width: 100%;
+            }
+
             .services-grid,
             .courses-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            nav {
-                padding: 1.25rem 2rem;
-            }
-            .hero {
-                padding: 3rem 2rem;
-                flex-direction: column;
-            }
-            .hero-content h1 {
-                font-size: 2.4rem;
-            }
-            .services,
-            .courses,
-            .cta-section,
-            footer {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 1rem 5%;
+                border-bottom: 1px solid #e8ecf4;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                gap: 0.75rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .nav-cta {
+                text-align: center;
+                width: 100%;
+                display: block;
+                padding: 0.6rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
             .services-grid,
             .courses-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
-            .nav-links {
-                display: none;
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
+
+            .btn-primary,
+            .btn-secondary,
+            .btn-white,
+            .btn-outline-white {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                padding: 0.7rem 1.25rem;
+                font-size: 0.85rem;
+            }
+
             .hero-content h1 {
-                font-size: 1.9rem;
+                font-size: 1.6rem;
             }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-            .footer-bottom {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
+
+            .whatsapp-float {
+                width: 46px;
+                height: 46px;
+                bottom: 18px;
+                right: 18px;
+            }
+
+            .whatsapp-float svg {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
@@ -625,15 +720,18 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">
-            <img src="devsec.png" alt="DevSec.id" class="logo-img">
-        </a>
-        <ul class="nav-links">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Layanan</a></li>
-            <li><a href="#">Kelas</a></li>
-            <li><a href="#">Tentang</a></li>
-            <li><a href="#" class="nav-cta">Kontak Kami</a></li>
+        <a href="#" class="logo">DevSec<span>.id</span></a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" onclick="closeMenu()">Beranda</a></li>
+            <li><a href="#services" onclick="closeMenu()">Layanan</a></li>
+            <li><a href="#courses" onclick="closeMenu()">Kelas</a></li>
+            <li><a href="#" onclick="closeMenu()">Tentang</a></li>
+            <li><a href="https://wa.me/6281230760785" class="nav-cta" target="_blank" rel="noopener" onclick="closeMenu()">Kontak Kami</a></li>
         </ul>
     </nav>
 
@@ -652,7 +750,7 @@
                     </span>
                     Hubungi via WhatsApp
                 </a>
-                <a href="#" class="btn-secondary">Jelajahi Kelas</a>
+                <a href="#courses" class="btn-secondary">Jelajahi Kelas</a>
             </div>
         </div>
         <div class="hero-visual">
@@ -667,11 +765,11 @@
                         <span class="terminal-prompt">devsec@indonesia:~$</span> whoami
                     </div>
                     <div class="terminal-output">DevSec.id - Secure Development</div>
-                    <div class="terminal-line" style="margin-top:12px;">
+                    <div class="terminal-line" style="margin-top:10px;">
                         <span class="terminal-prompt">devsec@indonesia:~$</span> cat mission.txt
                     </div>
                     <div class="terminal-output">Membangun ekosistem digital yang aman dan tangguh melalui layanan pengembangan dan pelatihan keamanan siber kelas dunia.</div>
-                    <div class="terminal-line" style="margin-top:12px;">
+                    <div class="terminal-line" style="margin-top:10px;">
                         <span class="terminal-prompt">devsec@indonesia:~$</span> <span class="terminal-cursor"></span>
                     </div>
                 </div>
@@ -754,9 +852,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
-                <div class="logo-footer">
-                    <img src="devsec.jpg" alt="DevSec.id" class="logo-img-footer">
-                </div>
+                <div class="logo-footer">DevSec<span>.id</span></div>
                 <p>Startup Indonesia yang berfokus pada jasa pengembangan web/aplikasi dan keamanan siber. Didirikan tahun 2024 oleh Yudi Ardata.</p>
                 <div class="social-links">
                     <a href="https://instagram.com/yudiardata" target="_blank" rel="noopener">@yudiardata</a>
@@ -793,5 +889,17 @@
             <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/>
         </svg>
     </a>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+    </script>
 </body>
 </html>
