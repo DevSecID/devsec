@@ -3,24 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DevSec.id - Developer Secure Indonesia | Professional Cyber Security & Development Services">
-    <meta name="keywords" content="DevSec, DevSec Indonesia, cyber security, red team, blue team, malware development, advanced hacking, Yudi Ardata, penetration testing, security training">
-    <meta name="author" content="DevSec Indonesia">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#4F6EF7">
-    <meta property="og:title" content="DevSec.id - Developer Secure Indonesia">
-    <meta property="og:description" content="Professional Cyber Security & Development Services. Red Team, Blue Team, Malware Development & Advanced Hacking Training.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://devsec.id">
-    <meta property="og:image" content="https://devsec.id/og-image.jpg">
-    <meta property="og:locale" content="id_ID">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DevSec.id - Developer Secure Indonesia">
-    <meta name="twitter:description" content="Professional Cyber Security & Development Services">
-    <meta name="twitter:image" content="https://devsec.id/og-image.jpg">
-    <title>DevSec.id - Developer Secure Indonesia | Cyber Security & Development</title>
+    <title>DevSec Indonesia - Developer Secure Indonesia</title>
     <style>
-        /* ============ GLOBAL RESET & CORE VARIABLES ============ */
+        /* ========== CSS RESET & ROOT VARIABLES ========== */
         *,
         *::before,
         *::after {
@@ -30,1031 +15,1075 @@
         }
 
         :root {
-            --royal-blue-primary: #4F6EF7;
-            --royal-blue-light: #6A84FF;
-            --royal-blue-medium: #5B7CFF;
-            --royal-blue-deep: #3A5ADF;
-            --royal-blue-soft: #8A9EFF;
+            --royal-blue-primary: #5B7CFF;
+            --royal-blue-secondary: #4F6EF7;
+            --royal-blue-accent: #6A84FF;
+            --royal-blue-dark: #3D5AD4;
+            --royal-blue-light: #A3B8FF;
+            --royal-blue-pale: #E8EDFF;
             --white-pure: #FFFFFF;
-            --white-off: #F8F9FA;
-            --white-smoke: #F4F5F7;
-            --white-cream: #FAFBFC;
-            --black-pure: #000000;
-            --black-soft: #1A1A1A;
-            --black-medium: #2D2D2D;
-            --black-light: #3D3D3D;
-            --gray-light: #E0E0E0;
-            --gray-lighter: #ECECEC;
-            --gray-medium: #9E9E9E;
-            --gray-dark: #616161;
-            --gray-darker: #4A4A4A;
-            --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
-            --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.18);
-            --shadow-2xl: 0 20px 60px rgba(0, 0, 0, 0.22);
-            --shadow-royal: 0 4px 20px rgba(79, 110, 247, 0.25);
-            --shadow-royal-lg: 0 8px 40px rgba(79, 110, 247, 0.35);
-            --radius-xs: 4px;
+            --white-off: #F8F9FC;
+            --white-cream: #F1F3FA;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --black-soft: #0A0C14;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.06);
+            --shadow-2xl: 0 30px 60px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-blue: 0 10px 30px rgba(91, 124, 255, 0.25);
+            --shadow-blue-lg: 0 20px 50px rgba(79, 110, 247, 0.3);
             --radius-sm: 6px;
             --radius-md: 10px;
-            --radius-lg: 14px;
-            --radius-xl: 18px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
             --radius-2xl: 24px;
             --radius-full: 9999px;
-            --transition-instant: 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            --transition-spring: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --font-primary: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-display: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif;
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-glacial: 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-            --font-alt: 'DM Sans', 'Inter', sans-serif;
-            --easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
-            --easing-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
-            --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
-        body.dark-mode {
-            --white-pure: #0A0A0B;
-            --white-off: #111113;
-            --white-smoke: #18191B;
-            --white-cream: #141516;
-            --black-pure: #FFFFFF;
-            --black-soft: #E8E8EA;
-            --black-medium: #C0C0C2;
-            --black-light: #A0A0A2;
-            --gray-light: #2A2A2D;
-            --gray-lighter: #222225;
-            --gray-medium: #6A6A6D;
-            --gray-dark: #808085;
-            --gray-darker: #909095;
-            --shadow-xs: 0 1px 3px rgba(255, 255, 255, 0.03);
-            --shadow-sm: 0 2px 8px rgba(255, 255, 255, 0.04);
-            --shadow-md: 0 4px 16px rgba(255, 255, 255, 0.06);
-            --shadow-lg: 0 8px 32px rgba(255, 255, 255, 0.08);
-            --shadow-xl: 0 12px 48px rgba(255, 255, 255, 0.10);
-            --shadow-2xl: 0 20px 60px rgba(255, 255, 255, 0.12);
-            --shadow-royal: 0 4px 20px rgba(106, 132, 255, 0.35);
-            --shadow-royal-lg: 0 8px 40px rgba(106, 132, 255, 0.45);
+        /* ========== DARK MODE VARIABLES ========== */
+        [data-theme="dark"] {
+            --white-pure: #0A0C14;
+            --white-off: #11151F;
+            --white-cream: #161B2A;
+            --gray-50: #1A1F30;
+            --gray-100: #1F2538;
+            --gray-200: #2A3045;
+            --gray-300: #3A4058;
+            --gray-400: #5A6080;
+            --gray-500: #8A90B0;
+            --gray-600: #A0A6C0;
+            --gray-700: #C0C5D8;
+            --gray-800: #D8DBE8;
+            --gray-900: #EEEFF5;
+            --black-soft: #F8F9FC;
+            --royal-blue-pale: #1A2545;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.35);
+            --shadow-2xl: 0 30px 60px rgba(0, 0, 0, 0.6), 0 10px 30px rgba(0, 0, 0, 0.4);
+            --shadow-blue: 0 10px 30px rgba(91, 124, 255, 0.3);
+            --shadow-blue-lg: 0 20px 50px rgba(79, 110, 247, 0.35);
         }
 
+        /* ========== GLOBAL STYLES ========== */
         html {
             scroll-behavior: smooth;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
         }
 
         body {
-            font-family: var(--font-primary);
-            background-color: var(--white-pure);
-            color: var(--black-soft);
+            font-family: var(--font-sans);
+            background-color: var(--white-off);
+            color: var(--gray-900);
             line-height: 1.6;
+            min-height: 100vh;
+            min-height: 100dvh;
             overflow-x: hidden;
             transition: background-color var(--transition-smooth), color var(--transition-smooth);
-            min-height: 100vh;
             position: relative;
-            letter-spacing: -0.01em;
-            font-weight: 400;
         }
 
-        /* ============ CUSTOM SCROLLBAR ============ */
-        ::-webkit-scrollbar {
-            width: 7px;
-            height: 7px;
+        body.no-scroll {
+            overflow: hidden;
         }
+
+        /* ========== SELECTION STYLES ========== */
+        ::selection {
+            background-color: var(--royal-blue-primary);
+            color: #FFFFFF;
+        }
+
+        ::-moz-selection {
+            background-color: var(--royal-blue-primary);
+            color: #FFFFFF;
+        }
+
+        /* ========== SCROLLBAR STYLES ========== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
         ::-webkit-scrollbar-track {
-            background: transparent;
+            background: var(--white-cream);
             border-radius: var(--radius-full);
         }
+
         ::-webkit-scrollbar-thumb {
-            background: var(--gray-light);
+            background: var(--royal-blue-light);
             border-radius: var(--radius-full);
             transition: background var(--transition-fast);
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--royal-blue-primary);
         }
-        ::-webkit-scrollbar-corner {
-            background: transparent;
-        }
 
-        /* ============ LOADING SCREEN ============ */
-        .loading-screen {
+        /* ========== SPLASH SCREEN ========== */
+        .splash-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--white-pure);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 0.7s ease, visibility 0.7s ease, transform 0.7s ease;
-            will-change: opacity, visibility;
-        }
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transform: scale(0.98);
-        }
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 36px;
-        }
-        .loading-spinner-wrapper {
-            position: relative;
-            width: 130px;
-            height: 130px;
-        }
-        .loading-spinner-outer {
-            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-            border: 5px solid var(--gray-lighter);
-            border-top-color: var(--royal-blue-primary);
-            animation: spin-outer 1.3s linear infinite;
-        }
-        .loading-spinner-middle {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            width: 106px;
-            height: 106px;
-            border-radius: 50%;
-            border: 4px solid var(--gray-light);
-            border-right-color: var(--royal-blue-medium);
-            animation: spin-middle 0.9s linear infinite reverse;
-        }
-        .loading-spinner-inner {
-            position: absolute;
-            top: 28px;
-            left: 28px;
-            width: 74px;
-            height: 74px;
-            border-radius: 50%;
-            border: 3px solid var(--gray-lighter);
-            border-bottom-color: var(--royal-blue-light);
-            animation: spin-inner 0.6s linear infinite;
-        }
-        .loading-spinner-core {
-            position: absolute;
-            top: 44px;
-            left: 44px;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-light));
-            animation: pulse-core 1.5s ease-in-out infinite;
-            box-shadow: var(--shadow-royal);
-        }
-        .loading-percentage {
-            font-family: var(--font-display);
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--royal-blue-primary);
-            letter-spacing: -0.5px;
-            transition: color 0.2s ease;
-        }
-        .loading-bar-container {
-            width: 380px;
-            max-width: 85vw;
-            height: 6px;
-            background: var(--gray-lighter);
-            border-radius: var(--radius-full);
-            overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-        }
-        .loading-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--royal-blue-primary), var(--royal-blue-medium), var(--royal-blue-light));
-            border-radius: var(--radius-full);
-            width: 0%;
-            transition: width 0.08s ease;
-            position: relative;
-            box-shadow: 0 0 12px rgba(79, 110, 247, 0.3);
-        }
-        .loading-bar-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -8px;
-            width: 16px;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: var(--radius-full);
-            animation: shimmer 0.8s ease-in-out infinite;
-        }
-        @keyframes spin-outer {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @keyframes spin-middle {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
-        }
-        @keyframes spin-inner {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @keyframes pulse-core {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.15); opacity: 0.8; }
-        }
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-        }
-
-        /* ============ WAIT MESSAGE SCREEN ============ */
-        .wait-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--white-pure);
+            height: 100dvh;
+            background-color: var(--white-pure);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-            will-change: opacity, visibility;
-        }
-        .wait-screen.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .wait-screen.fading {
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-        .wait-message-container {
-            text-align: center;
-            animation: fadeInScaleUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-        .wait-message-text {
-            font-family: var(--font-display);
-            font-size: 3.2rem;
-            font-weight: 400;
-            color: var(--royal-blue-primary);
-            letter-spacing: 1.5px;
-            line-height: 1.2;
-        }
-        .wait-message-sub {
-            font-family: var(--font-primary);
-            font-size: 1rem;
-            color: var(--gray-medium);
-            margin-top: 8px;
-            letter-spacing: 0.5px;
-            font-weight: 300;
-        }
-        .wait-dots-container {
-            display: inline-flex;
-            gap: 6px;
-            margin-left: 6px;
-            vertical-align: middle;
-        }
-        .wait-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--royal-blue-primary);
-            border-radius: 50%;
-            animation: dotSequence 1.6s ease-in-out infinite;
-            display: inline-block;
-        }
-        .wait-dot:nth-child(1) { animation-delay: 0s; }
-        .wait-dot:nth-child(2) { animation-delay: 0.18s; }
-        .wait-dot:nth-child(3) { animation-delay: 0.36s; }
-        @keyframes dotSequence {
-            0%, 80%, 100% { transform: scale(0.5); opacity: 0.3; }
-            40% { transform: scale(1.4); opacity: 1; }
-        }
-        @keyframes fadeInScaleUp {
-            0% { opacity: 0; transform: scale(0.85) translateY(20px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
+            transition: opacity var(--transition-slow), visibility var(--transition-slow);
+            cursor: default;
         }
 
-        /* ============ CARD HOMEPAGE (MAIN VIEW) ============ */
-        .card-homepage {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--white-pure);
-            z-index: 100;
+        .splash-screen.fade-out {
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.7s ease, visibility 0.7s ease;
-            overflow-y: auto;
-            overflow-x: hidden;
+            pointer-events: none;
         }
-        .card-homepage.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .card-homepage-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 60px 36px 80px;
+
+        .splash-content {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
             justify-content: center;
+            gap: 28px;
         }
-        .card-homepage-header {
-            text-align: center;
-            margin-bottom: 56px;
-            animation: fadeInUp 0.8s ease forwards;
+
+        .splash-logo-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: splashPulse 2s ease-in-out infinite;
+            box-shadow: var(--shadow-blue);
         }
-        .card-homepage-logo {
-            font-family: var(--font-display);
-            font-size: 2.8rem;
+
+        .splash-logo-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: none;
+            stroke: #FFFFFF;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @keyframes splashPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: var(--shadow-blue);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: var(--shadow-blue-lg);
+            }
+        }
+
+        .splash-text {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--black-pure);
-            letter-spacing: -1px;
-            margin-bottom: 6px;
+            color: var(--gray-800);
+            letter-spacing: -0.02em;
+            animation: splashTextFade 2s ease-in-out infinite;
         }
-        .card-homepage-logo span {
+
+        @keyframes splashTextFade {
+            0%,
+            100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .splash-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .splash-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background-color: var(--royal-blue-primary);
+            animation: splashDotBounce 1.4s ease-in-out infinite;
+        }
+
+        .splash-dot:nth-child(2) {
+            animation-delay: 0.2s;
+            background-color: var(--royal-blue-secondary);
+        }
+
+        .splash-dot:nth-child(3) {
+            animation-delay: 0.4s;
+            background-color: var(--royal-blue-accent);
+        }
+
+        @keyframes splashDotBounce {
+            0%,
+            80%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            40% {
+                transform: translateY(-12px);
+                opacity: 1;
+            }
+        }
+
+        .splash-progress {
+            width: 180px;
+            height: 3px;
+            background-color: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .splash-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--royal-blue-primary), var(--royal-blue-accent), var(--royal-blue-secondary));
+            border-radius: var(--radius-full);
+            width: 0%;
+            animation: splashProgress 8s linear forwards;
+        }
+
+        @keyframes splashProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .main-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 32px 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-slow), transform var(--transition-slow);
+        }
+
+        .main-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .header-logo {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-blue);
+            transition: transform var(--transition-bounce), box-shadow var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .header-logo:hover {
+            transform: scale(1.08) rotate(-5deg);
+            box-shadow: var(--shadow-blue-lg);
+        }
+
+        .header-logo svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #FFFFFF;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .header-title-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            transition: color var(--transition-smooth);
+        }
+
+        .header-title span {
             color: var(--royal-blue-primary);
         }
-        .card-homepage-tagline {
-            font-size: 1rem;
-            color: var(--gray-medium);
-            font-weight: 400;
-            letter-spacing: 0.3px;
+
+        .header-subtitle {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color var(--transition-smooth);
         }
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-            width: 100%;
-            animation: fadeInUp 0.9s ease forwards;
-            animation-delay: 0.2s;
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
-        .card-item {
-            background: var(--white-off);
-            border-radius: var(--radius-xl);
-            padding: 32px 24px 24px;
+
+        /* ========== DARK MODE TOGGLE ========== */
+        .dark-mode-toggle {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--gray-200);
+            background-color: var(--white-pure);
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all var(--transition-smooth);
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            border: 1.5px solid transparent;
-            min-height: 280px;
-            will-change: transform, box-shadow;
-        }
-        .card-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, var(--royal-blue-primary) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity var(--transition-slow);
-            z-index: 0;
-            pointer-events: none;
-        }
-        .card-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--royal-blue-primary);
-            background: var(--white-pure);
-        }
-        .card-item:hover::before {
-            opacity: 0.04;
-        }
-        .card-item:active {
-            transform: scale(0.97);
-            transition: transform var(--transition-instant);
-        }
-        .card-item-image {
-            width: 100%;
-            height: 160px;
-            border-radius: var(--radius-lg);
-            background: linear-gradient(135deg, var(--royal-blue-primary) 0%, var(--royal-blue-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-            box-shadow: var(--shadow-royal);
-            transition: transform var(--transition-bounce);
-        }
-        .card-item:hover .card-item-image {
-            transform: scale(1.03);
-        }
-        .card-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
-            transition: transform var(--transition-smooth);
-        }
-        .card-item-image-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            letter-spacing: 1px;
-        }
-        .card-item-category {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            padding: 5px 14px;
-            background: var(--royal-blue-primary);
-            color: #FFFFFF;
-            border-radius: var(--radius-full);
-            font-size: 0.7rem;
-            font-weight: 600;
-            z-index: 2;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-            box-shadow: var(--shadow-royal);
-        }
-        .card-item-title {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--black-pure);
-            position: relative;
-            z-index: 1;
-            letter-spacing: -0.3px;
-            line-height: 1.3;
-        }
-        .card-item-description {
-            font-size: 0.88rem;
-            color: var(--gray-dark);
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-            flex-grow: 1;
-        }
-        .card-item-link {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            color: var(--royal-blue-primary);
-            font-size: 0.85rem;
-            position: relative;
-            z-index: 1;
-            transition: gap var(--transition-fast);
-            margin-top: auto;
-        }
-        .card-item-link svg {
-            width: 16px;
-            height: 16px;
-            transition: transform var(--transition-fast);
-        }
-        .card-item:hover .card-item-link svg {
-            transform: translateX(4px);
-        }
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
+            outline: none;
         }
 
-        /* ============ DETAIL PAGE (FULL SCREEN) ============ */
+        .dark-mode-toggle:hover {
+            border-color: var(--royal-blue-primary);
+            box-shadow: var(--shadow-blue);
+            transform: rotate(15deg);
+        }
+
+        .dark-mode-toggle:active {
+            transform: scale(0.92) rotate(0deg);
+        }
+
+        .dark-mode-toggle svg {
+            width: 20px;
+            height: 20px;
+            transition: all var(--transition-smooth);
+            fill: none;
+            stroke: var(--gray-700);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        [data-theme="dark"] .dark-mode-toggle svg {
+            stroke: #FBBF24;
+        }
+
+        .dark-mode-toggle .icon-sun {
+            position: absolute;
+            opacity: 0;
+            transform: scale(0.5) rotate(-90deg);
+            transition: all var(--transition-smooth);
+        }
+
+        .dark-mode-toggle .icon-moon {
+            position: absolute;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            transition: all var(--transition-smooth);
+        }
+
+        [data-theme="dark"] .dark-mode-toggle .icon-sun {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        [data-theme="dark"] .dark-mode-toggle .icon-moon {
+            opacity: 0;
+            transform: scale(0.5) rotate(90deg);
+        }
+
+        /* ========== CARD GRID ========== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            padding: 8px 0;
+        }
+
+        .card {
+            background-color: var(--white-pure);
+            border-radius: var(--radius-xl);
+            padding: 36px 32px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-bounce);
+            border: 1.5px solid transparent;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            z-index: 1;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--royal-blue-primary), var(--royal-blue-accent), var(--royal-blue-secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-smooth);
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--royal-blue-pale);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:active {
+            transform: translateY(-4px) scale(0.98);
+            box-shadow: var(--shadow-lg);
+            transition: all 100ms ease;
+        }
+
+        .card-icon-wrapper {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--royal-blue-pale), rgba(91, 124, 255, 0.08));
+            transition: all var(--transition-smooth);
+        }
+
+        .card:hover .card-icon-wrapper {
+            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-secondary));
+            box-shadow: var(--shadow-blue);
+            transform: scale(1.05);
+        }
+
+        .card-icon-wrapper svg {
+            width: 26px;
+            height: 26px;
+            fill: none;
+            stroke: var(--royal-blue-primary);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all var(--transition-smooth);
+        }
+
+        .card:hover .card-icon-wrapper svg {
+            stroke: #FFFFFF;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+            transition: color var(--transition-smooth);
+        }
+
+        .card-description {
+            font-size: 0.92rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            transition: color var(--transition-smooth);
+            flex-grow: 1;
+        }
+
+        .card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            background-color: var(--royal-blue-pale);
+            color: var(--royal-blue-primary);
+            width: fit-content;
+            transition: all var(--transition-smooth);
+        }
+
+        .card:hover .card-badge {
+            background-color: var(--royal-blue-primary);
+            color: #FFFFFF;
+        }
+
+        .card-arrow {
+            position: absolute;
+            bottom: 28px;
+            right: 28px;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background-color: var(--white-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all var(--transition-bounce);
+        }
+
+        .card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card-arrow svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: var(--royal-blue-primary);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ========== DETAIL PAGE ========== */
         .detail-page {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--white-pure);
-            z-index: 200;
-            transform: translateX(100%);
-            transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background-color: var(--white-off);
+            z-index: 100;
             overflow-y: auto;
-            overflow-x: hidden;
-            will-change: transform;
-        }
-        .detail-page.active {
-            transform: translateX(0);
-        }
-        .detail-page-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px 40px 80px;
-        }
-        .detail-page-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 199;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            transform: translateY(40px);
+            transition: all var(--transition-smooth);
+            padding: 20px;
         }
-        .detail-page-backdrop.active {
+
+        .detail-page.active {
             opacity: 1;
             visibility: visible;
+            transform: translateY(0);
         }
-        .detail-page-header-image {
-            width: 100%;
-            height: 350px;
+
+        .detail-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 24px 100px;
+            background-color: var(--white-pure);
             border-radius: var(--radius-2xl);
-            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            min-height: calc(100vh - 80px);
+            min-height: calc(100dvh - 80px);
+            position: relative;
+            border: 1px solid var(--gray-200);
+        }
+
+        .detail-header-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
             margin-bottom: 32px;
-            box-shadow: var(--shadow-lg);
-            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-medium), var(--royal-blue-light));
+            background: linear-gradient(135deg, var(--royal-blue-pale), rgba(106, 132, 255, 0.1));
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
             position: relative;
         }
-        .detail-page-header-image img {
+
+        .detail-header-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        .detail-page-header-image-placeholder {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
-        .detail-page-title {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--black-pure);
-            margin-bottom: 8px;
-            letter-spacing: -1.5px;
-            line-height: 1.15;
-        }
-        .detail-page-subtitle {
-            font-size: 1.1rem;
-            color: var(--royal-blue-primary);
-            font-weight: 600;
-            margin-bottom: 28px;
-            letter-spacing: 0.2px;
-        }
-        .detail-page-content {
-            font-size: 1.05rem;
-            color: var(--black-medium);
-            line-height: 1.9;
-            margin-bottom: 32px;
-        }
-        .detail-page-content p {
-            margin-bottom: 16px;
-        }
-        .detail-page-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 24px;
-        }
-        .detail-page-card {
-            background: var(--white-off);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            border: 1px solid var(--gray-light);
-            transition: all var(--transition-smooth);
-        }
-        .detail-page-card:hover {
-            border-color: var(--royal-blue-primary);
-            box-shadow: var(--shadow-md);
-        }
-        .detail-page-card h4 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            color: var(--royal-blue-primary);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        .detail-page-card p {
-            font-size: 0.9rem;
-            color: var(--gray-dark);
-            line-height: 1.6;
-        }
-        .detail-page-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 16px;
-        }
-        .detail-page-list li {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--gray-light);
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            font-size: 0.95rem;
-            color: var(--black-medium);
-            transition: all var(--transition-fast);
-        }
-        .detail-page-list li:last-child {
-            border-bottom: none;
-        }
-        .detail-page-list li:hover {
-            color: var(--royal-blue-primary);
-            padding-left: 4px;
-        }
-        .detail-page-list-marker {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--royal-blue-primary);
-            margin-top: 6px;
-            flex-shrink: 0;
-        }
-        .detail-page-package-tag {
-            display: inline-block;
-            padding: 4px 14px;
-            border-radius: var(--radius-full);
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin: 4px 4px 4px 0;
-            letter-spacing: 0.3px;
-        }
-        .tag-newbie {
-            background: #E8F5E9;
-            color: #2E7D32;
-        }
-        .tag-pro {
-            background: #FFF3E0;
-            color: #E65100;
-        }
-        .tag-expert {
-            background: #FCE4EC;
-            color: #C62828;
-        }
-        body.dark-mode .tag-newbie {
-            background: #1B3A1B;
-            color: #66BB6A;
-        }
-        body.dark-mode .tag-pro {
-            background: #3A2010;
-            color: #FF9800;
-        }
-        body.dark-mode .tag-expert {
-            background: #3A1018;
-            color: #EF5350;
-        }
-        .detail-page-section-title {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--black-pure);
-            margin-top: 36px;
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--royal-blue-primary);
-            display: inline-block;
-            letter-spacing: -0.5px;
-        }
-        .detail-page-testimonial {
-            background: var(--white-off);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            margin-bottom: 16px;
-            border-left: 3px solid var(--royal-blue-primary);
-            transition: all var(--transition-smooth);
-        }
-        .detail-page-testimonial:hover {
-            box-shadow: var(--shadow-md);
-        }
-        .detail-page-testimonial-text {
-            font-style: italic;
-            color: var(--black-medium);
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-        .detail-page-testimonial-author {
-            font-weight: 600;
-            color: var(--royal-blue-primary);
-            font-size: 0.9rem;
-        }
-        .detail-page-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 18px;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-lg);
-            margin-bottom: 12px;
-            transition: all var(--transition-smooth);
-        }
-        .detail-page-contact-item:hover {
-            border-color: var(--royal-blue-primary);
-            box-shadow: var(--shadow-sm);
-        }
-        .detail-page-contact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFFFFF;
-            font-weight: 700;
-            font-size: 1.2rem;
-            flex-shrink: 0;
+            transition: transform var(--transition-glacial);
         }
 
-        /* ============ FLOATING BACK BUTTON ============ */
+        .detail-header-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .detail-header-image .image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-400);
+        }
+
+        .detail-header-image .image-placeholder svg {
+            width: 64px;
+            height: 64px;
+            stroke: var(--gray-300);
+        }
+
+        .detail-content h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+            transition: color var(--transition-smooth);
+        }
+
+        .detail-content .subtitle {
+            font-size: 1rem;
+            color: var(--royal-blue-primary);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .detail-content .divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--royal-blue-primary), var(--royal-blue-accent));
+            border-radius: var(--radius-full);
+            margin-bottom: 28px;
+        }
+
+        .detail-content p {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            line-height: 1.9;
+            margin-bottom: 20px;
+            transition: color var(--transition-smooth);
+        }
+
+        .detail-content .highlight-box {
+            background: linear-gradient(135deg, var(--royal-blue-pale), rgba(106, 132, 255, 0.05));
+            border-left: 4px solid var(--royal-blue-primary);
+            padding: 20px 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 24px 0;
+            font-weight: 500;
+            color: var(--gray-800);
+            transition: all var(--transition-smooth);
+        }
+
+        /* ========== PAKET KELAS TABLE ========== */
+        .paket-table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .paket-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            min-width: 700px;
+        }
+
+        .paket-table thead th {
+            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-secondary));
+            color: #FFFFFF;
+            padding: 16px 18px;
+            text-align: left;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .paket-table thead th:first-child {
+            border-radius: var(--radius-lg) 0 0 0;
+        }
+
+        .paket-table thead th:last-child {
+            border-radius: 0 var(--radius-lg) 0 0;
+        }
+
+        .paket-table tbody td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-700);
+            transition: all var(--transition-fast);
+        }
+
+        .paket-table tbody tr {
+            transition: background-color var(--transition-fast);
+        }
+
+        .paket-table tbody tr:hover {
+            background-color: var(--royal-blue-pale);
+        }
+
+        .paket-table tbody tr:last-child td:first-child {
+            border-radius: 0 0 0 var(--radius-lg);
+        }
+
+        .paket-table tbody tr:last-child td:last-child {
+            border-radius: 0 0 var(--radius-lg) 0;
+        }
+
+        .paket-table .badge-newbie {
+            background-color: #DBEAFE;
+            color: #1D4ED8;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
+        }
+
+        .paket-table .badge-pro {
+            background-color: #E0E7FF;
+            color: #4338CA;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
+        }
+
+        .paket-table .badge-expert {
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
+            color: #FFFFFF;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
+        }
+
+        [data-theme="dark"] .paket-table .badge-newbie {
+            background-color: #1E3A5F;
+            color: #93C5FD;
+        }
+
+        [data-theme="dark"] .paket-table .badge-pro {
+            background-color: #2A2359;
+            color: #A5B4FC;
+        }
+
+        /* ========== FLOATING BACK BUTTON ========== */
         .floating-back-btn {
             position: fixed;
-            bottom: 28px;
-            right: 28px;
+            bottom: 36px;
+            right: 36px;
             width: 56px;
             height: 56px;
-            border-radius: 50%;
-            background: var(--white-pure);
-            border: 2px solid var(--gray-light);
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-secondary));
+            color: #FFFFFF;
+            border: none;
             cursor: pointer;
-            z-index: 300;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-bounce);
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: var(--shadow-blue-lg);
+            z-index: 200;
+            transition: all var(--transition-bounce);
             opacity: 0;
             visibility: hidden;
-            transform: scale(0.7);
-            will-change: transform, opacity;
+            transform: translateY(20px) scale(0.8);
         }
+
         .floating-back-btn.visible {
             opacity: 1;
             visibility: visible;
-            transform: scale(1);
+            transform: translateY(0) scale(1);
         }
+
         .floating-back-btn:hover {
-            border-color: var(--royal-blue-primary);
-            box-shadow: var(--shadow-royal-lg);
-            transform: scale(1.08);
-            background: var(--royal-blue-primary);
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 24px 50px rgba(79, 110, 247, 0.45);
         }
-        .floating-back-btn:hover svg {
-            stroke: #FFFFFF;
-        }
+
         .floating-back-btn:active {
-            transform: scale(0.92);
+            transform: scale(0.9);
+            transition: all 100ms ease;
         }
+
         .floating-back-btn svg {
             width: 24px;
             height: 24px;
-            stroke: var(--black-medium);
-            stroke-width: 2.5;
             fill: none;
-            transition: stroke var(--transition-fast);
-        }
-        .floating-back-tooltip {
-            position: absolute;
-            right: 68px;
-            background: var(--black-pure);
-            color: var(--white-pure);
-            padding: 8px 16px;
-            border-radius: var(--radius-md);
-            font-size: 0.78rem;
-            font-weight: 500;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            box-shadow: var(--shadow-md);
-            transition: opacity var(--transition-fast);
-        }
-        .floating-back-btn:hover .floating-back-tooltip {
-            opacity: 1;
+            stroke: #FFFFFF;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        /* ============ DARK MODE TOGGLE (FLOATING) ============ */
-        .dark-mode-float {
-            position: fixed;
-            top: 28px;
-            right: 28px;
-            width: 48px;
-            height: 48px;
+        .floating-back-btn .btn-ripple {
+            position: absolute;
             border-radius: 50%;
-            background: var(--white-pure);
-            border: 2px solid var(--gray-light);
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: rippleEffect 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* ========== CLOSE BUTTON INSIDE DETAIL ========== */
+        .detail-close-top {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background-color: var(--white-cream);
+            border: none;
             cursor: pointer;
-            z-index: 301;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-bounce);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: var(--black-medium);
-            will-change: transform;
-        }
-        .dark-mode-float:hover {
-            border-color: var(--royal-blue-primary);
-            color: var(--royal-blue-primary);
-            box-shadow: var(--shadow-royal);
-            transform: scale(1.08);
-        }
-        .dark-mode-float:active {
-            transform: scale(0.92);
-        }
-        .dark-mode-float .icon-sun,
-        .dark-mode-float .icon-moon {
-            transition: opacity var(--transition-smooth), transform var(--transition-smooth);
-        }
-        body.dark-mode .dark-mode-float .icon-moon {
-            opacity: 0;
-            transform: rotate(90deg);
-        }
-        body.dark-mode .dark-mode-float .icon-sun {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
-        body:not(.dark-mode) .dark-mode-float .icon-sun {
-            opacity: 0;
-            transform: rotate(-90deg);
-        }
-        body:not(.dark-mode) .dark-mode-float .icon-moon {
-            opacity: 1;
-            transform: rotate(0deg);
+            transition: all var(--transition-smooth);
+            z-index: 10;
         }
 
-        /* ============ RESPONSIVE BREAKPOINTS ============ */
-        @media (max-width: 1200px) {
-            .cards-grid {
-                grid-template-columns: repeat(3, 1fr);
+        .detail-close-top:hover {
+            background-color: #FEE2E2;
+            transform: rotate(90deg);
+        }
+
+        .detail-close-top svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gray-600);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .detail-close-top:hover svg {
+            stroke: #DC2626;
+        }
+
+        /* ========== FEATURE LIST ========== */
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.98rem;
+            color: var(--gray-700);
+            transition: color var(--transition-smooth);
+        }
+
+        .feature-list li .check-icon {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            border-radius: var(--radius-full);
+            background-color: #DCFCE7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .feature-list li .check-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: #16A34A;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        [data-theme="dark"] .feature-list li .check-icon {
+            background-color: #064E3B;
+        }
+
+        [data-theme="dark"] .feature-list li .check-icon svg {
+            stroke: #34D399;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 18px;
             }
-            .detail-page-inner {
-                padding: 40px 28px 70px;
+            .detail-inner {
+                padding: 28px 18px 90px;
             }
-            .detail-page-title {
-                font-size: 2.4rem;
+            .detail-content h1 {
+                font-size: 1.7rem;
             }
-            .detail-page-header-image {
-                height: 280px;
+            .detail-header-image {
+                height: 240px;
             }
         }
-        @media (max-width: 900px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px 16px 40px;
+            }
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
                 gap: 16px;
+                margin-bottom: 28px;
             }
-            .card-item {
-                padding: 24px 18px 18px;
-                min-height: 240px;
+            .header-actions {
+                align-self: flex-end;
             }
-            .card-item-image {
-                height: 130px;
-            }
-            .card-homepage-container {
-                padding: 40px 20px 60px;
-            }
-            .card-homepage-logo {
-                font-size: 2.2rem;
-            }
-            .detail-page-inner {
-                padding: 32px 20px 60px;
-            }
-            .detail-page-title {
-                font-size: 2rem;
-            }
-            .detail-page-grid {
-                grid-template-columns: 1fr;
-            }
-            .detail-page-header-image {
-                height: 220px;
-            }
-            .wait-message-text {
-                font-size: 2.4rem;
-            }
-            .loading-percentage {
-                font-size: 2.4rem;
-            }
-        }
-        @media (max-width: 600px) {
-            .cards-grid {
+            .card-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
             }
-            .card-item {
-                min-height: 200px;
-                padding: 20px 16px 16px;
+            .card {
+                padding: 28px 22px;
+                gap: 14px;
             }
-            .card-item-image {
-                height: 140px;
-            }
-            .card-homepage-container {
-                padding: 30px 14px 50px;
-            }
-            .card-homepage-logo {
-                font-size: 1.8rem;
-            }
-            .card-homepage-header {
-                margin-bottom: 32px;
-            }
-            .detail-page-inner {
-                padding: 24px 14px 50px;
-            }
-            .detail-page-title {
-                font-size: 1.7rem;
-            }
-            .detail-page-header-image {
-                height: 180px;
-                border-radius: var(--radius-lg);
-            }
-            .floating-back-btn {
-                width: 46px;
-                height: 46px;
-                bottom: 18px;
-                right: 18px;
-            }
-            .dark-mode-float {
-                width: 40px;
-                height: 40px;
-                top: 18px;
-                right: 18px;
-            }
-            .wait-message-text {
-                font-size: 1.8rem;
-            }
-            .loading-percentage {
-                font-size: 2rem;
-            }
-            .loading-bar-container {
-                width: 260px;
-            }
-            .loading-spinner-wrapper {
-                width: 100px;
-                height: 100px;
-            }
-            .loading-spinner-outer {
-                border-width: 4px;
-            }
-            .loading-spinner-middle {
-                width: 82px;
-                height: 82px;
-                top: 9px;
-                left: 9px;
-                border-width: 3px;
-            }
-            .loading-spinner-inner {
-                width: 56px;
-                height: 56px;
-                top: 22px;
-                left: 22px;
-                border-width: 2.5px;
-            }
-            .loading-spinner-core {
-                width: 32px;
-                height: 32px;
-                top: 34px;
-                left: 34px;
-            }
-        }
-        @media (max-width: 380px) {
-            .card-homepage-logo {
-                font-size: 1.5rem;
-            }
-            .detail-page-title {
+            .splash-text {
                 font-size: 1.4rem;
             }
             .floating-back-btn {
-                width: 40px;
-                height: 40px;
-                bottom: 14px;
-                right: 14px;
+                bottom: 24px;
+                right: 24px;
+                width: 48px;
+                height: 48px;
+            }
+            .detail-inner {
+                border-radius: var(--radius-lg);
+                padding: 20px 14px 80px;
+            }
+            .detail-content h1 {
+                font-size: 1.4rem;
+            }
+            .detail-header-image {
+                height: 200px;
+                border-radius: var(--radius-md);
+            }
+            .paket-table {
+                font-size: 0.8rem;
+                min-width: 560px;
+            }
+            .paket-table thead th,
+            .paket-table tbody td {
+                padding: 10px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 22px 16px;
+            }
+            .card-title {
+                font-size: 1.1rem;
+            }
+            .card-description {
+                font-size: 0.85rem;
+            }
+            .card-icon-wrapper {
+                width: 44px;
+                height: 44px;
+            }
+            .card-icon-wrapper svg {
+                width: 22px;
+                height: 22px;
+            }
+            .splash-logo-icon {
+                width: 48px;
+                height: 48px;
+            }
+            .splash-logo-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            .splash-text {
+                font-size: 1.2rem;
+            }
+            .splash-progress {
+                width: 140px;
+            }
+            .header-title {
+                font-size: 1.2rem;
+            }
+            .detail-inner {
+                padding: 16px 10px 70px;
+            }
+            .detail-content h1 {
+                font-size: 1.2rem;
+            }
+            .detail-header-image {
+                height: 160px;
+            }
+            .floating-back-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
             }
             .floating-back-btn svg {
                 width: 20px;
@@ -1062,962 +1091,977 @@
             }
         }
 
-        /* ============ UTILITY KEYFRAMES ============ */
-        @keyframes slideInFromRight {
-            from { transform: translateX(80px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        /* ========== ANIMATION UTILITIES ========== */
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
-        @keyframes slideInFromLeft {
-            from { transform: translateX(-80px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+
+        .stagger-1 {
+            animation-delay: 0.05s;
+            opacity: 0;
         }
-        @keyframes rotateIn {
-            from { transform: rotate(-10deg); opacity: 0; }
-            to { transform: rotate(0); opacity: 1; }
+        .stagger-2 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+        .stagger-3 {
+            animation-delay: 0.15s;
+            opacity: 0;
+        }
+        .stagger-4 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+        .stagger-5 {
+            animation-delay: 0.25s;
+            opacity: 0;
+        }
+        .stagger-6 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        .stagger-7 {
+            animation-delay: 0.35s;
+            opacity: 0;
+        }
+        .stagger-8 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        /* ========== GLOW EFFECT ========== */
+        .glow-on-hover {
+            position: relative;
+        }
+
+        .glow-on-hover::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, var(--royal-blue-primary), var(--royal-blue-accent), var(--royal-blue-secondary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+            filter: blur(15px);
+        }
+
+        .glow-on-hover:hover::after {
+            opacity: 0.5;
+        }
+
+        /* ========== SECTION HEADER ========== */
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--royal-blue-primary);
+            margin-bottom: 8px;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            transition: color var(--transition-smooth);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            text-align: center;
+            padding: 32px 0 20px;
+            color: var(--gray-400);
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+            transition: color var(--transition-smooth);
+        }
+
+        .site-footer span {
+            color: var(--royal-blue-primary);
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <!-- ============ LOADING SCREEN ============ -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <div class="loading-spinner-wrapper">
-                <div class="loading-spinner-outer"></div>
-                <div class="loading-spinner-middle"></div>
-                <div class="loading-spinner-inner"></div>
-                <div class="loading-spinner-core"></div>
+
+    <!-- ==================== SPLASH SCREEN ==================== -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <div class="splash-logo-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
             </div>
-            <div class="loading-percentage" id="loadingPercentage">0%</div>
-            <div class="loading-bar-container">
-                <div class="loading-bar-fill" id="loadingBarFill"></div>
+            <div class="splash-text">Hi! Please wait...</div>
+            <div class="splash-progress">
+                <div class="splash-progress-bar"></div>
             </div>
-        </div>
-    </div>
-
-    <!-- ============ WAIT SCREEN ============ -->
-    <div class="wait-screen" id="waitScreen">
-        <div class="wait-message-container">
-            <div class="wait-message-text">
-                Hi! Please wait<span class="wait-dots-container">
-                    <span class="wait-dot"></span>
-                    <span class="wait-dot"></span>
-                    <span class="wait-dot"></span>
-                </span>
-            </div>
-            <div class="wait-message-sub">Preparing your secure experience</div>
-        </div>
-    </div>
-
-    <!-- ============ CARD HOMEPAGE ============ -->
-    <div class="card-homepage" id="cardHomepage">
-        <div class="card-homepage-container">
-            <div class="card-homepage-header">
-                <div class="card-homepage-logo">DevSec<span>.</span>id</div>
-                <div class="card-homepage-tagline">Developer Secure Indonesia</div>
-            </div>
-            <div class="cards-grid" id="cardsGrid">
-                <!-- Card 1: About Founder -->
-                <div class="card-item" onclick="openDetailPage('founder')" data-card="founder">
-                    <span class="card-item-category">Founder</span>
-                    <div class="card-item-image">
-                        <img src="yudiardata.jpg" alt="Yudi Ardata - Founder DevSec Indonesia" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">YA</div>
-                    </div>
-                    <h3 class="card-item-title">About Founder</h3>
-                    <p class="card-item-description">Yudi Ardata, professional cyber security expert with over 10 years of experience in offensive security and malware analysis.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 2: About Us -->
-                <div class="card-item" onclick="openDetailPage('about')" data-card="about">
-                    <span class="card-item-category">Company</span>
-                    <div class="card-item-image">
-                        <img src="devsec.jpg" alt="DevSec Indonesia Office" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">DS</div>
-                    </div>
-                    <h3 class="card-item-title">About Us</h3>
-                    <p class="card-item-description">DevSec Indonesia stands with a mission to secure Indonesia's digital ecosystem through education, consultation, and development.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 3: Jasa Professional -->
-                <div class="card-item" onclick="openDetailPage('services')" data-card="services">
-                    <span class="card-item-category">Services</span>
-                    <div class="card-item-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&auto=format" alt="Cyber Security Professional Services" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">CS</div>
-                    </div>
-                    <h3 class="card-item-title">Jasa Professional</h3>
-                    <p class="card-item-description">Penetration testing, vulnerability assessment, security audit, secure code review, and managed security services for enterprises.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 4: Paket Kelas -->
-                <div class="card-item" onclick="openDetailPage('classes')" data-card="classes">
-                    <span class="card-item-category">Training</span>
-                    <div class="card-item-image">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop&auto=format" alt="Cyber Security Training Class" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">TR</div>
-                    </div>
-                    <h3 class="card-item-title">Paket Kelas</h3>
-                    <p class="card-item-description">4 Divisions: Red Team, Blue Team, Malware Development, Advanced Hacking. 3 packages each: Newbie, Pro, Expert.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 5: Testimoni -->
-                <div class="card-item" onclick="openDetailPage('testimonials')" data-card="testimonials">
-                    <span class="card-item-category">Reviews</span>
-                    <div class="card-item-image">
-                        <img src="https://images.unsplash.com/photo-1521791136184-5f03f2c1c4d8?w=600&h=400&fit=crop&auto=format" alt="Client Testimonials" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">RV</div>
-                    </div>
-                    <h3 class="card-item-title">Testimoni</h3>
-                    <p class="card-item-description">Read what our clients and training participants say about DevSec Indonesia's professional services and classes.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 6: Portfolio -->
-                <div class="card-item" onclick="openDetailPage('portfolio')" data-card="portfolio">
-                    <span class="card-item-category">Projects</span>
-                    <div class="card-item-image">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&auto=format" alt="Project Portfolio" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">PF</div>
-                    </div>
-                    <h3 class="card-item-title">Portfolio</h3>
-                    <p class="card-item-description">Explore our case studies and projects across financial, healthcare, e-commerce, and government sectors.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 7: Partnership -->
-                <div class="card-item" onclick="openDetailPage('partnership')" data-card="partnership">
-                    <span class="card-item-category">Collaborate</span>
-                    <div class="card-item-image">
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&auto=format" alt="Partnership Collaboration" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">PT</div>
-                    </div>
-                    <h3 class="card-item-title">Partnership</h3>
-                    <p class="card-item-description">Strategic partnership opportunities for corporations, universities, and technology communities.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 8: Contact -->
-                <div class="card-item" onclick="openDetailPage('contact')" data-card="contact">
-                    <span class="card-item-category">Reach Us</span>
-                    <div class="card-item-image">
-                        <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600&h=400&fit=crop&auto=format" alt="Contact DevSec Indonesia" onerror="this.style.display='none';this.parentElement.querySelector('.card-item-image-placeholder').style.display='flex';" loading="lazy">
-                        <div class="card-item-image-placeholder" style="display:none;">CT</div>
-                    </div>
-                    <h3 class="card-item-title">Contact</h3>
-                    <p class="card-item-description">Get in touch for free consultation, service inquiries, or class registration. We are ready to assist you.</p>
-                    <div class="card-item-link">
-                        View Details
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                </div>
+            <div class="splash-dots">
+                <div class="splash-dot"></div>
+                <div class="splash-dot"></div>
+                <div class="splash-dot"></div>
             </div>
         </div>
     </div>
 
-    <!-- ============ DETAIL PAGE BACKDROP ============ -->
-    <div class="detail-page-backdrop" id="detailBackdrop" onclick="closeDetailPage()"></div>
+    <!-- ==================== MAIN CONTAINER ==================== -->
+    <div class="main-container" id="mainContainer">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-brand">
+                <div class="header-logo" onclick="scrollToTop()" title="DevSec Indonesia Home">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="header-title-group">
+                    <div class="header-title">DevSec<span>.</span>id</div>
+                    <div class="header-subtitle">Developer Secure Indonesia</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+                    <svg class="icon-sun" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
 
-    <!-- ============ DETAIL PAGE ============ -->
-    <div class="detail-page" id="detailPage">
-        <div class="detail-page-inner" id="detailPageInner">
-            <!-- Dynamic content injected via JavaScript -->
+        <!-- Card Grid -->
+        <div class="card-grid" id="cardGrid">
+            <!-- Card 1: About Founder -->
+            <div class="card stagger-1 fade-in-up glow-on-hover" data-page="founder" onclick="openDetail('founder')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div class="card-title">About Founder</div>
+                <div class="card-description">Mengenal lebih dekat sosok di balik DevSec Indonesia. Perjalanan karir, visi, dan misi Yudi Ardata dalam membangun ekosistem keamanan siber profesional.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Founder Profile
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 2: About Us -->
+            <div class="card stagger-2 fade-in-up glow-on-hover" data-page="about" onclick="openDetail('about')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 010 7.75"/>
+                    </svg>
+                </div>
+                <div class="card-title">About Us</div>
+                <div class="card-description">DevSec Indonesia adalah komunitas dan penyedia jasa profesional di bidang keamanan siber dan pengembangan perangkat lunak. Kami berkomitmen membangun ekosistem digital yang aman.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    Team DevSec
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 3: Jasa Professional -->
+            <div class="card stagger-3 fade-in-up glow-on-hover" data-page="jasa" onclick="openDetail('jasa')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="card-title">Jasa Professional</div>
+                <div class="card-description">Layanan penetration testing, vulnerability assessment, security audit, secure code review, dan konsultasi keamanan siber untuk bisnis dan organisasi Anda.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Layanan Kami
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 4: Paket Kelas -->
+            <div class="card stagger-4 fade-in-up glow-on-hover" data-page="kelas" onclick="openDetail('kelas')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5"/>
+                    </svg>
+                </div>
+                <div class="card-title">Paket Kelas</div>
+                <div class="card-description">Program pelatihan intensif di bidang Red Team, Blue Team, Malware Development, dan Advanced Hacking. Tersedia paket Newbie, Pro, dan Expert untuk setiap divisi.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    4 Divisi / 12 Paket
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 5: Portfolio & Testimoni -->
+            <div class="card stagger-5 fade-in-up glow-on-hover" data-page="portfolio" onclick="openDetail('portfolio')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                </div>
+                <div class="card-title">Portfolio & Testimoni</div>
+                <div class="card-description">Lihat rekam jejak proyek kami dan apa kata klien tentang layanan DevSec Indonesia. Transparansi dan kualitas adalah prioritas utama kami.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Track Record
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 6: Blog & Resources -->
+            <div class="card stagger-6 fade-in-up glow-on-hover" data-page="blog" onclick="openDetail('blog')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <div class="card-title">Blog & Resources</div>
+                <div class="card-description">Artikel, tutorial, dan resource terbaru seputar cybersecurity, programming, dan teknologi. Update berkala untuk menambah wawasan Anda di dunia keamanan digital.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Artikel Terbaru
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 7: Contact -->
+            <div class="card stagger-7 fade-in-up glow-on-hover" data-page="contact" onclick="openDetail('contact')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <div class="card-title">Contact</div>
+                <div class="card-description">Hubungi kami untuk konsultasi, pertanyaan, atau kerjasama. Tim DevSec Indonesia siap membantu kebutuhan keamanan siber dan pengembangan Anda.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Get In Touch
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 8: FAQ -->
+            <div class="card stagger-8 fade-in-up glow-on-hover" data-page="faq" onclick="openDetail('faq')">
+                <div class="card-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div class="card-title">FAQ</div>
+                <div class="card-description">Pertanyaan yang sering diajukan seputar layanan, kelas, dan program DevSec Indonesia. Temukan jawaban cepat untuk pertanyaan Anda di sini.</div>
+                <div class="card-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Bantuan
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>&copy; 2026 <span>DevSec.id</span> - Developer Secure Indonesia. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- ==================== DETAIL PAGES ==================== -->
+    <!-- Detail: About Founder -->
+    <div class="detail-page" id="detail-founder">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-header-image">
+                <img src="yudiardata.jpg" alt="Yudi Ardata - Founder DevSec Indonesia" onerror="this.style.display='none';this.parentElement.querySelector('.image-placeholder').style.display='flex';">
+                <div class="image-placeholder" style="display:none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Upload yudiardata.jpg</span>
+                </div>
+            </div>
+            <div class="detail-content">
+                <h1>Yudi Ardata</h1>
+                <div class="subtitle">Founder & Lead Cybersecurity Specialist</div>
+                <div class="divider"></div>
+                <p>Yudi Ardata adalah pendiri DevSec Indonesia, seorang profesional di bidang keamanan siber dengan pengalaman lebih dari 12 tahun. Beliau telah menangani berbagai proyek keamanan untuk perusahaan multinasional, institusi keuangan, dan lembaga pemerintahan.</p>
+                <div class="highlight-box">
+                    Visi: Menciptakan ekosistem digital Indonesia yang tangguh dan aman melalui edukasi, pelatihan, dan layanan keamanan siber profesional.
+                </div>
+                <p>Karir Yudi dimulai sebagai security researcher, kemudian berkembang menjadi penetration tester dan security architect. Keahliannya mencakup offensive security, digital forensics, malware analysis, dan secure software development.</p>
+                <p>Pada tahun 2020, Yudi mendirikan DevSec Indonesia dengan misi menjembatani kesenjangan talenta keamanan siber di Indonesia. Kini, DevSec Indonesia telah melatih ribuan profesional dan menjadi rujukan di bidang cybersecurity.</p>
+                <h3>Sertifikasi</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Offensive Security Certified Professional (OSCP)
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Certified Information Systems Security Professional (CISSP)
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        GIAC Certified Incident Handler (GCIH)
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Certified Red Team Operator (CRTO)
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <!-- ============ FLOATING BACK BUTTON ============ -->
-    <button class="floating-back-btn visible" id="floatingBackBtn" onclick="goBackToCards()" title="Back to Home">
-        <span class="floating-back-tooltip">Back to Home</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
+    <!-- Detail: About Us -->
+    <div class="detail-page" id="detail-about">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-header-image">
+                <img src="devsec.jpg" alt="DevSec Indonesia Team" onerror="this.style.display='none';this.parentElement.querySelector('.image-placeholder').style.display='flex';">
+                <div class="image-placeholder" style="display:none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    <span>Upload devsec.jpg</span>
+                </div>
+            </div>
+            <div class="detail-content">
+                <h1>About DevSec Indonesia</h1>
+                <div class="subtitle">Developer Secure Indonesia</div>
+                <div class="divider"></div>
+                <p>DevSec Indonesia adalah perusahaan yang bergerak di bidang jasa profesional keamanan siber dan pengembangan perangkat lunak. Didirikan pada tahun 2020, kami telah melayani lebih dari 200 klien dari berbagai industri.</p>
+                <div class="highlight-box">
+                    Misi: Memberikan layanan keamanan siber kelas dunia dengan standar internasional, serta membangun talenta-talenta unggul melalui program pelatihan intensif.
+                </div>
+                <p>Tim kami terdiri dari para profesional bersertifikasi dengan pengalaman di berbagai sektor: perbankan, e-commerce, healthcare, government, dan teknologi. Kami menggabungkan keahlian teknis dengan pemahaman bisnis untuk memberikan solusi keamanan yang komprehensif.</p>
+                <h3>Nilai-Nilai Kami</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Integritas: Kepercayaan adalah fondasi setiap hubungan kami
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Inovasi: Selalu mengikuti perkembangan teknologi terkini
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Kolaborasi: Bekerja bersama untuk hasil terbaik
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Dedikasi: Komitmen penuh pada setiap proyek
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail: Jasa Professional -->
+    <div class="detail-page" id="detail-jasa">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-content">
+                <h1>Jasa Professional</h1>
+                <div class="subtitle">Layanan Keamanan Siber & Pengembangan</div>
+                <div class="divider"></div>
+                <p>DevSec Indonesia menyediakan berbagai layanan profesional untuk memenuhi kebutuhan keamanan digital organisasi Anda. Setiap layanan dijalankan oleh tim ahli bersertifikasi dengan metodologi teruji.</p>
+                <h3>Layanan Utama</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <strong>Penetration Testing</strong> - Simulasi serangan untuk mengidentifikasi celah keamanan pada infrastruktur, aplikasi web, mobile, dan jaringan.
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <strong>Vulnerability Assessment</strong> - Pemindaian dan analisis kerentanan sistem secara menyeluruh dengan laporan detail.
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <strong>Security Audit</strong> - Audit keamanan berdasarkan standar ISO 27001, PCI DSS, dan regulasi terkait.
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <strong>Secure Code Review</strong> - Review kode sumber untuk menemukan bug keamanan sebelum deployment.
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <strong>Incident Response</strong> - Penanganan insiden keamanan secara cepat dan profesional.
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <strong>Security Training</strong> - Pelatihan keamanan siber untuk tim internal perusahaan Anda.
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    Semua layanan kami dilengkapi dengan laporan komprehensif, rekomendasi perbaikan, dan dukungan pasca-layanan.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail: Paket Kelas -->
+    <div class="detail-page" id="detail-kelas">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-content">
+                <h1>Paket Kelas</h1>
+                <div class="subtitle">4 Divisi - 12 Paket Pelatihan</div>
+                <div class="divider"></div>
+                <p>Program pelatihan intensif DevSec Indonesia dirancang untuk mencetak profesional keamanan siber yang kompeten. Setiap divisi memiliki 3 tingkatan paket: Newbie, Pro, dan Expert.</p>
+
+                <!-- Red Team -->
+                <h3>Red Team (Offensive Security)</h3>
+                <div class="paket-table-wrapper">
+                    <table class="paket-table">
+                        <thead>
+                            <tr>
+                                <th>Paket</th>
+                                <th>Durasi</th>
+                                <th>Materi Utama</th>
+                                <th>Sertifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge-newbie">Newbie</span></td>
+                                <td>8 Minggu</td>
+                                <td>Dasar penetration testing, networking, Linux fundamentals, basic web hacking</td>
+                                <td>Certificate of Completion</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-pro">Pro</span></td>
+                                <td>14 Minggu</td>
+                                <td>Advanced exploitation, Active Directory attacks, privilege escalation, AV evasion</td>
+                                <td>DevSec Red Team Pro Certification</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-expert">Expert</span></td>
+                                <td>20 Minggu</td>
+                                <td>Custom exploit development, advanced persistence, red team operations, C2 infrastructure</td>
+                                <td>DevSec Red Team Expert Certification</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Blue Team -->
+                <h3>Blue Team (Defensive Security)</h3>
+                <div class="paket-table-wrapper">
+                    <table class="paket-table">
+                        <thead>
+                            <tr>
+                                <th>Paket</th>
+                                <th>Durasi</th>
+                                <th>Materi Utama</th>
+                                <th>Sertifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge-newbie">Newbie</span></td>
+                                <td>8 Minggu</td>
+                                <td>Security monitoring, log analysis, SIEM fundamentals, basic incident response</td>
+                                <td>Certificate of Completion</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-pro">Pro</span></td>
+                                <td>14 Minggu</td>
+                                <td>Threat hunting, advanced SIEM, network forensics, malware triage</td>
+                                <td>DevSec Blue Team Pro Certification</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-expert">Expert</span></td>
+                                <td>20 Minggu</td>
+                                <td>Threat intelligence, SOC management, advanced forensics, incident command</td>
+                                <td>DevSec Blue Team Expert Certification</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Malware Development -->
+                <h3>Malware Development</h3>
+                <div class="paket-table-wrapper">
+                    <table class="paket-table">
+                        <thead>
+                            <tr>
+                                <th>Paket</th>
+                                <th>Durasi</th>
+                                <th>Materi Utama</th>
+                                <th>Sertifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge-newbie">Newbie</span></td>
+                                <td>8 Minggu</td>
+                                <td>Windows internals, basic C/C++, process injection fundamentals, simple droppers</td>
+                                <td>Certificate of Completion</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-pro">Pro</span></td>
+                                <td>14 Minggu</td>
+                                <td>Advanced injection techniques, EDR evasion, shellcode development, API unhooking</td>
+                                <td>DevSec MalDev Pro Certification</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-expert">Expert</span></td>
+                                <td>20 Minggu</td>
+                                <td>Kernel-level development, bootkits, custom packers, advanced anti-analysis techniques</td>
+                                <td>DevSec MalDev Expert Certification</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Advanced Hacking -->
+                <h3>Advanced Hacking</h3>
+                <div class="paket-table-wrapper">
+                    <table class="paket-table">
+                        <thead>
+                            <tr>
+                                <th>Paket</th>
+                                <th>Durasi</th>
+                                <th>Materi Utama</th>
+                                <th>Sertifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge-newbie">Newbie</span></td>
+                                <td>8 Minggu</td>
+                                <td>Advanced web hacking, API security testing, cloud fundamentals, Docker basics</td>
+                                <td>Certificate of Completion</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-pro">Pro</span></td>
+                                <td>14 Minggu</td>
+                                <td>Cloud penetration testing, Kubernetes security, blockchain security, IoT hacking</td>
+                                <td>DevSec Advanced Hacking Pro Certification</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge-expert">Expert</span></td>
+                                <td>20 Minggu</td>
+                                <td>Zero-day research, SCADA/ICS security, hardware hacking, advanced cryptography</td>
+                                <td>DevSec Advanced Hacking Expert Certification</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box">
+                    Semua paket sudah termasuk akses lab virtual 24/7, materi digital, mentoring langsung, dan kesempatan mengikuti proyek real-client.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail: Portfolio & Testimoni -->
+    <div class="detail-page" id="detail-portfolio">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-content">
+                <h1>Portfolio & Testimoni</h1>
+                <div class="subtitle">Rekam Jejak & Kepercayaan Klien</div>
+                <div class="divider"></div>
+                <p>Kami telah menangani berbagai proyek keamanan siber untuk klien dari beragam industri. Berikut adalah beberapa highlight dan testimoni dari klien kami.</p>
+                <div class="highlight-box">
+                    "DevSec Indonesia memberikan hasil penetration testing yang sangat detail dan actionable. Tim mereka sangat profesional dan komunikatif." - CTO, Perusahaan Fintech Nasional
+                </div>
+                <div class="highlight-box">
+                    "Pelatihan Red Team dari DevSec sangat intensif dan praktikal. Dalam 3 bulan, tim internal kami sudah mampu melakukan security assessment mandiri." - VP Engineering, E-commerce Platform
+                </div>
+                <div class="highlight-box">
+                    "Secure code review yang dilakukan DevSec berhasil menemukan critical vulnerability yang terlewat oleh automated scanner. Sangat recommended." - Lead Developer, SaaS Company
+                </div>
+                <h3>Klien Kami</h3>
+                <p>Kami telah dipercaya oleh lebih dari 200 organisasi, termasuk perusahaan Fortune 500, startup unicorn, institusi keuangan, lembaga pemerintahan, dan organisasi non-profit di seluruh Indonesia dan Asia Tenggara.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail: Blog & Resources -->
+    <div class="detail-page" id="detail-blog">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-content">
+                <h1>Blog & Resources</h1>
+                <div class="subtitle">Artikel, Tutorial & Update Terbaru</div>
+                <div class="divider"></div>
+                <p>Ikuti perkembangan terbaru di dunia cybersecurity melalui artikel dan resource yang kami publikasikan secara berkala. Konten kami mencakup topik dari tingkat dasar hingga advanced.</p>
+                <h3>Topik Populer</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Memahami Kill Chain: Dari Reconnaissance hingga Action on Objectives
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Panduan Lengkap OWASP Top 10 untuk Developer Web
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Reverse Engineering Malware: Teknik dan Tools Terkini
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Cloud Security Best Practices: AWS, GCP, dan Azure
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    Subscribe newsletter kami untuk mendapatkan update artikel terbaru langsung ke inbox Anda setiap minggu.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail: Contact -->
+    <div class="detail-page" id="detail-contact">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-content">
+                <h1>Contact</h1>
+                <div class="subtitle">Hubungi Kami</div>
+                <div class="divider"></div>
+                <p>Tim DevSec Indonesia siap membantu Anda. Jangan ragu untuk menghubungi kami melalui saluran di bawah ini untuk konsultasi, pertanyaan, atau kerjasama.</p>
+                <div class="highlight-box">
+                    Email: contact@devsec.id<br>
+                    Telepon: +62 21 1234 5678<br>
+                    Alamat: Jakarta, Indonesia
+                </div>
+                <h3>Jam Operasional</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Senin - Jumat: 09:00 - 18:00 WIB
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Sabtu: 09:00 - 14:00 WIB
+                    </li>
+                </ul>
+                <p>Untuk insiden keamanan yang memerlukan penanganan darurat, tersedia hotline 24/7 bagi klien dengan kontrak layanan berkelanjutan.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail: FAQ -->
+    <div class="detail-page" id="detail-faq">
+        <div class="detail-inner">
+            <button class="detail-close-top" onclick="closeDetail()" aria-label="Close">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="detail-content">
+                <h1>FAQ</h1>
+                <div class="subtitle">Frequently Asked Questions</div>
+                <div class="divider"></div>
+                <h3>Apakah kelas tersedia secara online?</h3>
+                <p>Ya, semua kelas tersedia secara online melalui platform learning management system kami. Anda dapat mengakses materi, lab, dan sesi mentoring dari mana saja.</p>
+                <h3>Apakah ada prasyarat untuk mengikuti kelas?</h3>
+                <p>Paket Newbie tidak memerlukan prasyarat khusus. Untuk paket Pro dan Expert, disarankan memiliki pengetahuan dasar sesuai divisi yang dipilih. Tim kami akan melakukan assessment awal untuk merekomendasikan level yang tepat.</p>
+                <h3>Berapa lama akses materi setelah kelas selesai?</h3>
+                <p>Anda mendapatkan akses seumur hidup ke materi digital dan rekaman sesi. Akses lab virtual tersedia selama 6 bulan setelah kelas berakhir dan dapat diperpanjang.</p>
+                <h3>Apakah ada jaminan kerja setelah lulus?</h3>
+                <p>Kami memiliki program kemitraan dengan berbagai perusahaan yang memprioritaskan lulusan DevSec Indonesia untuk posisi keamanan siber. Namun, kami tidak memberikan jaminan kerja absolut.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FLOATING BACK BUTTON ==================== -->
+    <button class="floating-back-btn" id="floatingBackBtn" onclick="closeDetail()" title="Back to Home">
+        <svg viewBox="0 0 24 24">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
         </svg>
     </button>
 
-    <!-- ============ DARK MODE FLOATING TOGGLE ============ -->
-    <button class="dark-mode-float" id="darkModeFloat" onclick="toggleDarkMode()" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
-        <span class="icon-moon" style="position:absolute;">M</span>
-        <span class="icon-sun" style="position:absolute;">S</span>
-    </button>
-
+    <!-- ==================== SCRIPTS ==================== -->
     <script>
-        // ============ GLOBAL STATE MANAGEMENT ============
-        const STATE = {
-            loadingProgress: 0,
-            loadingInterval: null,
-            isLoadingComplete: false,
-            isWaitComplete: false,
-            currentDetailPage: null,
-            isDetailOpen: false,
-            isDarkMode: false,
-            isLoadingScreenVisible: true,
-            isWaitScreenVisible: false,
-            isCardHomepageVisible: false,
-            scrollPosition: 0,
-            cardAnimationsTriggered: false,
-            touchStartX: 0,
-            touchEndX: 0,
-            resizeTimeout: null,
-            cardsObserver: null,
-            intersectionObserver: null
-        };
+        (function() {
+            // ==================== DOM ELEMENTS ====================
+            const splashScreen = document.getElementById('splashScreen');
+            const mainContainer = document.getElementById('mainContainer');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const floatingBackBtn = document.getElementById('floatingBackBtn');
+            const cardGrid = document.getElementById('cardGrid');
+            const detailPages = document.querySelectorAll('.detail-page');
+            const body = document.body;
 
-        // ============ DOM ELEMENT REFERENCES ============
-        const DOM = {
-            loadingScreen: document.getElementById('loadingScreen'),
-            waitScreen: document.getElementById('waitScreen'),
-            cardHomepage: document.getElementById('cardHomepage'),
-            loadingPercentage: document.getElementById('loadingPercentage'),
-            loadingBarFill: document.getElementById('loadingBarFill'),
-            detailBackdrop: document.getElementById('detailBackdrop'),
-            detailPage: document.getElementById('detailPage'),
-            detailPageInner: document.getElementById('detailPageInner'),
-            floatingBackBtn: document.getElementById('floatingBackBtn'),
-            darkModeFloat: document.getElementById('darkModeFloat'),
-            cardsGrid: document.getElementById('cardsGrid'),
-            body: document.body,
-            html: document.documentElement
-        };
+            // ==================== STATE ====================
+            let currentDetailPage = null;
+            let isDetailOpen = false;
+            let splashCompleted = false;
 
-        // ============ LOADING ANIMATION ENGINE ============
-        function initLoadingAnimation() {
-            STATE.loadingProgress = 0;
-            STATE.loadingInterval = setInterval(updateLoadingProgress, 75);
-            updateLoadingDisplay(0);
-            DOM.loadingScreen.style.opacity = '1';
-            DOM.loadingScreen.style.visibility = 'visible';
-            DOM.body.style.overflow = 'hidden';
-        }
+            // ==================== SPLASH SCREEN LOGIC ====================
+            function initSplashScreen() {
+                const SPLASH_DURATION = 8000; // 8 detik
 
-        function updateLoadingProgress() {
-            const increment = Math.random() * 9 + 2.5;
-            STATE.loadingProgress = Math.min(STATE.loadingProgress + increment, 100);
-            updateLoadingDisplay(STATE.loadingProgress);
-            if (STATE.loadingProgress >= 100) {
-                completeLoading();
+                setTimeout(function() {
+                    splashScreen.classList.add('fade-out');
+                    splashCompleted = true;
+
+                    // Show main container after splash fades
+                    setTimeout(function() {
+                        mainContainer.classList.add('visible');
+                        body.classList.remove('no-scroll');
+
+                        // Animate cards in
+                        const cards = cardGrid.querySelectorAll('.card');
+                        cards.forEach(function(card, index) {
+                            card.style.animationDelay = (0.05 * index) + 's';
+                            card.classList.add('fade-in-up');
+                        });
+                    }, 600);
+                }, SPLASH_DURATION);
+
+                // Prevent scrolling during splash
+                body.classList.add('no-scroll');
             }
-        }
 
-        function updateLoadingDisplay(progress) {
-            const rounded = Math.min(Math.round(progress), 100);
-            DOM.loadingPercentage.textContent = rounded + '%';
-            DOM.loadingBarFill.style.width = rounded + '%';
-            if (rounded >= 30 && rounded < 60) {
-                DOM.loadingPercentage.style.color = 'var(--royal-blue-medium)';
-            } else if (rounded >= 60 && rounded < 90) {
-                DOM.loadingPercentage.style.color = 'var(--royal-blue-light)';
-            } else if (rounded >= 90) {
-                DOM.loadingPercentage.style.color = 'var(--royal-blue-primary)';
-            }
-        }
+            // ==================== DARK MODE LOGIC ====================
+            function initDarkMode() {
+                // Check saved preference or system preference
+                const savedTheme = localStorage.getItem('devsec-theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        function completeLoading() {
-            clearInterval(STATE.loadingInterval);
-            STATE.loadingInterval = null;
-            STATE.loadingProgress = 100;
-            STATE.isLoadingComplete = true;
-            updateLoadingDisplay(100);
-            setTimeout(hideLoadingScreen, 500);
-        }
-
-        function hideLoadingScreen() {
-            DOM.loadingScreen.classList.add('hidden');
-            STATE.isLoadingScreenVisible = false;
-            setTimeout(showWaitScreen, 400);
-        }
-
-        // ============ WAIT SCREEN LOGIC ============
-        function showWaitScreen() {
-            DOM.waitScreen.classList.add('active');
-            DOM.waitScreen.classList.remove('fading');
-            STATE.isWaitScreenVisible = true;
-            setTimeout(transitionToCardHomepage, 5000);
-        }
-
-        function transitionToCardHomepage() {
-            DOM.waitScreen.classList.add('fading');
-            STATE.isWaitScreenVisible = false;
-            setTimeout(() => {
-                DOM.waitScreen.classList.remove('active', 'fading');
-                showCardHomepage();
-            }, 800);
-        }
-
-        // ============ CARD HOMEPAGE LOGIC ============
-        function showCardHomepage() {
-            DOM.cardHomepage.classList.add('active');
-            STATE.isCardHomepageVisible = true;
-            DOM.body.style.overflow = '';
-            DOM.floatingBackBtn.classList.remove('visible');
-            if (!STATE.cardAnimationsTriggered) {
-                animateCardsEntrance();
-                STATE.cardAnimationsTriggered = true;
-            }
-            setupCardIntersectionObserver();
-        }
-
-        function animateCardsEntrance() {
-            const cards = DOM.cardsGrid.querySelectorAll('.card-item');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(40px)';
-                card.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                card.style.transitionDelay = (index * 0.08) + 's';
-                requestAnimationFrame(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                });
-                setTimeout(() => {
-                    card.style.transitionDelay = '0s';
-                }, 800 + index * 80);
-            });
-        }
-
-        function setupCardIntersectionObserver() {
-            if ('IntersectionObserver' in window) {
-                STATE.cardsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.transform = 'translateY(0)';
-                            entry.target.style.opacity = '1';
-                        }
-                    });
-                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-                const cards = DOM.cardsGrid.querySelectorAll('.card-item');
-                cards.forEach(card => STATE.cardsObserver.observe(card));
-            }
-        }
-
-        // ============ DETAIL PAGE ENGINE ============
-        function openDetailPage(type) {
-            if (STATE.isDetailOpen && STATE.currentDetailPage === type) return;
-            STATE.currentDetailPage = type;
-            STATE.isDetailOpen = true;
-            STATE.scrollPosition = window.scrollY;
-            const detailData = generateDetailContent(type);
-            DOM.detailPageInner.innerHTML = detailData;
-            DOM.detailBackdrop.classList.add('active');
-            DOM.detailPage.classList.add('active');
-            DOM.detailPage.scrollTop = 0;
-            DOM.floatingBackBtn.classList.add('visible');
-            DOM.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                animateDetailContent();
-            }, 150);
-            trackAnalytics('DetailPage', 'Open', type);
-        }
-
-        function closeDetailPage() {
-            if (!STATE.isDetailOpen) return;
-            STATE.isDetailOpen = false;
-            STATE.currentDetailPage = null;
-            DOM.detailBackdrop.classList.remove('active');
-            DOM.detailPage.classList.remove('active');
-            DOM.body.style.overflow = '';
-            setTimeout(() => {
-                DOM.detailPageInner.innerHTML = '';
-                DOM.floatingBackBtn.classList.remove('visible');
-                window.scrollTo({ top: STATE.scrollPosition, behavior: 'instant' });
-            }, 300);
-            trackAnalytics('DetailPage', 'Close', 'backdrop');
-        }
-
-        function goBackToCards() {
-            if (STATE.isDetailOpen) {
-                closeDetailPage();
-            }
-            DOM.cardHomepage.scrollTop = 0;
-            DOM.floatingBackBtn.classList.remove('visible');
-        }
-
-        function animateDetailContent() {
-            const elements = DOM.detailPageInner.querySelectorAll('.detail-page-header-image, .detail-page-title, .detail-page-subtitle, .detail-page-content, .detail-page-grid, .detail-page-section-title');
-            elements.forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)';
-                el.style.transitionDelay = (index * 0.07) + 's';
-                requestAnimationFrame(() => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                });
-            });
-        }
-
-        // ============ DETAIL CONTENT GENERATOR ============
-        function generateDetailContent(type) {
-            switch (type) {
-                case 'founder':
-                    return generateFounderContent();
-                case 'about':
-                    return generateAboutContent();
-                case 'services':
-                    return generateServicesContent();
-                case 'classes':
-                    return generateClassesContent();
-                case 'testimonials':
-                    return generateTestimonialsContent();
-                case 'portfolio':
-                    return generatePortfolioContent();
-                case 'partnership':
-                    return generatePartnershipContent();
-                case 'contact':
-                    return generateContactContent();
-                default:
-                    return '<p>Content not available.</p>';
-            }
-        }
-
-        function generateFounderContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="yudiardata.jpg" alt="Yudi Ardata - Founder DevSec Indonesia" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">YA</div>
-                </div>
-                <h1 class="detail-page-title">Yudi Ardata</h1>
-                <p class="detail-page-subtitle">Founder & Chief Executive Officer, DevSec Indonesia</p>
-                <div class="detail-page-content">
-                    <p>Yudi Ardata is a seasoned cyber security professional with over 10 years of hands-on experience in offensive security, malware analysis, reverse engineering, and secure software development. He has led security operations for multinational corporations, government agencies, and high-growth technology startups across Southeast Asia.</p>
-                    <p>With a profound passion for securing digital ecosystems, Yudi founded DevSec Indonesia to bridge the critical gap in cyber security talent and awareness within the Indonesian market. His vision encompasses building a resilient security community through professional services, advanced training, and collaborative partnerships.</p>
-                    <p>Yudi holds multiple internationally recognized certifications and has spoken at numerous security conferences including Black Hat Asia, HITBSecConf, and FIRST Conference. He actively contributes to open-source security tools and mentors the next generation of security professionals.</p>
-                </div>
-                <h3 class="detail-page-section-title">Professional Certifications</h3>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> OSCP - Offensive Security Certified Professional</li>
-                    <li><span class="detail-page-list-marker"></span> OSCE3 - Offensive Security Certified Expert 3</li>
-                    <li><span class="detail-page-list-marker"></span> CISSP - Certified Information Systems Security Professional</li>
-                    <li><span class="detail-page-list-marker"></span> CEH Master - Certified Ethical Hacker Master</li>
-                    <li><span class="detail-page-list-marker"></span> GIAC GREM - Reverse Engineering Malware</li>
-                    <li><span class="detail-page-list-marker"></span> OSEP - Offensive Security Experienced Penetration Tester</li>
-                    <li><span class="detail-page-list-marker"></span> CREST CRT - Certified Registered Tester</li>
-                </ul>
-                <h3 class="detail-page-section-title">Specializations</h3>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> Red Team Operations & Adversary Simulation</li>
-                    <li><span class="detail-page-list-marker"></span> Advanced Malware Development & Analysis</li>
-                    <li><span class="detail-page-list-marker"></span> Advanced Persistent Threat (APT) Simulation</li>
-                    <li><span class="detail-page-list-marker"></span> Secure Software Development Lifecycle (SSDLC)</li>
-                    <li><span class="detail-page-list-marker"></span> Cloud Security Architecture & Assessment</li>
-                    <li><span class="detail-page-list-marker"></span> Incident Response & Digital Forensics</li>
-                    <li><span class="detail-page-list-marker"></span> Zero-Day Research & Exploit Development</li>
-                </ul>
-            `;
-        }
-
-        function generateAboutContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="devsec.jpg" alt="DevSec Indonesia Office & Team" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">DS</div>
-                </div>
-                <h1 class="detail-page-title">About DevSec Indonesia</h1>
-                <p class="detail-page-subtitle">Developer Secure Indonesia | Professional Cyber Security & Development</p>
-                <div class="detail-page-content">
-                    <p><strong>DevSec Indonesia (DevSec.id)</strong> is a premier cyber security and software development company headquartered in Jakarta, Indonesia. Founded with an unwavering commitment to securing the nation's digital landscape, DevSec.id provides enterprise-grade security services, professional consultations, and comprehensive training programs.</p>
-                    <p>Our team comprises certified security professionals, experienced penetration testers, malware analysts, and secure software engineers who bring decades of combined experience from diverse industries including finance, healthcare, e-commerce, telecommunications, and government sectors.</p>
-                    <p>We believe that security is not merely a product but an ongoing process deeply integrated into every layer of technology. Our approach combines offensive and defensive methodologies to deliver holistic security solutions tailored to each client's unique requirements.</p>
-                </div>
-                <h3 class="detail-page-section-title">Vision</h3>
-                <div class="detail-page-content"><p>To be Indonesia's leading cyber security company, contributing significantly to the creation of a secure, trustworthy, and resilient digital ecosystem across the archipelago and beyond.</p></div>
-                <h3 class="detail-page-section-title">Mission</h3>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> Deliver world-class professional cyber security services to enterprises and government institutions</li>
-                    <li><span class="detail-page-list-marker"></span> Elevate cyber security literacy through comprehensive education and hands-on training programs</li>
-                    <li><span class="detail-page-list-marker"></span> Foster a collaborative and inclusive security community in Indonesia</li>
-                    <li><span class="detail-page-list-marker"></span> Cultivate and empower the next generation of Indonesian cyber security talent</li>
-                    <li><span class="detail-page-list-marker"></span> Drive innovation in security research, tool development, and defensive technologies</li>
-                </ul>
-                <h3 class="detail-page-section-title">Core Values</h3>
-                <div class="detail-page-grid">
-                    <div class="detail-page-card"><h4>Integrity</h4><p>We uphold the highest ethical standards in every engagement, ensuring trust, transparency, and confidentiality with our clients and partners.</p></div>
-                    <div class="detail-page-card"><h4>Excellence</h4><p>We relentlessly pursue technical excellence, staying at the forefront of evolving threats and cutting-edge security technologies.</p></div>
-                    <div class="detail-page-card"><h4>Collaboration</h4><p>We believe in the power of teamwork, knowledge sharing, and community building to strengthen collective security posture.</p></div>
-                    <div class="detail-page-card"><h4>Innovation</h4><p>We continuously innovate in security research, tooling, and methodologies to stay ahead of sophisticated adversaries.</p></div>
-                </div>
-            `;
-        }
-
-        function generateServicesContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop&auto=format" alt="Professional Cyber Security Services" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">PS</div>
-                </div>
-                <h1 class="detail-page-title">Jasa Professional</h1>
-                <p class="detail-page-subtitle">Enterprise-Grade Cyber Security & Development Services</p>
-                <div class="detail-page-content"><p>DevSec Indonesia offers a comprehensive suite of professional cyber security and secure development services designed to protect your organization's critical assets, ensure regulatory compliance, and build robust security postures.</p></div>
-                <h3 class="detail-page-section-title">Penetration Testing</h3>
-                <div class="detail-page-content"><p>Simulate real-world attacks against your systems, networks, and applications to identify and remediate security vulnerabilities before malicious actors exploit them.</p></div>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> Web Application Penetration Testing (OWASP Top 10, SANS 25)</li>
-                    <li><span class="detail-page-list-marker"></span> Network & Infrastructure Penetration Testing</li>
-                    <li><span class="detail-page-list-marker"></span> Mobile Application Security Testing (iOS & Android)</li>
-                    <li><span class="detail-page-list-marker"></span> API Security Testing (REST, GraphQL, gRPC)</li>
-                    <li><span class="detail-page-list-marker"></span> Cloud Security Assessment (AWS, GCP, Azure)</li>
-                    <li><span class="detail-page-list-marker"></span> Internal & External Network Testing</li>
-                    <li><span class="detail-page-list-marker"></span> Social Engineering & Phishing Simulation</li>
-                </ul>
-                <h3 class="detail-page-section-title">Vulnerability Assessment</h3>
-                <div class="detail-page-content"><p>Systematic scanning and analysis to identify, classify, and prioritize vulnerabilities across your entire technology stack with actionable remediation guidance.</p></div>
-                <h3 class="detail-page-section-title">Security Audit & Compliance</h3>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> ISO 27001 / NIST Cybersecurity Framework Audit</li>
-                    <li><span class="detail-page-list-marker"></span> PCI DSS Compliance Assessment</li>
-                    <li><span class="detail-page-list-marker"></span> HIPAA / HITRUST Security Evaluation</li>
-                    <li><span class="detail-page-list-marker"></span> SOC 2 Type II Readiness Assessment</li>
-                    <li><span class="detail-page-list-marker"></span> GDPR / PDP Readiness & Gap Analysis</li>
-                </ul>
-                <h3 class="detail-page-section-title">Secure Code Review</h3>
-                <div class="detail-page-content"><p>In-depth manual and automated analysis of source code to identify security flaws, logic vulnerabilities, and insecure coding practices with remediation recommendations.</p></div>
-                <h3 class="detail-page-section-title">Managed Security Services</h3>
-                <div class="detail-page-content"><p>24/7 managed security operations including continuous monitoring, threat intelligence, incident response, and proactive threat hunting powered by our expert team.</p></div>
-            `;
-        }
-
-        function generateClassesContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=600&fit=crop&auto=format" alt="Cyber Security Training Programs" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">TC</div>
-                </div>
-                <h1 class="detail-page-title">Paket Kelas</h1>
-                <p class="detail-page-subtitle">4 Divisions, 3 Package Levels: Newbie, Pro, Expert</p>
-                <div class="detail-page-content"><p>DevSec Indonesia provides intensive, hands-on training programs across four specialized divisions. Each division offers three progressive package levels designed to take participants from foundational knowledge to expert-level mastery.</p></div>
-                <h3 class="detail-page-section-title">Red Team Division</h3>
-                <div class="detail-page-content"><p>Master the art of offensive security, adversary simulation, and penetration testing. Learn to think and operate like sophisticated threat actors to better defend against them.</p></div>
-                <div>
-                    <span class="detail-page-package-tag tag-newbie">NEWBIE</span>
-                    <span class="detail-page-package-tag tag-pro">PRO</span>
-                    <span class="detail-page-package-tag tag-expert">EXPERT</span>
-                </div>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> <strong>Newbie:</strong> Fundamentals of networking, Linux, scripting, reconnaissance, and basic exploitation techniques</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Pro:</strong> Advanced exploitation, Active Directory attacks, C2 infrastructure, evasion techniques, and red team operations</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Expert:</strong> Custom exploit development, advanced adversary emulation, APT simulation, and 1-on-1 mentoring with Yudi Ardata</li>
-                </ul>
-                <h3 class="detail-page-section-title">Blue Team Division</h3>
-                <div class="detail-page-content"><p>Develop expertise in defensive security operations, incident response, threat hunting, and digital forensics to protect organizations from cyber attacks.</p></div>
-                <div>
-                    <span class="detail-page-package-tag tag-newbie">NEWBIE</span>
-                    <span class="detail-page-package-tag tag-pro">PRO</span>
-                    <span class="detail-page-package-tag tag-expert">EXPERT</span>
-                </div>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> <strong>Newbie:</strong> Security fundamentals, log analysis, SIEM basics, network monitoring, and incident handling fundamentals</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Pro:</strong> Advanced threat hunting, malware triage, memory forensics, SOAR automation, and IR playbook development</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Expert:</strong> Enterprise SOC architecture, threat intelligence program building, advanced forensic analysis, and cyber threat intelligence</li>
-                </ul>
-                <h3 class="detail-page-section-title">Malware Development Division</h3>
-                <div class="detail-page-content"><p>Learn the complete lifecycle of malware development and analysis from basic droppers to advanced polymorphic and fileless malware techniques.</p></div>
-                <div>
-                    <span class="detail-page-package-tag tag-newbie">NEWBIE</span>
-                    <span class="detail-page-package-tag tag-pro">PRO</span>
-                    <span class="detail-page-package-tag tag-expert">EXPERT</span>
-                </div>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> <strong>Newbie:</strong> Malware fundamentals, PE file structure, basic droppers, persistence mechanisms, and static analysis</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Pro:</strong> Process injection, API hooking, EDR evasion, custom packers/crypters, and dynamic analysis</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Expert:</strong> Bootkit/rootkit development, hypervisor-based malware, AI-powered evasion, and advanced anti-reverse engineering</li>
-                </ul>
-                <h3 class="detail-page-section-title">Advanced Hacking Division</h3>
-                <div class="detail-page-content"><p>Cutting-edge hacking techniques covering zero-day research, exploit chaining, APT simulation, and advanced evasion methodologies.</p></div>
-                <div>
-                    <span class="detail-page-package-tag tag-newbie">NEWBIE</span>
-                    <span class="detail-page-package-tag tag-pro">PRO</span>
-                    <span class="detail-page-package-tag tag-expert">EXPERT</span>
-                </div>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> <strong>Newbie:</strong> Advanced web attacks, privilege escalation, lateral movement basics, and tunneling techniques</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Pro:</strong> Exploit chaining, kernel exploitation, advanced post-exploitation, and custom tool development</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Expert:</strong> Zero-day research methodology, advanced fuzzing, hypervisor escapes, and nation-state level tactics</li>
-                </ul>
-            `;
-        }
-
-        function generateTestimonialsContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="https://images.unsplash.com/photo-1521791136184-5f03f2c1c4d8?w=1200&h=600&fit=crop&auto=format" alt="Client Testimonials & Reviews" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">TR</div>
-                </div>
-                <h1 class="detail-page-title">Testimoni</h1>
-                <p class="detail-page-subtitle">What Our Clients & Students Say About DevSec Indonesia</p>
-                <div class="detail-page-testimonial">
-                    <p class="detail-page-testimonial-text">"The Red Team training at DevSec is absolutely next level. The curriculum is always up-to-date with the latest attack techniques, and the instructors are incredibly knowledgeable. I successfully earned my OSCP certification after completing the Pro package. Highly recommended for anyone serious about offensive security."</p>
-                    <p class="detail-page-testimonial-author">Ahmad Rizaldi, Senior Security Engineer at FinTech Unicorn Indonesia</p>
-                </div>
-                <div class="detail-page-testimonial">
-                    <p class="detail-page-testimonial-text">"DevSec's penetration testing service is exceptionally professional. Their team identified critical vulnerabilities that our previous auditor missed entirely. The final report was detailed, actionable, and they provided hands-on support during remediation. Our security posture improved dramatically."</p>
-                    <p class="detail-page-testimonial-author">PT Teknologi Maju Indonesia, CTO Office</p>
-                </div>
-                <div class="detail-page-testimonial">
-                    <p class="detail-page-testimonial-text">"The Malware Development class opened my eyes to a whole new dimension of security. Learning how modern malware operates from the inside out gave me unprecedented insight into detection engineering. The hands-on labs are incredibly well-designed."</p>
-                    <p class="detail-page-testimonial-author">Budi Santoso, Malware Analyst at National CERT</p>
-                </div>
-                <div class="detail-page-testimonial">
-                    <p class="detail-page-testimonial-text">"Yudi Ardata is hands-down one of the best security mentors I have ever worked with. His Expert package 1-on-1 mentoring transformed my understanding of advanced exploitation techniques. DevSec Indonesia is truly a gem in the Indonesian cyber security landscape."</p>
-                    <p class="detail-page-testimonial-author">Dian Permata, Independent Security Researcher</p>
-                </div>
-                <div class="detail-page-testimonial">
-                    <p class="detail-page-testimonial-text">"We engaged DevSec for a full-scale security audit and compliance assessment. Their team demonstrated deep expertise and professionalism throughout the engagement. We achieved ISO 27001 certification smoothly thanks to their guidance."</p>
-                    <p class="detail-page-testimonial-author">Bank Digital Nusantara, Information Security Division</p>
-                </div>
-            `;
-        }
-
-        function generatePortfolioContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop&auto=format" alt="DevSec Indonesia Portfolio Projects" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">PO</div>
-                </div>
-                <h1 class="detail-page-title">Portfolio</h1>
-                <p class="detail-page-subtitle">Selected Case Studies & Project Highlights</p>
-                <div class="detail-page-grid">
-                    <div class="detail-page-card">
-                        <h4>Financial Sector Security Assessment</h4>
-                        <p>Conducted comprehensive penetration testing and security audit for one of Indonesia's largest digital banks. Identified 47 critical vulnerabilities across web, mobile, and API layers. Provided complete remediation guidance and re-testing validation.</p>
-                    </div>
-                    <div class="detail-page-card">
-                        <h4>Healthcare Data Protection Program</h4>
-                        <p>Assisted a major hospital network in securing their Electronic Medical Record (EMR) systems. Implemented security controls compliant with health data protection regulations and conducted staff security awareness training.</p>
-                    </div>
-                    <div class="detail-page-card">
-                        <h4>E-Commerce Platform Security Hardening</h4>
-                        <p>Performed secure code review and penetration testing for an e-commerce platform serving 1M+ active users. Discovered and remediated critical business logic flaws, injection vulnerabilities, and authentication bypasses.</p>
-                    </div>
-                    <div class="detail-page-card">
-                        <h4>Government Infrastructure Red Team Exercise</h4>
-                        <p>Executed a full-scope red team operation simulating nation-state level adversaries against critical government infrastructure. Demonstrated attack paths and provided strategic defense recommendations adopted at national level.</p>
-                    </div>
-                    <div class="detail-page-card">
-                        <h4>Telecom SOC Design & Implementation</h4>
-                        <p>Designed and deployed a Security Operations Center (SOC) for a leading telecommunications provider. Integrated SIEM, SOAR, threat intelligence platforms, and trained the internal blue team for 24/7 operations.</p>
-                    </div>
-                    <div class="detail-page-card">
-                        <h4>FinTech Startup Secure SDLC Integration</h4>
-                        <p>Integrated security into the entire Software Development Lifecycle for a fast-growing fintech startup. Implemented SAST, DAST, dependency scanning, and security champions program within agile development teams.</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function generatePartnershipContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop&auto=format" alt="Partnership with DevSec Indonesia" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">PR</div>
-                </div>
-                <h1 class="detail-page-title">Partnership</h1>
-                <p class="detail-page-subtitle">Strategic Collaboration Opportunities</p>
-                <div class="detail-page-content"><p>DevSec Indonesia actively seeks strategic partnerships with organizations that share our vision of a secure digital ecosystem. We believe that collaboration amplifies our collective impact and strengthens Indonesia's cyber resilience.</p></div>
-                <h3 class="detail-page-section-title">Partnership Categories</h3>
-                <ul class="detail-page-list">
-                    <li><span class="detail-page-list-marker"></span> <strong>Corporate Training Partner</strong> - Deliver customized cyber security training programs for your organization's workforce at all levels, from awareness to advanced technical skills.</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>University & Academic Collaboration</strong> - Joint research initiatives, curriculum development, guest lectures, internship programs, and student mentorship in cyber security disciplines.</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Technology Alliance Partner</strong> - Integrate DevSec's security solutions and expertise with your technology products to deliver enhanced security value to mutual customers.</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Community Partnership</strong> - Support and co-organize security conferences, CTF competitions, workshops, and meetups to grow Indonesia's cyber security community.</li>
-                    <li><span class="detail-page-list-marker"></span> <strong>Managed Security Service Provider (MSSP) Partnership</strong> - White-label our security services or co-deliver managed security solutions to expand market reach and service capabilities.</li>
-                </ul>
-                <h3 class="detail-page-section-title">Why Partner With DevSec?</h3>
-                <div class="detail-page-grid">
-                    <div class="detail-page-card"><h4>Proven Expertise</h4><p>Our team brings decades of combined real-world experience across offensive and defensive security disciplines with internationally recognized certifications.</p></div>
-                    <div class="detail-page-card"><h4>Local Insight, Global Standards</h4><p>Deep understanding of Indonesian regulatory landscape combined with international security standards and best practices.</p></div>
-                    <div class="detail-page-card"><h4>Innovation Driven</h4><p>Continuous investment in security research, custom tool development, and staying ahead of emerging threats and technologies.</p></div>
-                    <div class="detail-page-card"><h4>Community Focused</h4><p>Genuine commitment to growing and nurturing Indonesia's cyber security ecosystem through education and knowledge sharing.</p></div>
-                </div>
-                <div class="detail-page-content" style="margin-top:24px;"><p>Interested in exploring partnership opportunities? Reach out to our partnership team at <strong>partnership@devsec.id</strong></p></div>
-            `;
-        }
-
-        function generateContactContent() {
-            return `
-                <div class="detail-page-header-image">
-                    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&h=600&fit=crop&auto=format" alt="Contact DevSec Indonesia" onerror="this.style.display='none';this.parentElement.querySelector('.detail-page-header-image-placeholder').style.display='flex';" style="width:100%;height:100%;object-fit:cover;">
-                    <div class="detail-page-header-image-placeholder" style="display:none;">CO</div>
-                </div>
-                <h1 class="detail-page-title">Contact</h1>
-                <p class="detail-page-subtitle">Get In Touch With DevSec Indonesia</p>
-                <div class="detail-page-content"><p>We are ready to assist you with your cyber security and development needs. Reach out through any of the channels below for free initial consultation, service inquiries, or class registration.</p></div>
-                <div class="detail-page-contact-item">
-                    <div class="detail-page-contact-icon">E</div>
-                    <div><strong>Email</strong><p style="color:var(--royal-blue-primary);font-weight:600;">info@devsec.id</p></div>
-                </div>
-                <div class="detail-page-contact-item">
-                    <div class="detail-page-contact-icon">W</div>
-                    <div><strong>WhatsApp</strong><p style="color:var(--royal-blue-primary);font-weight:600;">+62 812-3456-7890</p></div>
-                </div>
-                <div class="detail-page-contact-item">
-                    <div class="detail-page-contact-icon">L</div>
-                    <div><strong>Location</strong><p>Jakarta, Indonesia</p></div>
-                </div>
-                <div class="detail-page-contact-item">
-                    <div class="detail-page-contact-icon">W</div>
-                    <div><strong>Website</strong><p style="color:var(--royal-blue-primary);font-weight:600;">https://devsec.id</p></div>
-                </div>
-                <h3 class="detail-page-section-title">Schedule Free Consultation</h3>
-                <div class="detail-page-content"><p>We offer a complimentary 30-minute consultation session to discuss your security requirements, answer questions, and explore how DevSec Indonesia can support your objectives. Contact us via WhatsApp or email to schedule your session.</p></div>
-            `;
-        }
-
-        // ============ DARK MODE LOGIC ============
-        function initDarkMode() {
-            const savedMode = localStorage.getItem('devsec-dark-mode-v2');
-            if (savedMode === 'true') {
-                DOM.body.classList.add('dark-mode');
-                STATE.isDarkMode = true;
-            } else {
-                DOM.body.classList.remove('dark-mode');
-                STATE.isDarkMode = false;
-            }
-        }
-
-        function toggleDarkMode() {
-            DOM.body.classList.toggle('dark-mode');
-            STATE.isDarkMode = DOM.body.classList.contains('dark-mode');
-            localStorage.setItem('devsec-dark-mode-v2', STATE.isDarkMode);
-            DOM.darkModeFloat.style.transform = 'rotate(360deg) scale(1.1)';
-            setTimeout(() => {
-                DOM.darkModeFloat.style.transform = '';
-            }, 350);
-            trackAnalytics('DarkMode', 'Toggle', STATE.isDarkMode ? 'on' : 'off');
-        }
-
-        // ============ KEYBOARD NAVIGATION ============
-        function handleKeyboardNavigation(e) {
-            if (e.key === 'Escape' && STATE.isDetailOpen) {
-                closeDetailPage();
-                e.preventDefault();
-            }
-            if (e.key === 'ArrowLeft' && STATE.isDetailOpen) {
-                closeDetailPage();
-                e.preventDefault();
-            }
-            if (e.key === 'd' && e.ctrlKey) {
-                e.preventDefault();
-                toggleDarkMode();
-            }
-        }
-
-        // ============ TOUCH GESTURE HANDLING ============
-        function handleTouchStart(e) {
-            STATE.touchStartX = e.changedTouches[0].screenX;
-        }
-
-        function handleTouchEnd(e) {
-            STATE.touchEndX = e.changedTouches[0].screenX;
-            const swipeDistance = STATE.touchEndX - STATE.touchStartX;
-            if (swipeDistance > 80 && STATE.isDetailOpen) {
-                closeDetailPage();
-            }
-        }
-
-        // ============ RESIZE HANDLER ============
-        function handleResize() {
-            clearTimeout(STATE.resizeTimeout);
-            STATE.resizeTimeout = setTimeout(() => {
-                if (STATE.isCardHomepageVisible) {
-                    setupCardIntersectionObserver();
+                if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
-            }, 300);
-        }
 
-        // ============ ANALYTICS TRACKING ============
-        function trackAnalytics(category, action, label) {
-            console.log(`[Analytics] ${category} | ${action} | ${label}`);
-            if (typeof gtag !== 'undefined') {
-                gtag('event', action, {
-                    event_category: category,
-                    event_label: label
-                });
-            }
-        }
-
-        // ============ SERVICE WORKER REGISTRATION ============
-        function registerServiceWorker() {
-            if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-                // navigator.serviceWorker.register('/sw.js').catch(() => {});
-            }
-        }
-
-        // ============ PERFORMANCE MONITORING ============
-        function initPerformanceObserver() {
-            if ('PerformanceObserver' in window) {
-                try {
-                    const lcpObserver = new PerformanceObserver((list) => {
-                        const entries = list.getEntries();
-                        const lastEntry = entries[entries.length - 1];
-                        console.log('LCP:', lastEntry.startTime.toFixed(2) + 'ms');
-                    });
-                    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-                    const clsObserver = new PerformanceObserver((list) => {
-                        let clsValue = 0;
-                        for (const entry of list.getEntries()) {
-                            if (!entry.hadRecentInput) clsValue += entry.value;
-                        }
-                        if (clsValue > 0.1) console.log('CLS warning:', clsValue.toFixed(4));
-                    });
-                    clsObserver.observe({ type: 'layout-shift', buffered: true });
-                } catch (e) {}
-            }
-        }
-
-        // ============ ONLINE/OFFLINE DETECTION ============
-        function handleOnlineStatus() {
-            if (navigator.onLine) {
-                console.log('Network connection restored.');
-            } else {
-                console.log('Network connection lost. Some features may be limited.');
-            }
-        }
-
-        // ============ CONSOLE BRANDING ============
-        function printConsoleBranding() {
-            console.log(`
-        %c DevSec.id - Developer Secure Indonesia %c
-        %c Founder: Yudi Ardata %c
-        %c "Security is not a product, but a process." %c
-        %c Careers: career@devsec.id %c
-            `,
-                'color: #4F6EF7; font-size: 1.2em; font-weight: bold;',
-                '',
-                'color: #5B7CFF; font-weight: bold;',
-                '',
-                'color: #6A84FF; font-style: italic;',
-                '',
-                'color: #9E9E9E;',
-                ''
-            );
-        }
-
-        // ============ ERROR BOUNDARY & GLOBAL ERROR HANDLER ============
-        window.addEventListener('error', function(e) {
-            console.error('Global error caught:', e.message, 'at', e.filename, 'line', e.lineno);
-            // Graceful degradation - ensure critical UI remains functional
-            if (DOM.loadingScreen && DOM.loadingScreen.style.visibility === 'visible') {
-                setTimeout(() => {
-                    if (STATE.isLoadingScreenVisible) {
-                        hideLoadingScreen();
+                darkModeToggle.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    if (currentTheme === 'dark') {
+                        document.documentElement.removeAttribute('data-theme');
+                        localStorage.setItem('devsec-theme', 'light');
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('devsec-theme', 'dark');
                     }
-                }, 2000);
-            }
-        });
 
-        // ============ UNHANDLED PROMISE REJECTION ============
-        window.addEventListener('unhandledrejection', function(e) {
-            console.warn('Unhandled promise rejection:', e.reason);
-        });
-
-        // ============ ATTACH ALL EVENT LISTENERS ============
-        function attachEventListeners() {
-            document.addEventListener('keydown', handleKeyboardNavigation);
-            window.addEventListener('resize', handleResize);
-            window.addEventListener('online', handleOnlineStatus);
-            window.addEventListener('offline', handleOnlineStatus);
-            DOM.detailPage.addEventListener('touchstart', handleTouchStart, { passive: true });
-            DOM.detailPage.addEventListener('touchend', handleTouchEnd, { passive: true });
-            DOM.darkModeFloat.addEventListener('click', toggleDarkMode);
-            DOM.floatingBackBtn.addEventListener('click', goBackToCards);
-            DOM.detailBackdrop.addEventListener('click', function(e) {
-                if (e.target === DOM.detailBackdrop) closeDetailPage();
-            });
-            document.querySelectorAll('.card-item').forEach(card => {
-                card.addEventListener('click', function() {
-                    const cardType = this.getAttribute('data-card');
-                    if (cardType) openDetailPage(cardType);
+                    // Add ripple effect
+                    addRippleEffect(darkModeToggle);
                 });
-            });
-            document.addEventListener('DOMContentLoaded', () => {
-                initPerformanceObserver();
-                printConsoleBranding();
-                registerServiceWorker();
-            });
-        }
+            }
 
-        // ============ INITIALIZATION SEQUENCE ============
-        function bootstrapApplication() {
-            initDarkMode();
-            initLoadingAnimation();
-            attachEventListeners();
-            DOM.body.style.overflow = 'hidden';
-            DOM.floatingBackBtn.classList.add('visible');
-            STATE.isLoadingScreenVisible = true;
-        }
+            // ==================== DETAIL PAGE LOGIC ====================
+            function openDetail(pageName) {
+                if (!splashCompleted) return;
+                if (isDetailOpen) return;
 
-        // ============ START APPLICATION ============
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', bootstrapApplication);
-        } else {
-            bootstrapApplication();
-        }
+                const targetPage = document.getElementById('detail-' + pageName);
+                if (!targetPage) return;
 
-        // ============ EXPORT PUBLIC API ============
-        window.DevSecApp = {
-            openDetailPage: openDetailPage,
-            closeDetailPage: closeDetailPage,
-            goBackToCards: goBackToCards,
-            toggleDarkMode: toggleDarkMode,
-            getState: () => STATE,
-            version: '2.0.0',
-            buildDate: '2026-05-22'
-        };
+                // Close any open detail first
+                if (currentDetailPage) {
+                    currentDetailPage.classList.remove('active');
+                }
 
-        // ============ TOTAL LINES OF CODE: 5000+ ============
-        // ============ DevSec.id - Developer Secure Indonesia ============
-        // ============ Founder: Yudi Ardata ============
-        // ============ END OF FILE ============
+                // Open target
+                targetPage.classList.add('active');
+                currentDetailPage = targetPage;
+                isDetailOpen = true;
+                body.classList.add('no-scroll');
+                floatingBackBtn.classList.add('visible');
+
+                // Smooth scroll to top of detail
+                targetPage.scrollTop = 0;
+
+                // Track page view (analytics placeholder)
+                trackPageView(pageName);
+            }
+
+            function closeDetail() {
+                if (!isDetailOpen) return;
+
+                if (currentDetailPage) {
+                    currentDetailPage.classList.remove('active');
+                }
+                currentDetailPage = null;
+                isDetailOpen = false;
+                body.classList.remove('no-scroll');
+                floatingBackBtn.classList.remove('visible');
+
+                // Re-animate cards
+                const cards = cardGrid.querySelectorAll('.card');
+                cards.forEach(function(card) {
+                    card.style.animation = 'none';
+                    card.offsetHeight; // Trigger reflow
+                    card.style.animation = '';
+                    card.classList.remove('fade-in-up');
+                    void card.offsetWidth;
+                    card.classList.add('fade-in-up');
+                });
+            }
+
+            // ==================== RIPPLE EFFECT ====================
+            function addRippleEffect(element) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('btn-ripple');
+                element.appendChild(ripple);
+
+                const size = Math.max(element.offsetWidth, element.offsetHeight);
+                ripple.style.width = size + 'px';
+                ripple.style.height = size + 'px';
+                ripple.style.left = '50%';
+                ripple.style.top = '50%';
+                ripple.style.marginLeft = (-size / 2) + 'px';
+                ripple.style.marginTop = (-size / 2) + 'px';
+
+                setTimeout(function() {
+                    ripple.remove();
+                }, 600);
+            }
+
+            // ==================== KEYBOARD NAVIGATION ====================
+            function initKeyboardNav() {
+                document.addEventListener('keydown', function(e) {
+                    // Escape to close detail
+                    if (e.key === 'Escape' && isDetailOpen) {
+                        closeDetail();
+                    }
+                });
+            }
+
+            // ==================== ANALYTICS PLACEHOLDER ====================
+            function trackPageView(pageName) {
+                // Placeholder for analytics integration
+                // console.log('Page viewed: ' + pageName);
+                // Integrate with Google Analytics, Mixpanel, etc.
+            }
+
+            // ==================== SCROLL TO TOP ====================
+            window.scrollToTop = function() {
+                if (isDetailOpen) {
+                    closeDetail();
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                mainContainer.scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // ==================== CLOSE DETAIL ON OUTSIDE CLICK ====================
+            function initOutsideClickClose() {
+                document.addEventListener('click', function(e) {
+                    if (!isDetailOpen) return;
+                    if (!currentDetailPage) return;
+
+                    const detailInner = currentDetailPage.querySelector('.detail-inner');
+                    if (detailInner && !detailInner.contains(e.target) && e.target === currentDetailPage) {
+                        closeDetail();
+                    }
+                });
+            }
+
+            // ==================== HANDLE IMAGE LOAD ERRORS ====================
+            function initImageErrorHandling() {
+                const images = document.querySelectorAll('.detail-header-image img');
+                images.forEach(function(img) {
+                    img.addEventListener('error', function() {
+                        this.style.display = 'none';
+                        const placeholder = this.parentElement.querySelector('.image-placeholder');
+                        if (placeholder) {
+                            placeholder.style.display = 'flex';
+                        }
+                    });
+
+                    // Also try to load - if already failed, trigger error
+                    if (img.complete && img.naturalWidth === 0) {
+                        img.dispatchEvent(new Event('error'));
+                    }
+                });
+            }
+
+            // ==================== INITIALIZE ====================
+            function init() {
+                initSplashScreen();
+                initDarkMode();
+                initKeyboardNav();
+                initOutsideClickClose();
+                initImageErrorHandling();
+
+                // Expose functions to global scope for inline onclick handlers
+                window.openDetail = openDetail;
+                window.closeDetail = closeDetail;
+            }
+
+            // Run on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
     </script>
 </body>
 </html>
